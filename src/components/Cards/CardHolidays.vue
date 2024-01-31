@@ -178,7 +178,6 @@ const replaceNewlinesWithDiv = (text: string) => {
 };
 const churchHolidays = ref<HolidayData | null>(null);
 
-// const isNameDaysShown = ref(false);
 
 const props = defineProps(['selectedDate']);
 const selectedDate = ref(props.selectedDate);
