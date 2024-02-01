@@ -107,13 +107,13 @@
   <ion-header>
     <ion-toolbar>
       <ion-title>{{ selectedChurchHoliday?.name }}</ion-title>
-    <ion-buttons slot="end" style="margin-right: 7%;">
-      <ion-button @click="adjustFontSize('increase')"><svg xmlns="http://www.w3.org/2000/svg" width="44px" height="44px" viewBox="0 0 24 24" fill="none">
+    <ion-buttons slot="end" style="margin-right: 4%;">
+      <ion-button @click="adjustFontSize('increase')"><svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 24 24" fill="none">
       <g id="Interface / Magnifying_Glass_Plus">
       <path id="Vector" d="M7 10H10M10 10H13M10 10V7M10 10V13M15 15L21 21M10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10C17 13.866 13.866 17 10 17Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
       </g>
       </svg></ion-button>
-      <ion-button @click="adjustFontSize('decrease')"><svg xmlns="http://www.w3.org/2000/svg" width="44px" height="44px" viewBox="0 0 24 24" fill="none">
+      <ion-button @click="adjustFontSize('decrease')"><svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 24 24" fill="none">
       <g id="Interface / Magnifying_Glass_Minus">
       <path id="Vector" d="M7 10H13M15 15L21 21M10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10C17 13.866 13.866 17 10 17Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
       </g>
@@ -126,8 +126,9 @@
   </ion-header>
   <ion-content class="ion-padding">
     <p v-if="selectedChurchHoliday" :style="{ fontSize: fontSize + 'px' }">
+      <a :href="selectedChurchHoliday.audio" style="text-decoration: none;">Аудио</a>
       <img :src="selectedChurchHoliday.image" style="width: 30%;" />
-      {{ replaceNewlinesWithDiv(selectedChurchHoliday.text) }}
+      <div v-html="formatTextSpace(selectedChurchHoliday.text)"></div>
       <a :href="selectedChurchHoliday.href" style="text-decoration: none;">Още информация за празника {{ selectedChurchHoliday?.name }}</a>
     </p>
   </ion-content>
@@ -170,12 +171,15 @@ interface Holiday {
   image: string;
   offset: number;
 }
-
-const replaceNewlinesWithDiv = (text: string) => {
-  // Заменя всички срокове за нов ред (\n) с <br> и обвива резултата в div
+const formatTextSpace = (text: string) => {
   const htmlResult = text.replace(/\n/g, '<br>');
-  return `<div v-html="'${htmlResult}'"></div>`;
+  return htmlResult;
 };
+// const replaceNewlinesWithDiv = (text: string) => {
+//   // Заменя всички срокове за нов ред (\n) с <br> и обвива резултата в div
+//   const htmlResult = text.replace(/\n/g, '<br>');
+//   return `<div v-html="'${htmlResult}'"></div>`;
+// };
 const churchHolidays = ref<HolidayData | null>(null);
 
 

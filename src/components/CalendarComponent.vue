@@ -105,6 +105,9 @@
     </button>
   </div>
 
+  <button @click="goToGreatDay" class="greatDayButton">
+    Велики ден през {{ selectedYear }}
+  </button>
   <div v-if="props.showDatePicker">
     <DatePickerComponent
       v-model="selectedDate"
@@ -116,7 +119,6 @@
       :key="selectedDate.getTime()"
       :showDatePicker="props.showDatePicker"
     />
-
   </div>
     <!-- <div class="event-text" v-if="hasEvents">
       <p :class="{ 'red-text': isHoliday || isWeekend ,'highlight-day': isHoliday }">
@@ -132,9 +134,7 @@
     <swiper-slide>Slide 2</swiper-slide>
     <swiper-slide>Slide 3</swiper-slide>
 </swiper> -->
-  <button @click="goToGreatDay" class="greatDayButton">
-    Велики ден през {{ selectedYear }}
-  </button>
+
 </template>
 
 <script setup lang="ts">
@@ -583,7 +583,7 @@ const moveMonthBackward = () => {
 .date-navigation {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   margin-bottom: auto;
   margin-top: 5%;
 }
@@ -714,6 +714,14 @@ const moveMonthBackward = () => {
   border-radius: 20%;
   z-index: 4;
 } */
+.greatDayButton{
+  background-color: #f0f0f0;
+  text-align: center;
+  padding: 1%;
+  color: #65758b;
+  font-size: 35px;
+  border-radius: 10%;
+}
 
 .centerButton {
   background-color: #f0f0f0;
