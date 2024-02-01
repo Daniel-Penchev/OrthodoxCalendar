@@ -15,7 +15,7 @@
         </svg>
       </button>
     
-      <button @click="moveBackward" class="datePrevious" v-if="!props.showDatePicker">      <svg
+      <button @click="moveBackward" class="datePrevious" v-if="!props.showDatePicker && !data.isDropDownOpen">      <svg
           stroke-linecap="round"
           stroke-linejoin="round"
           viewBox="0 0 24 24"
@@ -80,7 +80,7 @@
       </div>
     </div>
 
-    <button @click="moveForward" class="dateNext" v-if="!props.showDatePicker" > <svg
+    <button @click="moveForward" class="dateNext" v-if="!props.showDatePicker && !data.isDropDownOpen" > <svg
         stroke-linecap="round"
         stroke-linejoin="round"
         viewBox="0 0 24 24"
@@ -105,9 +105,6 @@
     </button>
   </div>
 
-  <button @click="goToGreatDay" class="greatDayButton">
-    Велики ден през {{ selectedYear }}
-  </button>
   <div v-if="props.showDatePicker">
     <DatePickerComponent
       v-model="selectedDate"
@@ -118,8 +115,17 @@
       mode="date"
       :key="selectedDate.getTime()"
       :showDatePicker="props.showDatePicker"
+      @click="handleDatePickerClick(selectedDate.getTime())"
     />
+    
   </div>
+  
+  <button v-if="props.showDatePicker" @click="goToCurrentDay" class="greatDayButton">
+    Днешният ден
+  </button>
+  <button v-if="props.showDatePicker" @click="goToGreatDay" class="greatDayButton">
+    Велики ден през {{ selectedYear }}
+  </button>
     <!-- <div class="event-text" v-if="hasEvents">
       <p :class="{ 'red-text': isHoliday || isWeekend ,'highlight-day': isHoliday }">
         {{ formatDate(selectedDate) }} - {{ isHoliday }}
@@ -436,6 +442,9 @@ const goToGreatDay = () => {
   // Тук сложете логиката за промяна на датата на "Велики ден"
   selectedDate.value = calculateOrthodoxEaster(selectedYear.value);
 };
+const goToCurrentDay = () => {
+  selectedDate.value = currentDate.value;
+};
 
 // Свързано е с input year
 const editMode = ref(false);
@@ -456,6 +465,24 @@ const updateSelectedYear = (event: Event) => {
     selectedDate.value = newDate;
     calculateOrthodoxEaster(newYear);
   }
+};
+
+
+// Store the last clicked date
+let lastClickedDate = ref<number | null>(null);
+
+// Function to handle date picker click
+const handleDatePickerClick = (selectedDateValue: number) => {
+    // Check if the date has changed since the last click
+    if (lastClickedDate.value !== selectedDateValue) {
+      console.log("isDatePickerDisabled.value" + lastClickedDate.value);
+      console.log("isDatePickerDisabled.value" + selectedDateValue);
+
+      setTimeout(() => {
+        lastClickedDate.value = selectedDateValue; // Update the last clicked date
+      }, 1000); // 1-second delay
+    }
+    
 };
 //===========================================================
 // All About Slider
@@ -716,11 +743,12 @@ const moveMonthBackward = () => {
 } */
 .greatDayButton{
   background-color: #f0f0f0;
-  text-align: center;
-  padding: 1%;
-  color: #65758b;
-  font-size: 35px;
-  border-radius: 10%;
+    text-align: center;
+    padding: 2%;
+    color: #65758b;
+    font-size: 18px;
+    margin-top: -1%;
+    margin-right: 3%;
 }
 
 .centerButton {

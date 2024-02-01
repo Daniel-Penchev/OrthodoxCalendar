@@ -19,64 +19,69 @@
                 <div v-if="isCurrentDаy(day.day) && isCurrentMonth(month.name)">
                   <h3>Day {{ selectedDay.day }}</h3>
 
-                  <IonList class="churchHoliday" style="margin-top: 10%;" >
+                  <IonList class="churchHoliday" style="margin-top: 10%;">
                     <!-- Ще изведе подвижните праници -->
-                  <IonItem v-for="filteredHoliday in shouldDisplayItems" :key="filteredHoliday.name" >
-                    
-                    <ion-buttons class="buttonSaint" v-if="shouldDisplayItem(filteredHoliday.date)" @click="() => handleChurchFilteredHoliday(filteredHoliday)" >
-                     
-                      <ion-button expand="block">
-                      
-                        <div style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
-                          <ion-thumbnail class="custom-thumbnail">
-                            <img alt="Saint" :src="filteredHoliday.image || 'https://ionicframework.com/docs/img/demos/thumbnail.svg'" style="width: 100%;" />
-                          </ion-thumbnail>
-                         
-                          <div style="flex: 1; text-wrap: balance;width: auto;">
-                            {{ filteredHoliday.name }}
-                            {{ format(filteredHoliday.date, 'MMMM d') }}
-                            {{ filteredHoliday.offset }}
-                            <a  href="https://www.pravoslavieto.com/calendar/nedelnik/nedelja_pred_bogojavlenie.htm" style="text-decoration: none;">
-                             </a>
+                    <IonItem v-for="filteredHoliday in shouldDisplayItems" :key="filteredHoliday.name">
+
+                      <ion-buttons class="buttonSaint" v-if="shouldDisplayItem(filteredHoliday.date)"
+                        @click="() => handleChurchFilteredHoliday(filteredHoliday)">
+
+                        <ion-button expand="block">
+
+                          <div style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
+                            <ion-thumbnail class="custom-thumbnail">
+                              <img alt="Saint"
+                                :src="filteredHoliday.image || 'https://ionicframework.com/docs/img/demos/thumbnail.svg'"
+                                style="width: 100%;" />
+                            </ion-thumbnail>
+
+                            <div style="flex: 1; text-wrap: balance;width: auto;">
+                              {{ filteredHoliday.name }}
+                              {{ format(filteredHoliday.date, 'MMMM d') }}
+                              {{ filteredHoliday.offset }}
+                              <a href="https://www.pravoslavieto.com/calendar/nedelnik/nedelja_pred_bogojavlenie.htm"
+                                style="text-decoration: none;">
+                              </a>
+                            </div>
                           </div>
-                        </div>
-                      </ion-button>
-                    </ion-buttons>
-                  </IonItem>
+                        </ion-button>
+                      </ion-buttons>
+                    </IonItem>
 
                     <!-- Ще изведе праниците -->
                     <IonItem v-for="churchHoliday in selectedDay.church_holidays">
                       <ion-buttons class="buttonSaint">
-                        <ion-button expand="block" @click="() => handleChurchHolidayClick(churchHoliday)" >
+                        <ion-button expand="block" @click="() => handleChurchHolidayClick(churchHoliday)">
 
                           <div style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
-                                <ion-thumbnail class="custom-thumbnail" style="width: 100%;margin-bottom: 23%;" >
-                                <img :src="churchHoliday.image || 'https://ionicframework.com/docs/img/demos/thumbnail.svg'"  style="width: auto;height: auto;" />
-                              </ion-thumbnail>
+                            <ion-thumbnail class="custom-thumbnail" style="width: 100%;margin-bottom: 23%;">
+                              <img :src="churchHoliday.image || 'https://ionicframework.com/docs/img/demos/thumbnail.svg'"
+                                style="width: auto;height: auto;" />
+                            </ion-thumbnail>
                             <div style="flex: 1; text-wrap: balance;width: auto;">
                               {{ churchHoliday.name }}
                             </div>
                           </div>
-                          
-                            <!-- <ion-button expand="block" @click="setOpen(true)">Read me</ion-button> -->
 
-                            <!-- <svg viewBox="0 0 33 33" style="width: 6%;"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg> -->
-                
+                          <!-- <ion-button expand="block" @click="setOpen(true)">Read me</ion-button> -->
+
+                          <!-- <svg viewBox="0 0 33 33" style="width: 6%;"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg> -->
+
                         </ion-button>
                       </ion-buttons>
-                      <a :href="churchHoliday.audio" style="text-decoration: none;">Аудио за празника {{ selectedChurchHoliday?.name }}</a>
-                
+
+
                     </IonItem>
- 
+
                   </IonList>
 
                   <!-- Показва именните дни -->
                   <ion-button id="auto-trigger">Show name days</ion-button>
                   <ion-popover trigger="auto-trigger" size="cover">
                     <ion-card-content class="ion-padding">
-                      <div v-for="dayName in selectedDay.name_days" >
+                      <div v-for="dayName in selectedDay.name_days">
                         {{ dayName }}
-                        
+
                       </div>
                       <div v-if="selectedDay.name_days == ''">
                         Not found today
@@ -88,7 +93,7 @@
                   <!-- Идващи от Json -->
                   <p v-if="day.nameDay">Name Day: {{ selectedDay.name_days }}</p>
                   <p v-if="day.church_holidays">Church Holidays: {{ selectedDay.church_holidays }}</p>
-                  <a href="http://www.pravoslavieto.com/toc/chitalnja.htm" target=_blank><img width=158 height=23 src="http://www.pravoslavieto.com/images/felles/logo_small.gif" alt="ПРАВОСЛАВНАТА ЧИТАЛНЯ. Eastern Orthodox readings in Bulgarian at Pravoslavieto.com" border=0></a> 
+                 
                   <p>Selected Date in CardHolidays: {{ selectedDate }}</p>
                 </div>
               </div>
@@ -103,40 +108,74 @@
       </div>
     </ion-card-content>
   </ion-card>
-  <ion-modal :is-open="isOpen">
-  <ion-header>
-    <ion-toolbar>
-      <ion-title>{{ selectedChurchHoliday?.name }}</ion-title>
-    <ion-buttons slot="end" style="margin-right: 4%;">
-      <ion-button @click="adjustFontSize('increase')"><svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 24 24" fill="none">
-      <g id="Interface / Magnifying_Glass_Plus">
-      <path id="Vector" d="M7 10H10M10 10H13M10 10V7M10 10V13M15 15L21 21M10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10C17 13.866 13.866 17 10 17Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      </g>
-      </svg></ion-button>
-      <ion-button @click="adjustFontSize('decrease')"><svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 24 24" fill="none">
-      <g id="Interface / Magnifying_Glass_Minus">
-      <path id="Vector" d="M7 10H13M15 15L21 21M10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10C17 13.866 13.866 17 10 17Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      </g>
-      </svg></ion-button>
-    </ion-buttons>
-      <ion-buttons slot="end">
-        <ion-button @click="setOpen(false)">X</ion-button>
-      </ion-buttons>
-    </ion-toolbar>
-  </ion-header>
-  <ion-content class="ion-padding">
-    <p v-if="selectedChurchHoliday" :style="{ fontSize: fontSize + 'px' }">
-      <a :href="selectedChurchHoliday.audio" style="text-decoration: none;">Аудио</a>
-      <img :src="selectedChurchHoliday.image" style="width: 30%;" />
+
+  <ion-modal :is-open="isOpen" @blur="handleBlur">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>{{ selectedChurchHoliday?.name }}</ion-title>
+        <ion-buttons slot="end" style="margin-right: 4%;">
+          <ion-button @click="adjustFontSize('increase')"><svg xmlns="http://www.w3.org/2000/svg" width="30px"
+              height="30px" viewBox="0 0 24 24" fill="none">
+              <g id="Interface / Magnifying_Glass_Plus">
+                <path id="Vector"
+                  d="M7 10H10M10 10H13M10 10V7M10 10V13M15 15L21 21M10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10C17 13.866 13.866 17 10 17Z"
+                  stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </g>
+            </svg></ion-button>
+          <ion-button @click="adjustFontSize('decrease')"><svg xmlns="http://www.w3.org/2000/svg" width="30px"
+              height="30px" viewBox="0 0 24 24" fill="none">
+              <g id="Interface / Magnifying_Glass_Minus">
+                <path id="Vector"
+                  d="M7 10H13M15 15L21 21M10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10C17 13.866 13.866 17 10 17Z"
+                  stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </g>
+            </svg></ion-button>
+        </ion-buttons>
+        <ion-buttons slot="end">
+          <ion-button  @click="setOpen(false)">
+          <ion-icon slot="icon-only" :icon="close"></ion-icon>
+        </ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+      <p v-if="selectedChurchHoliday" :style="{ fontSize: fontSize + 'px' }">
+
+        <img :src="selectedChurchHoliday.image" style="width: 30%;" />
+
+                
+        <div style="display: flex; justify-content: center; align-items: center;flex-direction: column;">
+          <a :href="selectedChurchHoliday.audio" style="text-decoration: none;">
+            <svg width="30px" height="30px" viewBox="0 0 32 32" version="1.1"
+                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+              <title>headphone</title>
+              <desc>Created with Sketch Beta.</desc>
+              <defs></defs>
+              <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+                <g id="Icon-Set-Filled" sketch:type="MSLayerGroup" transform="translate(-466.000000, -517.000000)"
+                  fill="#000000">
+                  <path
+                    d="M495.938,531.521 C495.966,531.183 496,530.846 496,530.5 C496,523.044 489.732,517 482,517 C474.268,517 468,523.044 468,530.5 C468,530.846 468.034,531.183 468.063,531.521 C466.838,532.205 466,533.498 466,535 L466,541 C466,543.209 467.791,545 470,545 L474,545 C476.125,544.905 478,543.148 478,541 L478,535 C478,532.791 476.209,531 474,531 L470,531 C470,524.01 475.373,519 482,519 C488.628,519 494.043,523.967 494,531 C493.999,531.17 490,531 490,531 C487.791,531 486,532.791 486,535 L486,541 C486,543.148 487.875,544.905 490,545 L492,545 L492,548 C492,548.553 492.447,549 493,549 C493.553,549 494,548.553 494,548 L494,545 C496.209,545 498,543.209 498,541 L498,535 C498,533.498 497.162,532.205 495.938,531.521"
+                    id="headphone" sketch:type="MSShapeGroup"></path>
+                </g>
+              </g>
+            </svg>
+            <p>Аудио за празника</p>
+          </a>
+        </div>
+        
       <div v-html="formatTextSpace(selectedChurchHoliday.text)"></div>
-      <a :href="selectedChurchHoliday.href" style="text-decoration: none;">Още информация за празника {{ selectedChurchHoliday?.name }}</a>
-    </p>
-  </ion-content>
-</ion-modal>
+      <a :href="selectedChurchHoliday.href" style="text-decoration: none;">Още информация за празника {{
+        selectedChurchHoliday?.name }}</a>
+      </p>
+    </ion-content>
+  </ion-modal>
 </template>
 
 <script setup lang="ts">
-import { IonCard, IonCardContent, IonItem, IonButton, IonPopover, IonModal, IonHeader, IonToolbar, IonTitle, IonButtons, IonContent, IonList, IonThumbnail } from '@ionic/vue';
+import { IonCard, IonCardContent, IonItem, IonButton,IonIcon , IonPopover, IonModal, IonHeader, IonToolbar, IonTitle, IonButtons, IonContent, IonList, IonThumbnail } from '@ionic/vue';
+import { close } from 'ionicons/icons';
 import { format } from 'date-fns';
 // IonItem, IonCardHeader, IonCardTitle
 import { computed, onMounted, ref, watch } from 'vue';
@@ -227,7 +266,7 @@ onMounted(async () => {
 
 // ion-modal Logic
 
-const selectedChurchHoliday = ref<{ image:string  , name: string; text: string; href: string ,audio:string } | null>(null);
+const selectedChurchHoliday = ref<{ image: string, name: string; text: string; href: string, audio: string } | null>(null);
 
 const handleChurchHolidayClick = (churchHoliday: { image: string; name: string; text: string; href: string, audio: string }) => {
   selectedChurchHoliday.value = churchHoliday;
@@ -315,18 +354,18 @@ watch([churchHolidays, selectedDate], ([newData, newSelectedDate]) => {
   console.log('Променени са общите дати');
   console.log('calculatedHolidays:', newData);
   console.log('newSelectedDate:', format(newSelectedDate, 'MMMM d'));
-  console.log('newSelectedDate:', );
-  
+  console.log('newSelectedDate:',);
+
   // Извикайте вашата функция тук или добавете допълнителен код.
 });
 const shouldDisplayItem = (itemDate: Date) => {
-  if (format(selectedDate.value, 'MMMM d') === format(itemDate, 'MMMM d')){
+  if (format(selectedDate.value, 'MMMM d') === format(itemDate, 'MMMM d')) {
     console.log("YEEESSSSS");
-    
+
   }
-  else{
+  else {
     console.log("NOOOOOOOOOOOOOO");
-    
+
   }
   return format(selectedDate.value, 'MMMM d') === format(itemDate, 'MMMM d');
 };
@@ -355,44 +394,44 @@ const calculateOrthodoxEaster = (year: number): Date => {
 // const orthodoxEaster = computed(() => calculateOrthodoxEaster(selectedYear.value));
 
 const holidays = ref<Holiday[]>([
-  { name: 'Неделя на митаря и фарисея', date: '', offset: -70 ,image: ''},
-  { name: 'Неделя на блудния син', date: '', offset: -63,image: '' },
+  { name: 'Неделя на митаря и фарисея', date: '', offset: -70, image: '' },
+  { name: 'Неделя на блудния син', date: '', offset: -63, image: '' },
   // { name: 'Месен четвъртък (гръцка традиция! - Tsiknopempti)', date: '', offset: -59 },
-  { name: 'Събота срещу Неделя Месопустна Задушница', date: '', offset: -57 ,image: ''},
-  { name: 'Месна неделя', date: '', offset: -56,image: '' },
-  { name: 'Сирничка (Прошка) Неделя', date: '', offset: -49,image: '' },
-  { name: 'Чисти понеделник (започва Великият пост - пост 6 седмици)', date: '', offset: -48,image: '' },
-  { name: 'Свети Теодор', date: '', offset: -43 ,image: ''},
-  { name: 'Неделя на Православието ', date: '', offset: -42 ,image: ''},
-  { name: 'Свети Григорий Палама ', date: '', offset: -35,image: '' },
-  { name: 'Лазарова събота ', date: '', offset: -8 ,image: ''},
-  { name: 'Цветница ', date: '', offset: -7 ,image: ''},
-  { name: 'Велики понеделник ', date: '', offset: -6 ,image: ''},
-  { name: 'Велики вторник', date: '', offset: -5,image: '' },
-  { name: 'Велика сряда', date: '', offset: -4,image: '' },
-  { name: 'Велики четвъртък ', date: '', offset: -3,image: '' },
-  { name: 'Велики петък', date: '', offset: -2,image: '' },
-  { name: 'Велика събота', date: '', offset: -1,image: '' },
-  { name: 'СВЕТИ ВЕЛИКДЕН ', date: '', offset: 0 ,image: ''},
-  { name: '2-ри ден от Светлата седмица (седмица на Пасха, седмица на обновлението)', date: '', offset: 1 ,image: ''},
-  { name: '3-ти ден от Светлата седмица (Седмица на Пасха, Седмица на обновлението) - светъл вторник', date: '', offset: 2 ,image: ''},
-  { name: '4-ти ден от Светлата седмица (седмица на Пасха, седмица на обновлението)', date: '', offset: 3 ,image: ''},
-  { name: '5-ти ден от Светлата седмица (седмица на Пасха, седмица на обновлението)', date: '', offset: 4,image: '' },
-  { name: '6-ти ден от Светлата седмица (седмица на Пасха, седмица на обновлението)', date: '', offset: 5,image: '' },
-  { name: 'Ден на животворния фонтан ', date: '', offset: 5,image: '' },
-  { name: '7-ми ден от Светлата седмица (седмица на Пасха, седмица на обновлението)', date: '', offset: 6,image: '' },
-  { name: 'Неделя на Тома ', date: '', offset: 7,image: '' },
-  { name: 'Неделя на жените мироносици ', date: '', offset: 14,image: '' },
-  { name: 'Неделя на паралитика ', date: '', offset: 21,image: '' },
-  { name: 'Свето Възнесение ', date: '', offset: 39,image: '' },
-  { name: 'Събота срещу Петдесетница Задушница', date: '', offset: 48 ,image: ''},
-  { name: 'Света Петдесетница', date: '', offset: 49,image: '' },
-  { name: 'Понеделник на Светия Дух', date: '', offset: 50 ,image: ''},
-  { name: 'Неделя на всички светии', date: '', offset: 56,image: '' },
+  { name: 'Събота срещу Неделя Месопустна Задушница', date: '', offset: -57, image: '' },
+  { name: 'Месна неделя', date: '', offset: -56, image: '' },
+  { name: 'Сирничка (Прошка) Неделя', date: '', offset: -49, image: '' },
+  { name: 'Чисти понеделник (започва Великият пост - пост 6 седмици)', date: '', offset: -48, image: '' },
+  { name: 'Свети Теодор', date: '', offset: -43, image: '' },
+  { name: 'Неделя на Православието ', date: '', offset: -42, image: '' },
+  { name: 'Свети Григорий Палама ', date: '', offset: -35, image: '' },
+  { name: 'Лазарова събота ', date: '', offset: -8, image: '' },
+  { name: 'Цветница ', date: '', offset: -7, image: '' },
+  { name: 'Велики понеделник ', date: '', offset: -6, image: '' },
+  { name: 'Велики вторник', date: '', offset: -5, image: '' },
+  { name: 'Велика сряда', date: '', offset: -4, image: '' },
+  { name: 'Велики четвъртък ', date: '', offset: -3, image: '' },
+  { name: 'Велики петък', date: '', offset: -2, image: '' },
+  { name: 'Велика събота', date: '', offset: -1, image: '' },
+  { name: 'СВЕТИ ВЕЛИКДЕН ', date: '', offset: 0, image: '' },
+  { name: '2-ри ден от Светлата седмица (седмица на Пасха, седмица на обновлението)', date: '', offset: 1, image: '' },
+  { name: '3-ти ден от Светлата седмица (Седмица на Пасха, Седмица на обновлението) - светъл вторник', date: '', offset: 2, image: '' },
+  { name: '4-ти ден от Светлата седмица (седмица на Пасха, седмица на обновлението)', date: '', offset: 3, image: '' },
+  { name: '5-ти ден от Светлата седмица (седмица на Пасха, седмица на обновлението)', date: '', offset: 4, image: '' },
+  { name: '6-ти ден от Светлата седмица (седмица на Пасха, седмица на обновлението)', date: '', offset: 5, image: '' },
+  { name: 'Ден на животворния фонтан ', date: '', offset: 5, image: '' },
+  { name: '7-ми ден от Светлата седмица (седмица на Пасха, седмица на обновлението)', date: '', offset: 6, image: '' },
+  { name: 'Неделя на Тома ', date: '', offset: 7, image: '' },
+  { name: 'Неделя на жените мироносици ', date: '', offset: 14, image: '' },
+  { name: 'Неделя на паралитика ', date: '', offset: 21, image: '' },
+  { name: 'Свето Възнесение ', date: '', offset: 39, image: '' },
+  { name: 'Събота срещу Петдесетница Задушница', date: '', offset: 48, image: '' },
+  { name: 'Света Петдесетница', date: '', offset: 49, image: '' },
+  { name: 'Понеделник на Светия Дух', date: '', offset: 50, image: '' },
+  { name: 'Неделя на всички светии', date: '', offset: 56, image: '' },
   // ................................
-  ]);
+]);
 
- const calculatedHolidays = computed(() => {
+const calculatedHolidays = computed(() => {
   const easterDate = calculateOrthodoxEaster(selectedDate.value.getFullYear());
   const result = holidays.value.map(holiday => {
     const holidayDate = new Date(easterDate);
@@ -405,6 +444,11 @@ const holidays = ref<Holiday[]>([
   return result;
 });
 
+// Handle the blur event to close the modal
+const handleBlur = () => {
+  setOpen(false);
+  // Additional logic if needed
+};
 
 </script>
 
@@ -441,5 +485,4 @@ const holidays = ref<Holiday[]>([
 
 .buttonSaint {
   width: 100%;
-}
-</style>
+}</style>
