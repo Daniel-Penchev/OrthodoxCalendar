@@ -610,7 +610,7 @@ const moveMonthBackward = () => {
 .date-navigation {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   margin-bottom: auto;
   margin-top: 5%;
 }

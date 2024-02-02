@@ -14,12 +14,29 @@
             <ion-button><ion-icon class="icons-style" :icon="calendarOutline"></ion-icon></ion-button>
           </ion-buttons>
 
+        <!-- Искам да има иконка за преводач и когато я натисна да ми сменя всичко преведено на език -->
+        <!-- <ion-buttons slot="end">
+          <ion-button @click="openLanguagePopover">
+            <ion-icon class="icons-style" :icon="globe"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+
+        <ion-popover trigger="language-popover" :dismiss-on-select="true">
+      <ion-content>
+        <ion-list>
+          <ion-item v-for="lang in languages" :key="lang" :button="true" :detail="false" @click="changeLanguage(lang)">
+            {{ lang }}
+          </ion-item>
+        </ion-list>
+      </ion-content>
+    </ion-popover> -->
+
           <ion-buttons slot="end">
             <ion-button id="popover-button"><ion-icon class="icons-style"
                 :icon="ellipsisVertical"></ion-icon></ion-button>
 
           </ion-buttons>
-
+          
           <ion-popover trigger="popover-button" :dismiss-on-select="true">
             <ion-content>
               <ion-list>
@@ -118,7 +135,8 @@
 import CalendarComponent from '../../components/CalendarComponent.vue';
 import CardHolidays from '../../components/Cards/CardHolidays.vue';
 import { IonPage, IonContent, IonHeader, IonToolbar, IonButton, IonButtons,IonModal, IonIcon, IonTitle, IonPopover, IonList, IonItem } from '@ionic/vue';
-import { calendarOutline, ellipsisVertical, mail, star,close } from 'ionicons/icons';
+import { calendarOutline, ellipsisVertical, mail, star,close} from 'ionicons/icons';
+
 import { ref } from 'vue';
 
 // import { Swiper, SwiperSlide } from 'swiper/vue';
@@ -162,6 +180,11 @@ const closeAboutModal = () => {
 const handleBlur = () => {
   aboutModal.value = false;
 };
+
+// languages
+
+//const languages = ref(['English', 'Spanish', 'French']);
+
 </script>
 
 <style scoped>

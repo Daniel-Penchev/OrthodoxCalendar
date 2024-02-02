@@ -28,22 +28,17 @@
 
                         <ion-button expand="block">
 
-                          <div style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
-                            <ion-thumbnail class="custom-thumbnail">
-                              <img alt="Saint"
-                                :src="filteredHoliday.image || 'https://ionicframework.com/docs/img/demos/thumbnail.svg'"
-                                style="width: 100%;" />
+                          
+                          <div style="display: flex; align-items: center; justify-content: space-between; width: 100%;margin-left: 5%;">
+                            <ion-thumbnail class="custom-thumbnail" style="width: 100%;margin-bottom: 23%;">
+                              <img :src="filteredHoliday.image || 'https://ionicframework.com/docs/img/demos/thumbnail.svg'"
+                                style="width: auto;height: auto;" />
                             </ion-thumbnail>
-
                             <div style="flex: 1; text-wrap: balance;width: auto;">
                               {{ filteredHoliday.name }}
-                              {{ format(filteredHoliday.date, 'MMMM d') }}
-                              {{ filteredHoliday.offset }}
-                              <a href="https://www.pravoslavieto.com/calendar/nedelnik/nedelja_pred_bogojavlenie.htm"
-                                style="text-decoration: none;">
-                              </a>
                             </div>
                           </div>
+
                         </ion-button>
                       </ion-buttons>
                     </IonItem>
@@ -53,7 +48,7 @@
                       <ion-buttons class="buttonSaint">
                         <ion-button expand="block" @click="() => handleChurchHolidayClick(churchHoliday)">
 
-                          <div style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
+                          <div style="display: flex; align-items: center; justify-content: space-between; width: 100%;margin-left: 5%;">
                             <ion-thumbnail class="custom-thumbnail" style="width: 100%;margin-bottom: 23%;">
                               <img :src="churchHoliday.image || 'https://ionicframework.com/docs/img/demos/thumbnail.svg'"
                                 style="width: auto;height: auto;" />
@@ -110,6 +105,7 @@
   </ion-card>
 
   <ion-modal :is-open="isOpen" @blur="handleBlur">
+    
     <ion-header>
       <ion-toolbar>
         <ion-title>{{ selectedChurchHoliday?.name }}</ion-title>
@@ -138,10 +134,11 @@
         </ion-buttons>
       </ion-toolbar>
     </ion-header>
+
     <ion-content class="ion-padding">
       <p v-if="selectedChurchHoliday" :style="{ fontSize: fontSize + 'px' }">
 
-        <img :src="selectedChurchHoliday.image" style="width: 30%;" />
+        <img :src="selectedChurchHoliday.image || 'https://ionicframework.com/docs/img/demos/thumbnail.svg'" style="width: 30%;" />
 
                 
         <div style="display: flex; justify-content: center; align-items: center;flex-direction: column;">
@@ -166,7 +163,7 @@
         </div>
         
       <div v-html="formatTextSpace(selectedChurchHoliday.text)"></div>
-      <a :href="selectedChurchHoliday.href" style="text-decoration: none;">Още информация за празника {{
+      <a :href="selectedChurchHoliday.href || 'https://www.pravoslavieto.com/toc/chitalnja.htm'"  style="text-decoration: none;">Още информация за празника {{
         selectedChurchHoliday?.name }}</a>
       </p>
     </ion-content>
