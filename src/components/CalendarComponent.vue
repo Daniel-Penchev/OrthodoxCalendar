@@ -2,85 +2,157 @@
   <!-- <swiper  :options="swiperOptions"  @transitionEnd="onSwiperTransitionEnd" v-if="props.showDatePicker">
   <swiper-slide v-for="day in dateArray" > -->
   <div class="date-navigation">
-    <button @click="moveMonthBackward" class="datePrevious" v-if="props.showDatePicker && !data.isDropDownOpen">
+    <button
+      @click="moveMonthBackward"
+      class="datePrevious"
+      v-if="props.showDatePicker && !data.isDropDownOpen"
+    >
       <svg
         stroke-linecap="round"
         stroke-linejoin="round"
         viewBox="0 0 24 24"
-          width="24"
-          height="24"
-          class="vc-base-icon"
-        >
-          <polyline points="15 18 9 12 15 6"></polyline>
-        </svg>
-      </button>
-    
-      <button @click="moveBackward" class="datePrevious" v-if="!props.showDatePicker && !data.isDropDownOpen">      <svg
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          viewBox="0 0 24 24"
-          width="24"
-          height="24"
-          class="vc-base-icon"
-        >
-          <polyline points="15 18 9 12 15 6"></polyline>
-        </svg>
-      </button>
-    
-      <!-- <div v-for="holiday in calculatedHolidays" :key="holiday.name">
+        width="24"
+        height="24"
+        class="vc-base-icon"
+      >
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+    </button>
+
+    <button
+      @click="moveBackward"
+      class="datePrevious"
+      v-if="!props.showDatePicker && !data.isDropDownOpen"
+    >
+      <svg
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        viewBox="0 0 24 24"
+        width="24"
+        height="24"
+        class="vc-base-icon"
+      >
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+    </button>
+
+    <!-- <div v-for="holiday in calculatedHolidays" :key="holiday.name">
       <div>{{ holiday.name }}: {{ holiday.date }}</div>
     </div> -->
 
-      <div style="display: flex; justify-content: center; align-items: center;flex-direction: column;">
+      <div
+        style="
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+        "
+      >
         <button @click="openDropDownwithMonth" class="centerButton">
           {{ format(selectedDate, "MMMM yyyy") }}
         </button>
         <!-- Month and year dropdown -->
         <div v-if="data.isDropDownOpen" class="dropdown">
-          <div style="display: flex;justify-content: center;box-sizing: border-box;padding: 4%;">
-              <button @click="moveYearBackward" class="datePrevious"><svg
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        viewBox="0 0 24 24"
-          width="24"
-          height="24"
-          class="vc-base-icon"
-        >
-          <polyline points="15 18 9 12 15 6"></polyline>
-        </svg></button>
 
-        <div class="container">
-        <span v-if="!editMode" @click="enterEditMode" style="font-size: larger; cursor: pointer;">{{ selectedDate.getFullYear() }}</span>
-        <input v-if="editMode" v-model="selectedYear" @input="updateSelectedYear"  @blur="exitEditMode" type="number" style="width: 60px;border: solid;
-    border-radius: 5%;"/>
-      </div>
-      <button @click="moveYearForward" class="dateNext"><svg
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        viewBox="0 0 24 24"
-        width="24"
-        height="24"
-        class="vc-base-icon"
-      >
-        <polyline points="9 18 15 12 9 6"></polyline>
-      </svg></button>
+          <div
+            style="
+              display: flex;
+              justify-content: center;
+              box-sizing: border-box;
+              padding: 4%;
+              margin-top: 5%;
+              margin-bottom: 5%;
+              border-top: 2px solid rgb(183, 180, 180);
+              border-bottom: 2px solid rgb(183, 180, 180);
+            "
+           >
+           <!-- Move Year -->
+            <button @click="moveYearBackward" class="datePrevious">
+              <svg
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                viewBox="0 0 24 24"
+                width="24"
+                height="24"
+                class="vc-base-icon"
+              >
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+
+            <div class="container">
+              <span
+                v-if="!editMode"
+                @click="enterEditMode"
+                style="font-size: larger; cursor: pointer"
+                >{{ selectedDate.getFullYear() }}</span
+              >
+              <input
+                v-if="editMode"
+                v-model="selectedYear"
+                @input="updateSelectedYear"
+                @blur="exitEditMode"
+                type="number"
+                style="width: 60px; border: solid; border-radius: 5%"
+              />
+            </div>
+            <button @click="moveYearForward" class="dateNext">
+              <svg
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                viewBox="0 0 24 24"
+                width="24"
+                height="24"
+                class="vc-base-icon"
+              >
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+           <!--     -->
+           </div>
+           <div style="display: flex;justify-content: space-between;align-items: center;">
+            <button
+                    
+                    @click="goToCurrentDay"
+                    class="currentDayButton"
+                    >
+                      Днешният ден
+                    </button>
+                  <button
+                    
+                    @click="goToGreatDay"
+                    class="greatDayButton"
+                  >
+                    Велик ден през {{ selectedYear }}
+                  </button>
           </div>
-          <div style="display: grid;grid-template-columns: repeat(3, 1fr);gap: 10px;">
-          <button
-          v-for="(month, index) in data.months"
-          :key="index"
-          @click="changeMonth(index)"
-          class="buttonMonthSelect"
-          :class="{ active: index === selectedMonth }"
-        > 
-          {{ month }}
-        </button>
-      </div>
+  
 
+          <div
+            style="
+              display: grid;
+              grid-template-columns: repeat(3, 1fr);
+              gap: 10px;
+            "
+          >
+            <button
+              v-for="(month, index) in data.months"
+              :key="index"
+              @click="changeMonth(index)"
+              class="buttonMonthSelect"
+              :class="{ active: index === selectedMonth }"
+            >
+              {{ month }}
+            </button>
+          </div>
+        </div>
       </div>
-    </div>
-
-    <button @click="moveForward" class="dateNext" v-if="!props.showDatePicker && !data.isDropDownOpen" > <svg
+    <button
+      @click="moveForward"
+      class="dateNext"
+      v-if="!props.showDatePicker && !data.isDropDownOpen"
+    >
+      <svg
         stroke-linecap="round"
         stroke-linejoin="round"
         viewBox="0 0 24 24"
@@ -89,9 +161,14 @@
         class="vc-base-icon"
       >
         <polyline points="9 18 15 12 9 6"></polyline>
-      </svg></button>
+      </svg>
+    </button>
 
-    <button @click="moveMonthForward" class="dateNext" v-if="props.showDatePicker && !data.isDropDownOpen">
+    <button
+      @click="moveMonthForward"
+      class="dateNext"
+      v-if="props.showDatePicker && !data.isDropDownOpen"
+    >
       <svg
         stroke-linecap="round"
         stroke-linejoin="round"
@@ -115,18 +192,25 @@
       mode="date"
       :key="selectedDate.getTime()"
       :showDatePicker="props.showDatePicker"
-      @click="handleDatePickerClick(selectedDate.getTime())"
+      @click="handleDatePickerClick"
     />
-    
   </div>
-  
-  <button v-if="props.showDatePicker" @click="goToCurrentDay" class="greatDayButton">
+
+  <!-- <button
+    v-if="props.showDatePicker"
+    @click="goToCurrentDay"
+    class="greatDayButton"
+  >
     Днешният ден
   </button>
-  <button v-if="props.showDatePicker" @click="goToGreatDay" class="greatDayButton">
-    Велики ден през {{ selectedYear }}
-  </button>
-    <!-- <div class="event-text" v-if="hasEvents">
+  <button
+    v-if="props.showDatePicker"
+    @click="goToGreatDay"
+    class="greatDayButton"
+  >
+    Велик ден през {{ selectedYear }}
+  </button> -->
+  <!-- <div class="event-text" v-if="hasEvents">
       <p :class="{ 'red-text': isHoliday || isWeekend ,'highlight-day': isHoliday }">
         {{ formatDate(selectedDate) }} - {{ isHoliday }}
         <span v-if="isHoliday">✞ </span><strong>{{ calendarEvent.nameHoliday }}</strong>
@@ -134,13 +218,12 @@
 
    </swiper-slide>
 </swiper> -->
-    <!-- <p>Swiper</p> -->
-    <!-- <swiper :loop="true" >3
+  <!-- <p>Swiper</p> -->
+  <!-- <swiper :loop="true" >3
     <swiper-slide>Slide 1</swiper-slide>
     <swiper-slide>Slide 2</swiper-slide>
     <swiper-slide>Slide 3</swiper-slide>
 </swiper> -->
-
 </template>
 
 <script setup lang="ts">
@@ -467,22 +550,20 @@ const updateSelectedYear = (event: Event) => {
   }
 };
 
-
 // Store the last clicked date
 let lastClickedDate = ref<number | null>(null);
 
 // Function to handle date picker click
 const handleDatePickerClick = (selectedDateValue: number) => {
-    // Check if the date has changed since the last click
-    if (lastClickedDate.value !== selectedDateValue) {
-      console.log("isDatePickerDisabled.value" + lastClickedDate.value);
-      console.log("isDatePickerDisabled.value" + selectedDateValue);
+  // Check if the date has changed since the last click
+  if (lastClickedDate.value !== selectedDateValue) {
+    console.log("isDatePickerDisabled.value" + lastClickedDate.value);
+    console.log("isDatePickerDisabled.value" + selectedDateValue);
 
-      setTimeout(() => {
-        lastClickedDate.value = selectedDateValue; // Update the last clicked date
-      }, 1000); // 1-second delay
-    }
-    
+    setTimeout(() => {
+      lastClickedDate.value = selectedDateValue; // Update the last clicked date
+    }, 1000); // 1-second delay
+  }
 };
 //===========================================================
 // All About Slider
@@ -507,7 +588,7 @@ const handleDatePickerClick = (selectedDateValue: number) => {
 // const moveBackward = () => {
 //   selectedDate.value.setDate(selectedDate.value.getDate() - 1);
 // };
-const moveForward =  () => {
+const moveForward = () => {
   // Преместване напред
   const newDate = new Date(selectedDate.value);
   newDate.setDate(newDate.getDate() + 1);
@@ -610,10 +691,11 @@ const moveMonthBackward = () => {
 .date-navigation {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   margin-bottom: auto;
   margin-top: 5%;
 }
+
 
 .datePrevious {
   background-color: #f0f0f0;
@@ -657,6 +739,7 @@ const moveMonthBackward = () => {
 .dropdown {
   z-index: 5;
 }
+
 
 .buttonMonthSelect {
   width: 100%;
@@ -741,26 +824,42 @@ const moveMonthBackward = () => {
   border-radius: 20%;
   z-index: 4;
 } */
-.greatDayButton{
+
+/* Бутоните за днешният ден и велик ден */
+.greatDayButton {
   background-color: #f0f0f0;
     text-align: center;
-    padding: 2%;
-    color: #65758b;
-    font-size: 18px;
-    margin-top: -1%;
-    margin-right: 3%;
+    padding: 3%;
+    color: #0f172a;
+    font-size: 14px;
+    font-weight: 600;
+    /* border-radius: 10% 16% 50% 70%; */
+    width: 24%;
+    margin-top: -30%;
 }
+.currentDayButton {
+  background-color: #f0f0f0;
+    text-align: center;
+    padding: 3%;
+    color: #0f172a;
+    font-size: 14px;
+    font-weight: 600;
+    /* border-radius: 10% 16% 50% 70%; */
+    width: 28%;
+    margin-top: -30%;
+}
+/*--------------------------*/
 
 .centerButton {
-    background-color: #f0f0f0;
-    text-align: center;
-    color: #0f172a;
-    font-size: 20px;
-    font-weight: 600;
-    border-radius: 4%;
-    z-index: 4;
-    width: 160px;
-    height: 77px;
+  background-color: #f0f0f0;
+  text-align: center;
+  color: #0f172a;
+  font-size: 20px;
+  font-weight: 600;
+  border-radius: 4%;
+  z-index: 4;
+  width: 160px;
+  height: 77px;
 }
 /* Add a new style for highlighting holidays */
 /* .highlight-day {

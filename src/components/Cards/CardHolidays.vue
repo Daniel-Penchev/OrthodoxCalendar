@@ -34,7 +34,7 @@
                               <img :src="filteredHoliday.image || 'https://ionicframework.com/docs/img/demos/thumbnail.svg'"
                                 style="width: auto;height: auto;" />
                             </ion-thumbnail>
-                            <div style="flex: 1; text-wrap: balance;width: auto;margin-left: 2%;">
+                            <div style="flex: 1; text-wrap: balance;width: auto;margin-left: 2%;font-size: 16px;">
                               {{ filteredHoliday.name }}
                             </div>
                           </div>
@@ -53,7 +53,7 @@
                               <img :src="churchHoliday.image || 'https://ionicframework.com/docs/img/demos/thumbnail.svg'"
                                 style="width: auto;height: auto;" />
                             </ion-thumbnail>
-                            <div style="flex: 1; text-wrap: balance;width: auto;margin-left: 2%;">
+                            <div style="flex: 1; text-wrap: balance;width: auto;margin-left: 2%;font-size: 13px;">
                               {{ churchHoliday.name }}
                             </div>
                           </div>
@@ -103,8 +103,7 @@
       </div>
     </ion-card-content>
   </ion-card>
-  <!-- @blur="handleBlur" -->
-  <ion-modal :is-open="isOpen" >
+  <ion-modal :is-open="isOpen" @blur="handleBlur" >
     
     <ion-header>
       <ion-toolbar>
@@ -137,12 +136,13 @@
 
     <ion-content class="ion-padding">
       <p v-if="selectedChurchHoliday" :style="{ fontSize: fontSize + 'px' }">
-
-        <img :src="selectedChurchHoliday.image || 'https://ionicframework.com/docs/img/demos/thumbnail.svg'" style="width: 30%;" />
-
-                
+         
           <a :href="selectedChurchHoliday.audio" style="text-decoration: none;">
+
             <div style="display:flex;justify-content:center;align-items:center; flex-direction: column;gap:3px">
+
+              <img  :src="selectedChurchHoliday.image || 'https://ionicframework.com/docs/img/demos/thumbnail.svg'" style="width: 60%;" />
+
               <svg width="30px" height="30px" viewBox="0 0 32 32" version="1.1"
                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
@@ -158,12 +158,14 @@
                 </g>
               </g>
             </svg>
-            <p style="margin-top: 0%;">Аудио за празника</p>
+            <p style="margin-top: 0%;font-size: 20px;">Аудио за празника</p>
             </div>
+
           </a>
         
-      <div v-html="formatTextSpace(selectedChurchHoliday.text)"></div>
-      <a :href="selectedChurchHoliday.href || 'https://www.pravoslavieto.com/toc/chitalnja.htm'"  style="text-decoration: none;">Още информация за празника {{
+       <div v-html="formatTextSpace(selectedChurchHoliday.text)"></div>
+    <br>
+       <a :href="selectedChurchHoliday.href || 'https://www.pravoslavieto.com/toc/chitalnja.htm'"  style="text-decoration: none;">Още информация за празника {{
         selectedChurchHoliday?.name }}</a>
       </p>
     </ion-content>
