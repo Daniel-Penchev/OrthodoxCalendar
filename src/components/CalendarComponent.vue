@@ -752,15 +752,15 @@ const moveMonthBackward = () => {
 }
 
 .centerButton {
-  background-color: #f0f0f0;
-  text-align: center;
-  color: #0f172a;
-  font-size: 20px;
-  font-weight: 600;
-  border-radius: 0%;
-  z-index: 4;
-  width: 168px;
-  height: 77px;
+    background-color: #f0f0f0;
+    text-align: center;
+    color: #0f172a;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 4%;
+    z-index: 4;
+    width: 160px;
+    height: 77px;
 }
 /* Add a new style for highlighting holidays */
 /* .highlight-day {
