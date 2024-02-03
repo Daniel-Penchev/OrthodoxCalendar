@@ -344,16 +344,14 @@ const combinedAttributes = computed(() => {
   return [
     {
       key: "today",
-      highlight: { color: "blue", width: "2px", fillMode: "outline" },
+      highlight: { color: "white", width: "2px", fillMode: "outline" },
       dates: currentDate.value,
-      class: "today-highlight",
     },
     {
       key: "selected",
       content: "blue",
-      highlight: { color: "blue", fillMode: "outline", width: "8px" },
+      highlight: { color: "white", width: "8px", fillMode: "outline"  },
       dates: selectedDate.value,
-      class: "selected-highlight",
     },
     ...holidaysAttributes,
   ];
@@ -923,15 +921,7 @@ const moveMonthBackward = () => {
   font-size: large;
 }
 
-/* Текуща дата */
-.vc-highlight-content-outline {
-  /* Тук е заа текущата и за избраната */
-  background: url("../assets/img/PrayerBookDay.png") center center no-repeat;
-  background-size: 57px;
-  background-position-y: -5px;
-  width: 40px;
-  height: 54px;
-}
+
 
 /* Избраната дата */
 
@@ -939,78 +929,35 @@ const moveMonthBackward = () => {
 .vc-light .vc-attr {
   --vc-highlight-solid-bg: rgb(
     250 183 81
-  ); /* Новият цвят в RGB формат (червен цвят) */
-}
-.vc-highlight-content-outline .vc-red {
-  background: url("../assets/img/PrayerBookDay.png") center center no-repeat;
-  background-size: 57px;
-  background-position-y: -5px;
-  width: 40px;
-  height: 54px;
+  ); 
+  --vc-highlight-outline-border: white;
+  
+  /* Новият цвят в RGB формат (червен цвят) */
+  /* --vc-highlight-outline-content-color: white; */
 }
 
-/* Styles for "today" highlight */
-.vc-day-content.vc-focusable.vc-focus.vc-attr.vc-attr.today-highlight {
-  background-color: blue !important; /* Example color - change as needed */
-  width: 2px;
-  background-blend-mode: multiply;
-  /* Specify the background image for today */
-  background-image: url("../assets/img/today-highlight-image.png");
-  /* Adjust background image size and position as needed */
-  background-size: cover;
-  background-position: center;
+/* Текуща дата */
+.vc-highlight-content-outline {
+  /* Тук е заа текущата и за избраната */
+  background: url("../assets/img/cross5.png") center center no-repeat;
+  background-size: 58px;
+    background-position-y: 9px;
+    width: 40px;
+    height: 66px;
 }
 
-/* Styles for "selected" highlight */
-.vc-day-content.vc-focusable.vc-focus.vc-attr.vc-attr.selected-highlight {
-  background-color: blue !important; /* Example color - change as needed */
-  width: 8px;
-  background-blend-mode: multiply;
-  /* Specify the background image for the selected date */
-  background-image: url("../assets/img/selected-highlight-image.png");
-  /* Adjust background image size and position as needed */
-  background-size: cover;
-  background-position: center;
-}
-
-/* Styles for "outline" highlight */
+/* Holidays */
 .vc-highlight-content-outline.vc-red {
   /* Тук е мястото за иконката църква */
-  background: url("../assets/img/CrossBook.png") center center no-repeat;
+  background: url("../assets/img/church.png") center center no-repeat;
   background-size: 57px;
   background-position-y: -5px;
   width: 40px;
   height: 54px;
 }
-/* Стилове за "днес" */
-.today-highlight {
-  background-color: blue !important; /* Примерен цвят - променете го според вашите нужди */
-  width: 2px;
-  background-blend-mode: multiply;
-  background: url("../assets/img/CrossBook.png") center center no-repeat;
-  background-size: 57px;
-  background-position-y: -5px;
-}
 
-/* Стилове за "избрана дата" */
-.selected-highlight {
-  background-color: blue !important; /* Примерен цвят - променете го според вашите нужди */
-  width: 8px;
-  background-blend-mode: multiply;
-  background: url("../assets/img/CrossBook.png") center center no-repeat;
-  background-size: 57px;
-  background-position-y: -5px;
-}
 
-/* Стилове за празници */
-.holiday-highlight {
-  background-color: red !important; /* Примерен цвят - променете го според вашите нужди */
-  width: 2px;
-  background-blend-mode: multiply;
-  background: url("../assets/img/CrossBook.png") center center no-repeat;
-  background-size: 57px;
-  background-position-y: -5px;
-}
+
 
 /* Стилове за бутоните */
 .vc-base-icon {
