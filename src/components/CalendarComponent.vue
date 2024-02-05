@@ -254,7 +254,7 @@ interface Holiday {
   offset: number;
   isEaster: boolean;
 }
-const selectAttribute = ref({ dot: true });
+const selectAttribute = ref({content: 'blue',});
 const events = ref<EventData[]>([]);
 const currentDate = ref(new Date());
 const selectedDate = ref(new Date());
@@ -344,13 +344,13 @@ const combinedAttributes = computed(() => {
   return [
     {
       key: "today",
-      highlight: { color: "white", width: "2px", fillMode: "outline" },
+      highlight: { color: "blue", width: "2px", fillMode: "outline" },
       dates: currentDate.value,
     },
     {
       key: "selected",
       content: "blue",
-      highlight: { color: "white", width: "8px", fillMode: "outline"  },
+      highlight: { color: "blue", width: "8px", fillMode: "outline"  },
       dates: selectedDate.value,
     },
     ...holidaysAttributes,
@@ -931,11 +931,8 @@ const moveMonthBackward = () => {
     250 183 81
   ); 
   --vc-highlight-outline-border: white;
-  
-  /* Новият цвят в RGB формат (червен цвят) */
-  /* --vc-highlight-outline-content-color: white; */
+  /* --vc-content-color: #ffffff; */
 }
-
 /* Текуща дата */
 .vc-highlight-content-outline {
   /* Тук е заа текущата и за избраната */
@@ -949,11 +946,11 @@ const moveMonthBackward = () => {
 /* Holidays */
 .vc-highlight-content-outline.vc-red {
   /* Тук е мястото за иконката църква */
-  background: url("../assets/img/church.png") center center no-repeat;
-  background-size: 57px;
-  background-position-y: -5px;
-  width: 40px;
-  height: 54px;
+  background: url('/src/assets/img/church.png') center center no-repeat;
+    background-size: 53px;
+    background-position-y: -1px;
+    width: 40px;
+    height: 54px;
 }
 
 

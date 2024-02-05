@@ -18,7 +18,7 @@
               <div v-for="(day, dayIndex) in month.days" :key="dayIndex">
                 <div v-if="isCurrentDаy(day.day) && isCurrentMonth(month.name)">
                   <h3>Day {{ selectedDay.day }}</h3>
-
+                    <img :src="selectedDay.image || 'https://ionicframework.com/docs/img/demos/thumbnail.svg'" style="width: auto; height: auto;" />
                   <IonList class="churchHoliday" style="margin-top: 10%;">
                     <!-- Ще изведе подвижните праници -->
                     <IonItem v-for="filteredHoliday in shouldDisplayItems" :key="filteredHoliday.name">
