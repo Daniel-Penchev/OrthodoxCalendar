@@ -7,7 +7,6 @@
 
 
         <div class="header-content">
-
           <IonTitle class="header-title">Calendar</IonTitle>
 
           <ion-buttons slot="end" @click="toggleDatePicker">
@@ -39,7 +38,7 @@
 
           <ion-popover trigger="popover-button" :dismiss-on-select="true">
             <ion-content>
-              <ion-list>
+              <ion-list style="padding-bottom: 0px;">
                 <ion-item :button="true" :detail="false"><ion-icon class="icons-style" style="margin-right: 4%;"
                     :icon="star" @click="redirectToGooglePlay"></ion-icon>Rating</ion-item>
                 <ion-item :button="true" :detail="false" @click="sendEmail"><ion-icon class="icons-style"
@@ -232,4 +231,6 @@ const handleBlur = () => {
   margin-left: 4%;
   padding-left: inherit;
   font-weight: bold;
-}</style>
+}
+
+</style>

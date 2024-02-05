@@ -15,52 +15,69 @@
       </ion-toolbar>
     </ion-header>
     <ion-content>
-      <!-- <ion-searchbar v-model="searchData" @ionChange="searchHolidays"></ion-searchbar>
-        <div class="example-content">
-          <div v-for="holiday in holidays" :key="holiday.day">
-            <h2>{{ holiday.name }}</h2>
-           Display other holiday information as needed 
-          </div>
-        </div> -->
+      <ion-searchbar v-model="searchData" @ionChange="searchHolidays"></ion-searchbar>
+      <div class="example-content">
+        <div v-for="holiday in filteredHolidays" :key="holiday.toString">
+          <h2>{{ holiday }}</h2>
+          <!-- Display other holiday information as needed -->
+        </div>
+      </div>
     </ion-content>
   </ion-page>
 </template>
 
 <script setup lang="ts">
-import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/vue';
+import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonSearchbar } from '@ionic/vue';
+import { ref, onMounted} from 'vue';
 
-// interface Holiday {
-//   year: {
-//     months: {
-//       name: string;
-//       days: {
-//         day: number;
-//         nameDay: string[];
-//         church_holidays?: {
-//           name: string;
-//           image: string;
-//           text: string;
-//           href: string;
-//           audio: string;
-//         }[];
-//       }[];
-//     }[];
-//   };
-// }
+interface ChurchHoliday {
+  day: number;
+  name_days: string[];
+  church_holidays?: {
+    name: string;
+    image: string;
+    text: string;
+    href: string;
+    audio: string;
+  }[];
+}
 
-// const searchData = ref('');
-// const holidays = ref<Holiday[]>([]);
+const searchData = ref('');
+const holidays = ref<ChurchHoliday[]>([]);
 
-// const searchHolidays = () => {
-//   const searchTerm = searchData.value.toLowerCase();
-//   holidays.value = churchHolidaysData.year.months[0].days.filter(day => {
-//     const dayName = day.nameDay?.[0]?.toLowerCase() || ''; // Update this line to match the actual structure
-//     return dayName.includes(searchTerm);
-//   });
-// };
+onMounted(async () => {
+  holidays.value = await fetchChurchHolidaysData();
+});
 
-// // Fetch data on component mount
-// onMounted(() => {
-//   holidays.value = churchHolidaysData.year.months[0].days;
-// });
+const fetchChurchHolidaysData = async () => {
+  try {
+    const response = await fetch('/src/data/church_holidays.json');
+
+    if (!response.ok) {
+      console.error('Server error:', response.statusText);
+      return null;
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    return null;
+  }
+};
+
+const searchHolidays = () => {
+  const searchTerm = searchData.value.toLowerCase();
+  
+  if (!searchTerm) {
+    filteredHolidays.value = holidays.value;
+  } else {
+    const matchingHolidays = holidays.value.filter(holiday =>
+      holiday.church_holidays?.some(ch => ch.name.toLowerCase().includes(searchTerm))
+    );
+    filteredHolidays.value = matchingHolidays;
+  }
+};
+
+const filteredHolidays = ref(holidays.value);
 </script>

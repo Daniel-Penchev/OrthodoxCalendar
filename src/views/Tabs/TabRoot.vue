@@ -13,7 +13,6 @@
             <ion-icon :icon="bed" />
             <ion-label>Holidays</ion-label>
           </ion-tab-button>
-
           <!-- <ion-tab-button tab="library" href="/library">
             <ion-icon :icon="library" />
             <ion-label>Library</ion-label>

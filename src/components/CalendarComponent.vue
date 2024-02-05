@@ -60,10 +60,10 @@
               justify-content: center;
               box-sizing: border-box;
               padding: 4%;
-              margin-top: 5%;
-              margin-bottom: 5%;
-              border-top: 2px solid rgb(183, 180, 180);
-              border-bottom: 2px solid rgb(183, 180, 180);
+              margin-top: 0%;
+              margin-bottom: 25%;
+              border-top: 0px solid rgb(183, 180, 180);
+              border-bottom: 1px solid rgb(183, 180, 180);
             "
            >
            <!-- Move Year -->
@@ -123,7 +123,7 @@
                     @click="goToGreatDay"
                     class="greatDayButton"
                   >
-                    Велик ден през {{ selectedYear }}
+                    Велик ден {{ selectedYear }}
                   </button>
           </div>
   
@@ -192,7 +192,6 @@
       mode="date"
       :key="selectedDate.getTime()"
       :showDatePicker="props.showDatePicker"
-      @click="handleDatePickerClick"
     />
   </div>
 
@@ -344,14 +343,13 @@ const combinedAttributes = computed(() => {
   return [
     {
       key: "today",
-      highlight: { color: "blue", width: "2px", fillMode: "outline" },
+      highlight: { color: "blue",width: "2px", fillMode: "outline" },
       dates: currentDate.value,
     },
     {
       key: "selected",
       content: "blue",
-      highlight: { color: "blue", width: "8px", fillMode: "outline"  },
-      dates: selectedDate.value,
+      highlight: { color: "blue", width: "2px", fillMode: "light"},
     },
     ...holidaysAttributes,
   ];
@@ -522,9 +520,11 @@ const calculatedHolidays = computed(() => {
 const goToGreatDay = () => {
   // Тук сложете логиката за промяна на датата на "Велики ден"
   selectedDate.value = calculateOrthodoxEaster(selectedYear.value);
+  data.isDropDownOpen = false;
 };
 const goToCurrentDay = () => {
   selectedDate.value = currentDate.value;
+  data.isDropDownOpen = false;
 };
 
 // Свързано е с input year
@@ -548,21 +548,8 @@ const updateSelectedYear = (event: Event) => {
   }
 };
 
-// Store the last clicked date
-let lastClickedDate = ref<number | null>(null);
 
-// Function to handle date picker click
-const handleDatePickerClick = (selectedDateValue: number) => {
-  // Check if the date has changed since the last click
-  if (lastClickedDate.value !== selectedDateValue) {
-    console.log("isDatePickerDisabled.value" + lastClickedDate.value);
-    console.log("isDatePickerDisabled.value" + selectedDateValue);
 
-    setTimeout(() => {
-      lastClickedDate.value = selectedDateValue; // Update the last clicked date
-    }, 1000); // 1-second delay
-  }
-};
 //===========================================================
 // All About Slider
 //===========================================================
@@ -686,6 +673,7 @@ const moveMonthBackward = () => {
   color: red;
 }
 
+/* date-navigation */
 .date-navigation {
   display: flex;
   align-items: center;
@@ -693,7 +681,46 @@ const moveMonthBackward = () => {
   margin-bottom: auto;
   margin-top: 5%;
 }
+.date-navigation button,
+.date-navigation div {
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
 
+/* .date-navigation button:active,
+.date-navigation button:hover,
+.date-navigation div:active,
+.date-navigation div:hover {
+    transform: scale(0.95);
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+} */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.date-navigation button,
+.date-navigation div {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.closing-animation {
+    animation: fadeOut 0.5s ease-in-out;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+/*  */
 
 .datePrevious {
   background-color: #f0f0f0;
@@ -704,18 +731,28 @@ const moveMonthBackward = () => {
   border-radius: 10%;
   z-index: 4;
   margin-right: 2%;
+  transition: transform 0.2s ease-in-out; 
+}
+.datePrevious:active {
+    transform: scale(1.22); /* Смалява бутона при натискане */
 }
 
 .dateNext {
-  background-color: #f0f0f0;
-  text-align: center;
-  padding: 1%;
-  color: #65758b;
-  font-size: 35px;
-  border-radius: 10%;
-  z-index: 4;
-  margin-left: 2%;
+    background-color: #f0f0f0;
+    text-align: center;
+    padding: 1%;
+    color: #65758b;
+    font-size: 35px;
+    border-radius: 10%;
+    z-index: 4;
+    margin-left: 2%;
+    transition: transform 0.2s ease-in-out; /* Добавена транзиция за плавно променяне на състоянието */
 }
+
+.dateNext:active {
+    transform: scale(1.22); /* Смалява бутона при натискане */
+}
+
 .custom-date-navigation {
   display: flex;
   align-items: center;
@@ -736,6 +773,7 @@ const moveMonthBackward = () => {
 
 .dropdown {
   z-index: 5;
+  padding: 5%;
 }
 
 
@@ -747,6 +785,7 @@ const moveMonthBackward = () => {
   color: #0f172a;
   font-size: 100%;
   font-weight: 600;
+  border-radius: 7%;
 }
 
 .active {
@@ -827,14 +866,23 @@ const moveMonthBackward = () => {
 .greatDayButton {
   background-color: #f0f0f0;
     text-align: center;
-    padding: 3%;
+    padding: 2%;
     color: #0f172a;
     font-size: 14px;
     font-weight: 600;
     /* border-radius: 10% 16% 50% 70%; */
     width: 24%;
     margin-top: -30%;
+    border-radius: 7%;
+    width: 36%;
+    padding: 15px;
 }
+.greatDayButton:active {
+    background-color: #3498db;
+    color: #fff;
+}
+
+
 .currentDayButton {
   background-color: #f0f0f0;
     text-align: center;
@@ -845,20 +893,36 @@ const moveMonthBackward = () => {
     /* border-radius: 10% 16% 50% 70%; */
     width: 28%;
     margin-top: -30%;
+    border-radius: 7%;
+    width: 36%;
+    padding: 15px;
+}
+.currentDayButton:active {
+    background-color: #3498db;
+    color: #fff;
 }
 /*--------------------------*/
 
 .centerButton {
-  background-color: #f0f0f0;
-  text-align: center;
-  color: #0f172a;
-  font-size: 20px;
-  font-weight: 600;
-  border-radius: 4%;
-  z-index: 4;
-  width: 160px;
-  height: 77px;
+    background-color: #f0f0f0;
+    text-align: center;
+    color: #0f172a;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 4%;
+    z-index: 4;
+    width: 160px;
+    height: 77px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
+
+
+.centerButton:active {
+    transform: scale(1.11);
+}
+
+
 /* Add a new style for highlighting holidays */
 /* .highlight-day {
   color: #ff0630 !important;
@@ -931,9 +995,18 @@ const moveMonthBackward = () => {
     250 183 81
   ); 
   --vc-highlight-outline-border: white;
+  --vc-highlight-light-content-color: #000000;
   /* --vc-content-color: #ffffff; */
 }
 /* Текуща дата */
+.vc-highlight-content-outline .vc-content-start {
+  /* Тук е заа текущата и за избраната */
+  background: url("../assets/img/cross.png") center center no-repeat;
+  background-size: 58px;
+    background-position-y: 9px;
+    width: 40px;
+    height: 66px;
+}
 .vc-highlight-content-outline {
   /* Тук е заа текущата и за избраната */
   background: url("../assets/img/cross5.png") center center no-repeat;

@@ -5,9 +5,12 @@ import TabRoot from './views/Tabs/TabRoot.vue';
 const routes: Array<RouteRecordRaw> = [
     {
       path: '/',
-      redirect: '/home',
       component: TabRoot,
       children: [
+        {
+          path: '',
+          redirect: '/home',
+        },
         {
           path: 'home',
           component: () => import('./views/Tabs/HomePage.vue'),
