@@ -18,10 +18,10 @@
               <div v-for="(day, dayIndex) in month.days" :key="dayIndex">
                 <div v-if="isCurrentDаy(day.day) && isCurrentMonth(month.name)">
                   <h3>Day {{ selectedDay.day }}</h3>
-                 
+
                     <img :src="selectedDay.image || 'https://ionicframework.com/docs/img/demos/thumbnail.svg'" style="width: 50%; height: auto;margin-top: 5%;" />
 
-                  <IonList class="churchHoliday" style="margin-top: 10%;">
+                    <IonList class="churchHoliday" style="margin-top: 10%;">
                     <!-- Ще изведе подвижните праници -->
                     <IonItem v-for="filteredHoliday in shouldDisplayItems" :key="filteredHoliday.name">
 
@@ -348,13 +348,13 @@ const selectedDay = ref();
 const selectedMonth = ref();
 
 watch([churchHolidays, selectedDate], ([newData, newSelectedDate]) => {
-  if (newData && newSelectedDate) {
+ if (newData && newSelectedDate instanceof Date) {
     const selectedMonthStringName = monthNameToIndex[newSelectedDate.getMonth().toString()];
 
     // Find the month that matches the selected date
     selectedMonth.value = newData.year.months.find((month) => month.name === selectedMonthStringName);
 
-    if (selectedMonth) {
+    if (selectedMonth.value) {
       // Find the day that matches the selected date
       selectedDay.value = selectedMonth.value.days.find((day: { day: any; }) => day.day === newSelectedDate.getDate());
 
@@ -366,12 +366,12 @@ watch([churchHolidays, selectedDate], ([newData, newSelectedDate]) => {
   }
 });
 // TESTING STOINOSTI watch
-watch([churchHolidays, selectedDate], ([newData, newSelectedDate]) => {
+watch([churchHolidays, selectedDate], ([newData]) => {
   // Тук можете да извършите допълнителна логика
   // в зависимост от промените в churchHolidays и selectedDate
   console.log('Променени са общите дати');
   console.log('calculatedHolidays:', newData);
-  console.log('newSelectedDate:', format(newSelectedDate, 'MMMM d'));
+  // console.log('newSelectedDate:', format(newSelectedDate, 'MMMM d'));
   console.log('newSelectedDate:',);
 
   // Извикайте вашата функция тук или добавете допълнителен код.

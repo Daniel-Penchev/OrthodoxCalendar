@@ -8,7 +8,7 @@ const routes: Array<RouteRecordRaw> = [
       component: TabRoot,
       children: [
         {
-          path: '',
+          path: '/',
           redirect: '/home',
         },
         {

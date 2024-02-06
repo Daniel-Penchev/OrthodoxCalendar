@@ -48,9 +48,10 @@
           flex-direction: column;
         "
       >
-        <button @click="openDropDownwithMonth" class="centerButton">
-          {{ format(selectedDate, "MMMM yyyy") }}
-        </button>
+      <button @click="openDropDownwithMonth" class="centerButton" style="display: flow;">
+        <p style="margin-bottom: -6%;margin-top: 12%;">{{ selectedDate ? format(selectedDate, "MMMM") : "" }}</p>
+        <p style="font-size: medium;">{{ selectedDate ? format(selectedDate, "yyyy") : "" }}</p>
+      </button>
         <!-- Month and year dropdown -->
         <div v-if="data.isDropDownOpen" class="dropdown">
 
@@ -61,9 +62,7 @@
               box-sizing: border-box;
               padding: 4%;
               margin-top: 0%;
-              margin-bottom: 25%;
-              border-top: 0px solid rgb(183, 180, 180);
-              border-bottom: 1px solid rgb(183, 180, 180);
+              margin-bottom: 2%;
             "
            >
            <!-- Move Year -->
@@ -110,20 +109,26 @@
             </button>
            <!--     -->
            </div>
-           <div style="display: flex;justify-content: space-between;align-items: center;">
+
+           
+           <div style="display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+                padding-top: 5%;">
             <button
                     
                     @click="goToCurrentDay"
                     class="currentDayButton"
                     >
-                      Днешният ден
+                     <p>Днешният ден</p> 
                     </button>
                   <button
                     
                     @click="goToGreatDay"
                     class="greatDayButton"
                   >
-                    Велик ден {{ selectedYear }}
+                  <p>Велик ден {{ selectedYear }}</p> 
+                    
                   </button>
           </div>
   
@@ -133,6 +138,9 @@
               display: grid;
               grid-template-columns: repeat(3, 1fr);
               gap: 10px;
+              border-top: 1px solid rgb(183, 180, 180);
+              padding-top: 5%;
+              margin-top: 5%;
             "
           >
             <button
@@ -183,6 +191,7 @@
   </div>
 
   <div v-if="props.showDatePicker">
+    
     <DatePickerComponent
       v-model="selectedDate"
       :attributes="combinedAttributes"
@@ -192,9 +201,10 @@
       mode="date"
       :key="selectedDate.getTime()"
       :showDatePicker="props.showDatePicker"
+      @dblclick.prevent
     />
   </div>
-
+  <!-- :key="(selectedDate ? selectedDate.getTime() : currentDate.getTime())" -->
   <!-- <button
     v-if="props.showDatePicker"
     @click="goToCurrentDay"
@@ -257,27 +267,40 @@ const selectAttribute = ref({content: 'blue',});
 const events = ref<EventData[]>([]);
 const currentDate = ref(new Date());
 const selectedDate = ref(new Date());
-const selectedYear = computed(() => selectedDate.value.getFullYear());
-const selectedMonth = computed(() => selectedDate.value.getMonth());
+const selectedMonth = computed(() => {
+  if (selectedDate.value instanceof Date) {
+    return selectedDate.value.getMonth();
+  } else {
+    return null;
+  }
+});
+const selectedYear = computed(() => {
+  if (selectedDate.value instanceof Date) {
+    return selectedDate.value.getFullYear();
+  } else {
+    return null; 
+  }
+});
 
 const data = reactive({
   isDropDownOpen: false,
   selectedMonth: selectedDate.value.getMonth(),
   months: [
-    "January",
-    "February",
-    "March",
-    "April",
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
     "May",
     "June",
     "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
+    "Aug",
+    "Sept",
+    "Oct",
+    "Nov",
+    "Dec",
   ],
 });
+
 
 const openDropDownwithMonth = () => {
   data.isDropDownOpen = !data.isDropDownOpen;
@@ -334,37 +357,36 @@ const combinedAttributes = computed(() => {
   const holidaysAttributes = calculatedHolidays.value.map((holiday) => {
     return {
       key: holiday.name,
-      highlight: { color: "red", width: "2px", fillMode: "outline" },
+      highlight: { color: "red", width: "2px", fillMode: "light", class: "vc-highlight-content-outline vc-red" },
       dates: holiday.date,
-      class: "holiday-highlight", // Добавяне на класа за празници
     };
   });
 
   return [
     {
       key: "today",
-      highlight: { color: "blue",width: "2px", fillMode: "outline" },
+      highlight: { color: "blue", width: "2px", fillMode: "light", class: "vc-highlight-content-outline vc-content-today" },
       dates: currentDate.value,
     },
     {
       key: "selected",
-      content: "blue",
-      highlight: { color: "blue", width: "2px", fillMode: "light"},
+      highlight: { color: "blue", width: "5px", fillMode: "light", class: "vc-highlight-content-outline vc-content-selected" },
+      dates: selectedDate.value,
     },
     ...holidaysAttributes,
   ];
 });
-
 //При зареждане на компонента
 onMounted(async () => {
   try {
     const response = await fetch("/src/data/church_holidays.json");
     events.value = await response.json();
+    
     selectedDate.value = currentDate.value;
+
     emit("update:selectedDate", selectedDate.value);
 
-    // // Update combinedAttributes on page load
-    // updateCombinedAttributes();
+    updateCalendarEvent(selectedDate.value)
   } catch (error) {
     console.error("Error reading events:", error);
     events.value = [];
@@ -376,9 +398,10 @@ onMounted(async () => {
 //===========================================================
 // Гледане за промяна на selectedDate
 watch(selectedDate, (newDate) => {
-  updateCalendarEvent(newDate);
-  // Допълнителен код за следене на промените в годината
-  emit("update:selectedDate", newDate);
+  if (newDate instanceof Date && !isNaN(newDate.getTime())) {
+    updateCalendarEvent(newDate);
+    emit("update:selectedDate", newDate);
+  }
 });
 
 // Приемане на промяна в selectedDate
@@ -509,19 +532,28 @@ const holidays = ref<Holiday[]>([
 ]);
 
 const calculatedHolidays = computed(() => {
-  const easterDate = calculateOrthodoxEaster(selectedYear.value);
-  return holidays.value.map((holiday) => {
-    const holidayDate = new Date(easterDate);
-    holidayDate.setDate(easterDate.getDate() + holiday.offset);
-    return { ...holiday, date: holidayDate };
-  });
+  const year = selectedYear.value;
+  if (year !== null) {
+    const easterDate = calculateOrthodoxEaster(year);
+    return holidays.value.map((holiday) => {
+      const holidayDate = new Date(easterDate);
+      holidayDate.setDate(easterDate.getDate() + holiday.offset);
+      return { ...holiday, date: holidayDate };
+    });
+  } else {
+    // Можете да върнете празен масив или направете нещо друго, според вашите нужди
+    return [];
+  }
 });
 
 const goToGreatDay = () => {
-  // Тук сложете логиката за промяна на датата на "Велики ден"
-  selectedDate.value = calculateOrthodoxEaster(selectedYear.value);
-  data.isDropDownOpen = false;
+  const year = selectedYear.value;
+  if (year !== null) {
+    selectedDate.value = calculateOrthodoxEaster(year);
+    data.isDropDownOpen = false;
+  }
 };
+
 const goToCurrentDay = () => {
   selectedDate.value = currentDate.value;
   data.isDropDownOpen = false;
@@ -792,25 +824,6 @@ const moveMonthBackward = () => {
   background-color: #3498db;
   color: #fff;
 }
-.vc-day {
-  width: 40px; /* Adjust the width as needed */
-  /* For phone */
-  margin-left: 36px;
-
-  @media screen and (max-width: 325px) {
-    margin-right: 1px;
-    width: 30px;
-  }
-  @media screen and (max-width: 600px) {
-    margin-left: 3px;
-  }
-  @media screen and (min-width: 1024px) {
-    margin-left: 50px;
-  }
-  @media screen and (min-width: 1400px) {
-    margin-left: 79px;
-  }
-}
 
 /* input year conteiner */
 .container {
@@ -866,16 +879,15 @@ const moveMonthBackward = () => {
 .greatDayButton {
   background-color: #f0f0f0;
     text-align: center;
-    padding: 2%;
-    color: #0f172a;
-    font-size: 14px;
     font-weight: 600;
     /* border-radius: 10% 16% 50% 70%; */
-    width: 24%;
-    margin-top: -30%;
-    border-radius: 7%;
-    width: 36%;
+    /* margin-top: -37%; */
+    width: 100%;
     padding: 15px;
+    cursor: pointer;
+    color: #0f172a;
+    font-size: 100%;
+    border-radius: 7%;
 }
 .greatDayButton:active {
     background-color: #3498db;
@@ -886,16 +898,15 @@ const moveMonthBackward = () => {
 .currentDayButton {
   background-color: #f0f0f0;
     text-align: center;
-    padding: 3%;
-    color: #0f172a;
-    font-size: 14px;
     font-weight: 600;
     /* border-radius: 10% 16% 50% 70%; */
-    width: 28%;
-    margin-top: -30%;
-    border-radius: 7%;
-    width: 36%;
+    width: 100%;
+    /* margin-top: -37%; */
     padding: 15px;
+    cursor: pointer;
+    color: #0f172a;
+    font-size: 100%;
+    border-radius: 7%;
 }
 .currentDayButton:active {
     background-color: #3498db;
@@ -907,11 +918,11 @@ const moveMonthBackward = () => {
     background-color: #f0f0f0;
     text-align: center;
     color: #0f172a;
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 600;
     border-radius: 4%;
     z-index: 4;
-    width: 160px;
+    width: 136px;
     height: 77px;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
@@ -989,31 +1000,39 @@ const moveMonthBackward = () => {
 
 /* Избраната дата */
 
-.vc-light.vc-attr,
+/* .vc-light.vc-attr,
 .vc-light .vc-attr {
   --vc-highlight-solid-bg: rgb(
     250 183 81
   ); 
   --vc-highlight-outline-border: white;
   --vc-highlight-light-content-color: #000000;
-  /* --vc-content-color: #ffffff; */
-}
-/* Текуща дата */
-.vc-highlight-content-outline .vc-content-start {
-  /* Тук е заа текущата и за избраната */
+} */
+
+
+/* Current */
+.vc-highlight-content-outline.vc-content-today {
   background: url("../assets/img/cross.png") center center no-repeat;
   background-size: 58px;
-    background-position-y: 9px;
-    width: 40px;
-    height: 66px;
+  background-position-y: 9px;
+  width: 40px;
+  height: 66px;
+  z-index: 4;
 }
-.vc-highlight-content-outline {
-  /* Тук е заа текущата и за избраната */
-  background: url("../assets/img/cross5.png") center center no-repeat;
-  background-size: 58px;
-    background-position-y: 9px;
-    width: 40px;
-    height: 66px;
+
+/* Selected */
+.vc-highlight-content-outline.vc-content-selected {
+  /* Add your styles for the selected date here */
+  /* For example: */
+  background: url('../assets/img/cross5.png') center center no-repeat;
+  background-size: 40px;
+  width: 40px;
+  height: 40px;
+  z-index: 5;
+}
+.vc-content:not(.vc-base) {
+    font-weight:bold;
+    color: #1d4fbd;
 }
 
 /* Holidays */
@@ -1024,9 +1043,8 @@ const moveMonthBackward = () => {
     background-position-y: -1px;
     width: 40px;
     height: 54px;
+    z-index: 2;
 }
-
-
 
 
 /* Стилове за бутоните */
