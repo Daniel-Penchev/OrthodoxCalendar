@@ -93,18 +93,18 @@
                         {{ dayName }}
 
                       </div>
-                      <div v-if="selectedDay.name_days == ''">
+                      <div v-if="selectedDay.name_days && selectedDay.name_days === ''">
                         Not found today
                       </div>
                     </ion-card-content>
                   </ion-popover>
-                  <div>________________________________________________</div>
+                  <!-- <div>________________________________________________</div> -->
 
                   <!-- Идващи от Json -->
-                  <p v-if="day.nameDay">Name Day: {{ selectedDay.name_days }}</p>
+                  <!-- <p v-if="day.nameDay">Name Day: {{ selectedDay.name_days }}</p>
                   <p v-if="day.church_holidays">Church Holidays: {{ selectedDay.church_holidays }}</p>
-                 
-                  <p>Selected Date in CardHolidays: {{ selectedDate }}</p>
+                  -->
+                  <!-- <p>Selected Date in CardHolidays: {{ selectedDate }}</p> -->
                 </div>
               </div>
             </div>

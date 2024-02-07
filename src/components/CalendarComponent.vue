@@ -84,7 +84,7 @@
                 v-if="!editMode"
                 @click="enterEditMode"
                 style="font-size: larger; cursor: pointer"
-                >{{ selectedDate.getFullYear() }}</span
+                >{{ selectedDate && selectedDate instanceof Date ? selectedDate.getFullYear() : '' }}</span
               >
               <input
                 v-if="editMode"
@@ -203,6 +203,7 @@
       :showDatePicker="props.showDatePicker"
       @dblclick.prevent
     />
+    {{ selectedDate.getTime() }}
   </div>
   <!-- :key="(selectedDate ? selectedDate.getTime() : currentDate.getTime())" -->
   <!-- <button
