@@ -201,7 +201,6 @@
       mode="date"
       :key="selectedDate.getTime()"
       :showDatePicker="props.showDatePicker"
-      @dblclick.prevent
     />
     {{ selectedDate.getTime() }}
   </div>
@@ -331,6 +330,15 @@ const changeMonth = (index: number) => {
 // };
 
 const emit = defineEmits();
+
+
+
+//Това е при doubleclick 
+watch(selectedDate, (newValue,oldValue) => {
+  if (newValue === null) {
+    selectedDate.value = oldValue; // Ако selectedDate е null, задайте го на текущата дата
+  }
+});
 
 // const formatDate = (date: Date | null | undefined) => {
 //   if (date) {
@@ -1013,9 +1021,9 @@ const moveMonthBackward = () => {
 
 /* Current */
 .vc-highlight-content-outline.vc-content-today {
-  background: url("../assets/img/cross.png") center center no-repeat;
-  background-size: 58px;
-  background-position-y: 9px;
+  background: url("../assets/img/currentDaySun.png") center center no-repeat;
+  background-size: 50px;
+  background-position-y: 8px;
   width: 40px;
   height: 66px;
   z-index: 4;
