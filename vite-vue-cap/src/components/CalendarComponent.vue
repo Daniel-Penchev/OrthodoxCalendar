@@ -204,28 +204,7 @@
     />
     {{ selectedDate.getTime() }}
   </div>
-  <!-- :key="(selectedDate ? selectedDate.getTime() : currentDate.getTime())" -->
-  <!-- <button
-    v-if="props.showDatePicker"
-    @click="goToCurrentDay"
-    class="greatDayButton"
-  >
-    Днешният ден
-  </button>
-  <button
-    v-if="props.showDatePicker"
-    @click="goToGreatDay"
-    class="greatDayButton"
-  >
-    Велик ден през {{ selectedYear }}
-  </button> -->
-  <!-- <div class="event-text" v-if="hasEvents">
-      <p :class="{ 'red-text': isHoliday || isWeekend ,'highlight-day': isHoliday }">
-        {{ formatDate(selectedDate) }} - {{ isHoliday }}
-        <span v-if="isHoliday">✞ </span><strong>{{ calendarEvent.nameHoliday }}</strong>
-      </p>
-
-   </swiper-slide>
+   <!-- </swiper-slide>
 </swiper> -->
   <!-- <p>Swiper</p> -->
   <!-- <swiper :loop="true" >3
@@ -615,18 +594,19 @@ const updateSelectedYear = (event: Event) => {
 //   selectedDate.value.setDate(selectedDate.value.getDate() - 1);
 // };
 const moveForward = () => {
-  // Преместване напред
   const newDate = new Date(selectedDate.value);
   newDate.setDate(newDate.getDate() + 1);
   selectedDate.value = newDate;
+  emit("move-forward", newDate);
 };
 
 const moveBackward = () => {
-  // Преместване назад
   const newDate = new Date(selectedDate.value);
   newDate.setDate(newDate.getDate() - 1);
   selectedDate.value = newDate;
+  emit("move-backward", newDate);
 };
+
 const moveYearForward = () => {
   const newDate = new Date(selectedDate.value);
   const selectedMonth = selectedDate.value.getMonth();
@@ -1041,7 +1021,7 @@ const moveMonthBackward = () => {
 }
 .vc-content:not(.vc-base) {
     font-weight:bold;
-    color: #1d4fbd;
+    color: #1e3a8a;
 }
 
 /* Holidays */

@@ -33,7 +33,6 @@
           <ion-buttons slot="end">
             <ion-button id="popover-button"><ion-icon class="icons-style"
                 :icon="ellipsisVertical"></ion-icon></ion-button>
-
           </ion-buttons>
 
           <ion-popover trigger="popover-button" :dismiss-on-select="true">
@@ -81,10 +80,15 @@
         <div pager="true" style="width: 100%">
           <!-- Slide 1 -->
           <div style="width: 100%">
-            <CalendarComponent :showDatePicker="showDatePicker" @update:selectedDate="updateSelectedDate">
-            </CalendarComponent>
+           <swiper :loop="true">
+            <swiper-slide>
 
-            <CardHolidays :selectedDate="selectedDate"></CardHolidays>
+              <CalendarComponent :showDatePicker="showDatePicker"     @move-forward="handleMoveForward"
+      @move-backward="handleMoveBackward" @update:selectedDate="updateSelectedDate"></CalendarComponent>
+              <CardHolidays :selectedDate="selectedDate"></CardHolidays>
+              
+            </swiper-slide>
+          </swiper>
           </div>
         </div>
       </div>
@@ -133,7 +137,9 @@
                 src="http://www.pravoslavieto.com/images/felles/logo_small.gif"
                 alt="ПРАВОСЛАВНАТА ЧИТАЛНЯ. Eastern Orthodox readings in Bulgarian at Pravoslavieto.com" border=0></a>
           </li>
-          <li>Resource 2</li>
+          <li><a href="http://www.sviatost.info/12_jitiya_na_svetiite/index.html" target=_blank><img width=158 height=23
+                src="http://www.pravoslavieto.com/images/felles/logo_small.gif"></a>
+          </li>
           <li>Resource 3</li>
           <!-- Add more resources as needed -->
         </ul>
@@ -154,7 +160,8 @@ import CalendarComponent from '../../components/CalendarComponent.vue';
 import CardHolidays from '../../components/Cards/CardHolidays.vue';
 import { IonPage, IonContent, IonHeader, IonToolbar, IonButton, IonButtons, IonModal, IonIcon, IonTitle, IonPopover, IonList, IonItem } from '@ionic/vue';
 import { calendarOutline, ellipsisVertical, mail, star, close } from 'ionicons/icons';
-
+import { Swiper , SwiperSlide } from 'swiper/vue';
+import 'swiper/swiper-bundle.css';
 import { ref } from 'vue';
 
 // import { Swiper, SwiperSlide } from 'swiper/vue';
@@ -182,9 +189,16 @@ const sendEmail = () => {
   window.open('https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&source=mailto&to=danielpenchev1709@gmail.com', '_system');
 }
 
+// Slider Logic
+const handleMoveForward = (newDate: any) => {
+  console.log("Move forward to:", newDate);
+};
+
+const handleMoveBackward = (newDate: any) => {
+  console.log("Move backward to:", newDate);
+};
+
 // About Logic
-
-
 const aboutModal = ref<boolean>(false);
 
 const openAboutModal = () => {

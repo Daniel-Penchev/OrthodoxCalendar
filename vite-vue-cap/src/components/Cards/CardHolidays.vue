@@ -1,12 +1,13 @@
 <template>
   <ion-card>
-    <!-- <ion-item lines="full">
-      <ion-card-header>
-        <ion-card-title style="font-size: larger;">{{ getCurrentDate() }}</ion-card-title>
-      </ion-card-header>
-    </ion-item> -->
 
     <ion-card-content class="cardContent">
+      <!-- <p>Snimki</p>
+      <swiper :loop="true" >3
+        <swiper-slide>Slide 1</swiper-slide>
+        <swiper-slide>Slide 2</swiper-slide>
+        <swiper-slide>Slide 3</swiper-slide>
+    </swiper> -->
 
       <div v-if="churchHolidays" style="margin-top: 3%;">
         <!-- <swiper :loop="true">
@@ -78,7 +79,6 @@
 
                         </ion-button>
                       </ion-buttons>
-
 
                     </IonItem>
 
@@ -196,8 +196,8 @@ import { close } from 'ionicons/icons';
 import { format } from 'date-fns';
 // IonItem, IonCardHeader, IonCardTitle
 import { computed, onMounted, ref, watch } from 'vue';
-// import { Swiper, SwiperSlide } from 'swiper/vue';
-
+// import { Swiper , SwiperSlide } from 'swiper/vue';
+// import 'swiper/swiper-bundle.css';
 const isOpen = ref(false);
 
 const setOpen = (open: boolean) => (isOpen.value = open);

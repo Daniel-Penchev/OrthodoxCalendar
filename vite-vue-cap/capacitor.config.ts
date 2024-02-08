@@ -1,9 +1,9 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'com.orthodoxCalendar',
-  appName: 'Orthodox Calendar',
-  webDir: 'www',
+  appId: 'vite.vue.cap',
+  appName: 'vite-vue-cap',
+  webDir: 'dist',
   server: {
     androidScheme: 'https'
   }
