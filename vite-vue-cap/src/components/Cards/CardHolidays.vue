@@ -31,10 +31,12 @@
                         <ion-button expand="block" @click="() => handleChurchFilteredHoliday(filteredHoliday)" style="width: 100%">
 
                           <div style="display: flex; align-items: center; justify-content: space-between; width: 100%;margin-left: 5%;">
+                           
                             <!-- <ion-thumbnail class="custom-thumbnail" style="width: 100%;margin-bottom: 23%;">
                               <img :src="filteredHoliday.image || 'https://ionicframework.com/docs/img/demos/thumbnail.svg'"
                                 style="width: auto;height: auto;" />
                             </ion-thumbnail> -->
+
                             <div style="flex: 1; text-wrap: balance;width: auto;margin-left: 2%;font-size: 16px;">
                               {{ filteredHoliday.name }}
                             </div>
