@@ -26,9 +26,9 @@
                     <IonItem v-for="filteredHoliday in shouldDisplayItems" :key="filteredHoliday.name">
 
                       <ion-buttons class="buttonSaint" v-if="shouldDisplayItem(filteredHoliday.date)"
-                        @click="() => handleChurchFilteredHoliday(filteredHoliday)">
+                       >
 
-                        <ion-button expand="block">
+                        <ion-button expand="block" @click="() => handleChurchFilteredHoliday(filteredHoliday)" style="width: 100%">
 
                           
                           <div style="display: flex; align-items: center; justify-content: space-between; width: 100%;margin-left: 5%;">
