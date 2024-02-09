@@ -7212,7 +7212,7 @@
                 "image": "",
                 "text": "",
                 "href": "",
-                "audio": ""
+                "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Prepodobni_Lazar.mp3"
               } ],
             "name_days": []
           },
@@ -7224,7 +7224,7 @@
                 "image": "",
                 "text": "",
                 "href": "",
-                "audio": ""
+                "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Swbor_na_sveti_arhistratig_Mihail.mp3"
               },
               {
                 "name": "Св. мчк Ангел Лерински",
@@ -7276,7 +7276,7 @@
                 "image": "",
                 "text": "",
                 "href": "",
-                "audio": ""
+                "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_apostoli_Olimp_Rodion_Erast_Kvart_Sosipatwr_Terciy.mp3"
               },
               {
                 "name": "Преп. Арсений Кападокийски",
@@ -7296,7 +7296,7 @@
                 "image": "",
                 "text": "",
                 "href": "",
-                "audio": ""
+                "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_mwchenici_Mina_Viktor_Vikentiy_i_Stefanida.mp3"
               },
               {
                 "name": "Св. мчци Виктор и Викентий",
@@ -7310,14 +7310,14 @@
                 "image": "",
                 "text": "",
                 "href": "",
-                "audio": ""
+                "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_mwchenici_Mina_Viktor_Vikentiy_i_Stefanida.mp3"
               },
               {
                 "name": "Преп. Теодор Студит, изповедник",
                 "image": "",
                 "text": "",
                 "href": "",
-                "audio": ""
+                "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Prepodobni_Teodor_Studit.mp3"
               }
               
             ],
@@ -7331,7 +7331,7 @@
                 "image": "",
                 "text": "",
                 "href": "",
-                "audio": ""
+                "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_Yoan_milostiviy_patriarh_Aleksandriyski.mp3"
               },
               {
                 "name": "Преп. Нил Постник",
@@ -7358,8 +7358,8 @@
                 "name": "Св. Йоан Златоуст, архиеп. Константинополски",
                 "image": "",
                 "text": "",
-                "href": "",
-                "audio": ""
+                "href": "https://www.pravoslavieto.com/life/11.13_sv_Joan_Zlatoust.htm",
+                "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_Yoan_Zlatoust.mp3"
               }],
             "name_days": ["Евлоги", "Евлогия"]
           },
@@ -7371,7 +7371,7 @@
                 "image": "",
                 "text": "",
                 "href": "",
-                "audio": ""
+                "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_apostol_Filip.mp3"
               },
               {
                 "name": "Св. благоверни цар Управда Юстиниан",
@@ -7397,7 +7397,7 @@
                 "image": "",
                 "text": "",
                 "href": "",
-                "audio": ""
+                "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_mwchenici_Guriy_Samon_i_Aviv.mp3"
               },
               {
                 "name": "(Начало на Рождественския пост)",
@@ -7416,7 +7416,7 @@
                 "image": "",
                 "text": "",
                 "href": "",
-                "audio": ""
+                "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_evangelist_Matey.mp3"
               }],
             "name_days": ["Матей", "Матея"]
           },
@@ -7435,7 +7435,7 @@
                 "image": "",
                 "text": "",
                 "href": "",
-                "audio": ""
+                "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_Grigoriy_episkop_Neokesariyski_chudotvorec.mp3"
               }],
             "name_days": ["Мико"]
           },
@@ -7443,11 +7443,18 @@
             "day": 18,
             "church_holidays": [
               {
-                "name": "Св. мчци Платон и Роман",
+                "name": "Св. мчци Платон",
                 "image": "",
                 "text": "",
                 "href": "",
-                "audio": ""
+                "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_mwchenik_Platon.mp3"
+              },              
+              {
+                "name": "Св. мчци Роман",
+                "image": "",
+                "text": "",
+                "href": "",
+                "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_mwchenik_Roman.mp3"
               }],
             "name_days": []
           },
@@ -7466,7 +7473,7 @@
                 "image": "",
                 "text": "",
                 "href": "",
-                "audio": ""
+                "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_mwchenik_Varlaam.mp3"
               } ],
             "name_days": []
           },
@@ -7478,14 +7485,14 @@
                 "image": "",
                 "text": "",
                 "href": "",
-                "audio": ""
+                "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Prepodobni_Grigoriy_Dekapolit.mp3"
               },
               {
                 "name": "Св. Прокъл, архиеп. Константинополски",
                 "image": "",
                 "text": "",
                 "href": "",
-                "audio": ""
+                "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_Prokwl_arhiepiskop_Carigradski.mp3"
               },
               {
                 "name": "Св. мчк Дасий Доростолски",
@@ -7510,8 +7517,8 @@
                 "name": "✞ Въведение Богородично",
                 "image": "",
                 "text": "",
-                "href": "",
-                "audio": ""
+                "href": "https://www.pravoslavieto.com/calendar/feasts/11.21_Vavedenie_Bogorodichno.htm",
+                "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Vwvejdane_na_Presveta_Bogorodica_v_hrama.mp3"
               },
               {
                 "name": "(Ден на православната християнска младеж и семейство)",
@@ -7537,7 +7544,7 @@
                 "image": "",
                 "text": "",
                 "href": "",
-                "audio": ""
+                "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_pravedni_Mihail_Bwlgarski.mp3"
               }],
             "name_days": []
           },
@@ -7549,7 +7556,7 @@
                 "image": "",
                 "text": "",
                 "href": "",
-                "audio": ""
+                "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_Amfilohiy_i_sveti_Grigoriy.mp3"
               },
               {
                 "name": "Св. Григорий, еп. Акрагантийски",
@@ -7563,7 +7570,7 @@
                 "image": "",
                 "text": "",
                 "href": "",
-                "audio": ""
+                "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_blagoverni_knyaz_Aleksandwr_Nevski.mp3"
               }],
             "name_days": []
           },
@@ -7582,14 +7589,14 @@
                 "image": "",
                 "text": "",
                 "href": "",
-                "audio": ""
+                "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveta_velikomwchenica_Ekaterina.mp3"
               },
               {
                 "name": "Св. вмчк Меркурий",
                 "image": "",
                 "text": "",
                 "href": "",
-                "audio": ""
+                "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_velikomwchenik_Merkuriy.mp3"
               }],
             "name_days": ["Екатерина", "Катерина", "Катя", "Катрин", "Катина", "Кина", "Катин"]
           },
@@ -7601,14 +7608,14 @@
                 "image": "",
                 "text": "",
                 "href": "",
-                "audio": ""
+                "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_Kliment_Ohridski.mp3"
               },
               {
                 "name": "Св. Климент, папа Римски",
                 "image": "",
                 "text": "",
                 "href": "",
-                "audio": ""
+                "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_sveshtenomwchenik_Kliment_episkop_Rimski.mp3"
               },
               {
                 "name": "Св. Петър, еп. Александрийски",
@@ -7660,14 +7667,14 @@
                 "image": "",
                 "text": "",
                 "href": "",
-                "audio": ""
+                "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Prepodobni_Teodosiy_Twrnovski.mp3"
               },
               {
                 "name": "Св. вмчк Яков Персиец",
                 "image": "",
                 "text": "",
                 "href": "",
-                "audio": ""
+                "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_mwchenik_Yakov_Persiyanin.mp3"
               },
               {
                 "name": "Преп. Паладий",
@@ -7686,7 +7693,7 @@
                 "image": "",
                 "text": "",
                 "href": "",
-                "audio": ""
+                "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_prepodobnomwchenik_Stefan_Novi.mp3"
               },
               {
                 "name": "Св. мчк Иринарх",
@@ -7700,14 +7707,14 @@
                 "image": "",
                 "text": "",
                 "href": "",
-                "audio": ""
+                "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_15_Tiveriopolski_mwchenici.mp3"
               },
               {
                 "name": "Св. мчк Христо",
                 "image": "",
                 "text": "",
                 "href": "",
-                "audio": ""
+                "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_mwchenik_Hristo.mp3"
               }
             ],
             "name_days": []
@@ -7720,7 +7727,7 @@
                 "image": "",
                 "text": "",
                 "href": "",
-                "audio": ""
+                "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_mwchenik_Paramon.mp3"
               },
               {
                 "name": "Св. мчк Филумен",
@@ -7746,7 +7753,7 @@
                 "image": "",
                 "text": "",
                 "href": "",
-                "audio": ""
+                "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_Andrey_Pwrvozvani.mp3"
               }],
             "name_days": ["(Андреевден)","Андрей", "Андреа", "Андрея", "Андрейка", "Адриан", "Адриана", "Адрияна", "Андреана", "Андреяна", "Андрейчо", "Първан", "Пръвка", "Първанка", "Храбър", "Храбрин", "Силен", "Силка", "Дешо", "Дешка"]
           }
@@ -7770,7 +7777,7 @@
                 "image": "",
                 "text": "",
                 "href": "",
-                "audio": ""
+                "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_prorok_Naum.mp3"
               },
               {
                 "name": "Св. Филарет Милостиви",
@@ -7795,7 +7802,7 @@
                 "image": "",
                 "text": "",
                 "href": "",
-                "audio": ""
+                "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_prorok_Avakum.mp3"
               },
               {
                 "name": "Преп. Йоан и Андрей",
@@ -7813,7 +7820,7 @@
                 "image": "",
                 "text": "",
                 "href": "",
-                "audio": ""
+                "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_prorok_Sofoniy.mp3"
               },
               {
                 "name": "Св. свщмчк Теодор, архиеп. Александрийски",
@@ -7831,14 +7838,14 @@
                 "image": "",
                 "text": "",
                 "href": "",
-                "audio": ""
+                "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveta_velikomwchenica_Varvara.mp3"
               },
               {
                 "name": "Преп. Йоан Дамаскин",
                 "image": "",
                 "text": "",
                 "href": "",
-                "audio": ""
+                "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_Yoan_Damaskin.mp3"
               } ],
             "name_days": ["Варвара", "Барбара", "Варя", "Варадин"]
           },
@@ -7850,14 +7857,14 @@
                 "image": "",
                 "text": "",
                 "href": "",
-                "audio": ""
+                "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_Sava_osveshteni.mp3"
               },
               {
                 "name": "Преп. Нектарий Битолски",
                 "image": "",
                 "text": "",
                 "href": "",
-                "audio": ""
+                "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Prepodobni_Nektariy_Bitolski.mp3"
               } ],
             "name_days": [
               "Елисавета", "Сава", "Савина", "Савка", "Савчо", "Саня", "Владислав", "Владислава",
@@ -7886,14 +7893,14 @@
                 "image": "",
                 "text": "",
                 "href": "",
-                "audio": ""
+                "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_Amvrosiy_episkop_Mediolanski.mp3"
               },
               {
                 "name": "Св. Филотея Търновска",
                 "image": "",
                 "text": "",
                 "href": "",
-                "audio": ""
+                "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Prepodobna_Filoteya_Twrnovska.mp3"
               } ]
           },
           {
@@ -7911,7 +7918,7 @@
                 "image": "",
                 "text": "",
                 "href": "",
-                "audio": ""
+                "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Prepodobni_Patapiy.mp3"
               } ],
             "name_days": ["Стамат", "Стаматка", "Стамо"]
           },
@@ -7942,7 +7949,7 @@
                 "image": "",
                 "text": "",
                 "href": "",
-                "audio": ""
+                "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_mwchenici_Mina_Ermogen_i_Evgraf.mp3"
               }]
           },
           {
@@ -7953,7 +7960,7 @@
                 "image": "",
                 "text": "",
                 "href": "",
-                "audio": ""
+                "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Prepodobni_Daniil_Stwlpnik.mp3"
               },
               {
                 "name": "Преп. Лука Стълпник",
@@ -7971,7 +7978,7 @@
                 "image": "",
                 "text": "",
                 "href": "",
-                "audio": ""
+                "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_Spiridon_episkop_Trimitunski.mp3"
               }],
             "name_days": ["Спиро", "Спиридон", "Дарина", "Дариела", "Дария", "Дорита", "Дориета"]
           },
@@ -7983,7 +7990,7 @@
                 "image": "",
                 "text": "",
                 "href": "",
-                "audio": ""
+                "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_mwchenici_Evstratiy_Avksentiy_Evgeniy_Mardariy_i_Orest.mp3"
               },
               {
                 "name": "Св. мчца Лукия девица",
@@ -8001,7 +8008,7 @@
                 "image": "",
                 "text": "",
                 "href": "",
-                "audio": ""
+                "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_mwchenici_Tirs_Lewkiy_i_Filimon.mp3"
               } ],
             "name_days": ["Снежана", "Снежа", "Снежка", "Снежко"]
           },
@@ -8039,7 +8046,7 @@
                 "image": "",
                 "text": "",
                 "href": "",
-                "audio": ""
+                "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_prorok_Agey.mp3"
               },
               {
                 "name": "Св. мчк Марин",
@@ -8057,7 +8064,7 @@
                 "image": "",
                 "text": "",
                 "href": "",
-                "audio": ""
+                "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_prorok_Daniil_i_trite_momci_Ananiy_Azariy_i_Misail.mp3"
               }],
             "name_days": ["Данаил", "Даниел", "Даниела", "Данислав", "Данаила", "Дани", "Дана"]
           },
@@ -8088,7 +8095,7 @@
                 "image": "",
                 "text": "",
                 "href": "",
-                "audio": ""
+                "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_mwchenik_Bonifaciy.mp3"
               },
               {
                 "name": "Св. Григорий, еп. Омиритски",
@@ -8113,7 +8120,7 @@
                 "image": "",
                 "text": "",
                 "href": "",
-                "audio": ""
+                "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_sveshtenomwchenik_Ignatiy_Bogonosec.mp3"
               },
               {
                 "name": "Св. Йоан Кронщадски",
@@ -8154,7 +8161,7 @@
                 "image": "",
                 "text": "",
                 "href": "",
-                "audio": ""
+                "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveta_velikomwchenica_Anastasiya.mp3"
               } ],
             "name_days": ["Анастасия", "Анастас"]
           },
@@ -8166,14 +8173,14 @@
                 "image": "",
                 "text": "",
                 "href": "",
-                "audio": ""
+                "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_prepodobni_Naum_Ohridski.mp3"
               },
               {
                 "name":  "Св. 10 мчци в Крит",
                 "image": "",
                 "text": "",
                 "href": "",
-                "audio": ""
+                "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_10_Kritski_mwchenici.mp3"
               },
               {
                 "name": "Св. мчк Геласий",
@@ -8191,7 +8198,7 @@
                 "image": "",
                 "text": "",
                 "href": "",
-                "audio": ""
+                "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveta_prepodobnamwchenica_Ewgeniya.mp3"
               },
               {
                 "name":  "Преп. Николай воин",
@@ -8220,7 +8227,7 @@
                 "image": "",
                 "text": "",
                 "href": "",
-                "audio": ""
+                "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Rojdestvo_Hristovo.mp3"
               }],
             "name_days": [
               "Божидар", "Емил", "Емилия", "Христо", "Християн", "Християна", "Христин", "Кристиян", "Кристияна",
@@ -8239,7 +8246,7 @@
                 "image": "",
                 "text": "",
                 "href": "",
-                "audio": ""
+                "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Swbor_na_Presveta_Bogorodica.mp3"
               },
               {
                 "name": "Св. Йосиф Обручник",
@@ -8272,7 +8279,7 @@
                 "image": "",
                 "text": "",
                 "href": "",
-                "audio": ""
+                "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_pwrvomwchenik_i_arhidyakon_Stefan.mp3"
               },
               {
                 "name": "Преп. Теодор Начертаний",
@@ -8298,7 +8305,7 @@
                 "image": "",
                 "text": "",
                 "href": "",
-                "audio": ""
+                "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---20000_mwchenici_izgoreni_v_Nikomidiya.mp3"
               }]
           },
           {
@@ -8316,7 +8323,7 @@
                 "image": "",
                 "text": "",
                 "href": "",
-                "audio": ""
+                "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Hilyadi_mladenci_izbiti_ot_car_Irod.mp3"
               },
               {
                 "name":  "Преп. Маркел",
@@ -8334,7 +8341,7 @@
                 "image": "",
                 "text": "",
                 "href": "",
-                "audio": ""
+                "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveta_mwchenica_Anisiya.mp3"
               },
               {
                 "name": "Св. свщмчк Зотик Сиропитател",
@@ -8365,7 +8372,7 @@
               "image": "",
               "text": "",
               "href": "",
-              "audio": ""
+              "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Prepodobna_Melaniya_Rimlyanka.mp3"
             }]
           }
         ]

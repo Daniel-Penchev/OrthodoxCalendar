@@ -635,7 +635,8 @@ const calculatedHolidays = computed(() => {
 .button-82-front {
   display: block;
   position: relative;
-  padding: 12px 27px;
+  padding: 9px 15px;
+  margin: 2px 4px;
   border-radius: 12px;
   font-size: 1.1rem;
   color: white;
@@ -651,7 +652,7 @@ const calculatedHolidays = computed(() => {
 @media (min-width: 768px) {
   .button-82-front {
     font-size: 1.25rem;
-    padding: 12px 42px;
+    padding: 10px 13px;
   }
 }
 
