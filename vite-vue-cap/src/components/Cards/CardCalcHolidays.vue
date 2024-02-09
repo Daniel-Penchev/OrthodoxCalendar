@@ -6,16 +6,27 @@
       </ion-card-header>
     </ion-item>
 
-    <ion-card-content style="width: 400px;">
-      <label for="year">Select Year:</label>
-      <input type="number" id="year" v-model="selectedYear" />
-      <button @click="calculateHolidays">Calculate</button>
+    <ion-card-content style="width: 100%;">
+      <div style="display: flow;justify-content: center;align-items: center;margin-bottom: 5%;margin-top: 5%;text-align: center;">
 
-      <table cellspacing="0" cellpadding="0">
+      <label style="width:25%" for="year">Select Year:</label>
+
+      <input style="width:25%" type="number" id="year" v-model="selectedYear" />
+
+      <button style="width:auto;margin: 4%;" class="button-82-pushable" role="button" @click="calculateHolidays">
+        <span class="button-82-shadow"></span>
+        <span class="button-82-edge"></span>
+        <span class="button-82-front text">
+          Calculate
+        </span>
+      </button>
+    </div>
+
+      <table cellspacing="1" cellpadding="1">
         <tbody>
-          <tr v-for="(holiday, index) in calculatedHolidays" :key="index">
+          <tr v-for="(holiday, index) in calculatedHolidays" :key="index" style="border-bottom: 1px solid #dbd2d2;">
             <td>{{ holiday.name }}</td>
-            <td>{{ holiday.date }}</td>
+            <td >{{ holiday.date }}</td>
           </tr>
         </tbody>
       </table>
@@ -129,3 +140,111 @@ const calculateCustomDate = (offset: number): Date => {
   return date;
 };
 </script>
+<style scopde>
+
+
+/* CSS */
+.button-82-pushable {
+  position: relative;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  outline-offset: 4px;
+  transition: filter 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-82-shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: hsl(0deg 0% 0% / 0.25);
+  will-change: transform;
+  transform: translateY(2px);
+  transition:
+    transform
+    600ms
+    cubic-bezier(.3, .7, .4, 1);
+}
+
+.button-82-edge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: linear-gradient(
+    to left,
+    hsl(340deg 100% 16%) 0%,
+    hsl(340deg 100% 32%) 8%,
+    hsl(340deg 100% 32%) 92%,
+    hsl(340deg 100% 16%) 100%
+  );
+}
+
+.button-82-front {
+  display: block;
+  position: relative;
+  padding: 12px 27px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  color: white;
+  background: hsl(345deg 100% 47%);
+  will-change: transform;
+  transform: translateY(-4px);
+  transition:
+    transform
+    600ms
+    cubic-bezier(.3, .7, .4, 1);
+}
+
+@media (min-width: 768px) {
+  .button-82-front {
+    font-size: 1.25rem;
+    padding: 12px 42px;
+  }
+}
+
+.button-82-pushable:hover {
+  filter: brightness(110%);
+  -webkit-filter: brightness(110%);
+}
+
+.button-82-pushable:hover .button-82-front {
+  transform: translateY(-6px);
+  transition:
+    transform
+    250ms
+    cubic-bezier(.3, .7, .4, 1.5);
+}
+
+.button-82-pushable:active .button-82-front {
+  transform: translateY(-2px);
+  transition: transform 34ms;
+}
+
+.button-82-pushable:hover .button-82-shadow {
+  transform: translateY(4px);
+  transition:
+    transform
+    250ms
+    cubic-bezier(.3, .7, .4, 1.5);
+}
+
+.button-82-pushable:active .button-82-shadow {
+  transform: translateY(1px);
+  transition: transform 34ms;
+}
+
+.button-82-pushable:focus:not(:focus-visible) {
+  outline: none;
+}
+
+</style>

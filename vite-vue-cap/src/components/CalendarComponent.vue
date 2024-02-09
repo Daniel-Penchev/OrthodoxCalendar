@@ -202,7 +202,6 @@
       :key="selectedDate.getTime()"
       :showDatePicker="props.showDatePicker"
     />
-    {{ selectedDate.getTime() }}
   </div>
    <!-- </swiper-slide>
 </swiper> -->

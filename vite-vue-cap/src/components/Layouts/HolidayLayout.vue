@@ -13,7 +13,6 @@
             <ion-icon :icon="calendar" />
             <ion-label>Holidays</ion-label>
           </ion-tab-button>
-
         </ion-tab-bar>
       </ion-tabs>
     </ion-page>
@@ -21,7 +20,7 @@
   </template>
   
   <script setup lang="ts">
-    import { IonPage, IonTabs, IonRouterOutlet, IonTabBar, IonTabButton, IonLabel, IonIcon } from '@ionic/vue';
+    import { IonPage, IonTabs, IonTabBar, IonTabButton, IonLabel, IonIcon } from '@ionic/vue';
     import { calendar } from 'ionicons/icons';
 
   </script>

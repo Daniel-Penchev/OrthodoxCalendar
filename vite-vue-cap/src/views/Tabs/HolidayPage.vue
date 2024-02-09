@@ -3,9 +3,9 @@
     display: grid;
     align-items: center;
     justify-content: center;
-    margin-right: 16%;
-    margin-left: 16%;
-    margin-top: 6%;
+    margin-right: 5%;
+    margin-left: 5%;
+    margin-top: 5%;
   }
 </style>
 
@@ -21,7 +21,7 @@
       <div class="holiday-content">
         
         <CardCalcHolidays></CardCalcHolidays>
-        <CalendarDisplay></CalendarDisplay>
+        <!-- <CalendarDisplay></CalendarDisplay> -->
       </div>
     </ion-content>
   </ion-page>
@@ -32,7 +32,7 @@
 //  import CalendarPost from '../../components/CalendarPost.vue';
  import CardCalcHolidays from '../../components/Cards/CardCalcHolidays.vue';
 
- import CalendarDisplay from '../../components/CalendarDisplay.vue';
+//  import CalendarDisplay from '../../components/CalendarDisplay.vue';
  
  import { IonPage, IonHeader, IonToolbar, IonContent } from '@ionic/vue';
 

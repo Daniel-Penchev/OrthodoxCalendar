@@ -29,7 +29,7 @@
                       <ion-buttons class="buttonSaint" v-if="shouldDisplayItem(filteredHoliday.date)"
                        >
 
-                        <ion-button expand="block" @click="() => handleChurchFilteredHoliday(filteredHoliday)" style="width: 100%">
+                        <ion-button expand="block" style="width: 100%">
 
                           <div style="display: flex; align-items: center; justify-content: space-between; width: 100%;margin-left: 5%;">
                             <!-- <ion-thumbnail class="custom-thumbnail" style="width: 100%;margin-bottom: 23%;">
@@ -48,7 +48,7 @@
                     <!-- Ще изведе праниците -->
                     <IonItem v-for="churchHoliday in selectedDay.church_holidays">
                       <ion-buttons class="buttonSaint">
-                        <ion-button expand="block" @click="() => handleChurchHolidayClick(churchHoliday)" style="width: 100%">
+                        <ion-button expand="block" style="width: 100%">
 
                           <div style="display: flex; align-items: center; justify-content: center; width: 100%;">
                             <!-- <ion-thumbnail class="custom-thumbnail" style="width: 100%;margin-bottom: 23%;">
@@ -58,7 +58,21 @@
                             
                               <div style="flex: 1; text-wrap: balance;width: auto;margin-left: 2%;font-size: 15px;">{{ churchHoliday.name }}</div>
                           </div>
-                          <svg v-if="churchHoliday.audio" width="20px" height="20px" viewBox="0 0 32 32" version="1.1"
+                      
+                      </ion-button>
+
+                        <ion-button class="button-82-pushable" v-if="churchHoliday.href" role="button">
+                          <span class="button-82-shadow"></span>
+                          <span class="button-82-edge"></span>
+                          <span class="button-82-front text">
+                            <img  src="../../assets/img/PrayerBook.png" />
+                          </span>
+                        </ion-button>
+                        <ion-button class="button-82-pushable" v-if="churchHoliday.audio" role="button">
+                          <span class="button-82-shadow"></span>
+                          <span class="button-82-edge"></span>
+                          <span class="button-82-front text">
+                            <svg v-if="churchHoliday.audio" width="20px" height="20px" viewBox="0 0 32 32" version="1.1"
                             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                             xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
                           <title>headphone</title>
@@ -72,12 +86,11 @@
                                 id="headphone" sketch:type="MSShapeGroup"></path>
                             </g>
                           </g>
-                        </svg>
-                          <!-- <ion-button expand="block" @click="setOpen(true)">Read me</ion-button> -->
-
-                          <!-- <svg viewBox="0 0 33 33" style="width: 6%;"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg> -->
-
+                           </svg>
+                          </span>
                         </ion-button>
+
+                        
                       </ion-buttons>
 
                     </IonItem>
@@ -121,7 +134,7 @@
 
   
   <!-- Modal -->
-  <ion-modal :is-open="isOpen" @blur="handleBlur" >
+  <!-- <ion-modal :is-open="isOpen" @blur="handleBlur" >
     
     <ion-header>
       <ion-toolbar>
@@ -187,20 +200,21 @@
         selectedChurchHoliday?.name }}</a>
       </p>
     </ion-content>
-  </ion-modal>
+  </ion-modal> -->
 </template>
 
 <script setup lang="ts">
-import { IonCard, IonCardContent, IonItem, IonButton,IonIcon , IonPopover, IonModal, IonHeader, IonToolbar, IonTitle, IonButtons, IonContent, IonList } from '@ionic/vue';
-import { close } from 'ionicons/icons';
+import { IonCard, IonCardContent, IonItem, IonButton , IonPopover, IonButtons, IonList } from '@ionic/vue';
+
 import { format } from 'date-fns';
 // IonItem, IonCardHeader, IonCardTitle
 import { computed, onMounted, ref, watch } from 'vue';
 // import { Swiper , SwiperSlide } from 'swiper/vue';
 // import 'swiper/swiper-bundle.css';
-const isOpen = ref(false);
 
-const setOpen = (open: boolean) => (isOpen.value = open);
+// const isOpen = ref(false);
+
+// const setOpen = (open: boolean) => (isOpen.value = open);
 
 // Define the type of your data structure
 interface HolidayData {
@@ -227,10 +241,10 @@ interface Holiday {
   image: string;
   offset: number;
 }
-const formatTextSpace = (text: string) => {
-  const htmlResult = text.replace(/\n/g, '<br>');
-  return htmlResult;
-};
+// const formatTextSpace = (text: string) => {
+//   const htmlResult = text.replace(/\n/g, '<br>');
+//   return htmlResult;
+// };
 // const replaceNewlinesWithDiv = (text: string) => {
 //   // Заменя всички срокове за нов ред (\n) с <br> и обвива резултата в div
 //   const htmlResult = text.replace(/\n/g, '<br>');
@@ -283,33 +297,33 @@ onMounted(async () => {
 
 // ion-modal Logic
 
-const selectedChurchHoliday = ref<{ image: string, name: string; text: string; href: string, audio: string } | null>(null);
+// const selectedChurchHoliday = ref<{ image: string, name: string; text: string; href: string, audio: string } | null>(null);
 
-const handleChurchHolidayClick = (churchHoliday: { image: string; name: string; text: string; href: string, audio: string }) => {
-  selectedChurchHoliday.value = churchHoliday;
-  setOpen(true); // Open the modal
-};
-const handleChurchFilteredHoliday = (filteredHoliday: { date: Date; name: string; offset: number; image: string; }) => {
-  selectedChurchHoliday.value = {
-    image: 'https://ionicframework.com/docs/img/demos/thumbnail.svg', // You may need to provide a default image value here
-    name: filteredHoliday.name,
-    text: '', // You may need to provide a default text value here
-    href: '', // You may need to provide a default href value here
-    audio: '', // You may need to provide a default audio value here
-  };
-  setOpen(true); // Open the modal
-};
+// const handleChurchHolidayClick = (churchHoliday: { image: string; name: string; text: string; href: string, audio: string }) => {
+//   selectedChurchHoliday.value = churchHoliday;
+//   setOpen(true); // Open the modal
+// };
+// const handleChurchFilteredHoliday = (filteredHoliday: { date: Date; name: string; offset: number; image: string; }) => {
+//   selectedChurchHoliday.value = {
+//     image: 'https://ionicframework.com/docs/img/demos/thumbnail.svg', // You may need to provide a default image value here
+//     name: filteredHoliday.name,
+//     text: '', // You may need to provide a default text value here
+//     href: '', // You may need to provide a default href value here
+//     audio: '', // You may need to provide a default audio value here
+//   };
+//   setOpen(true); // Open the modal
+// };
 
 // За размера на текста
-const fontSize = ref(16); // Default font size
+// const fontSize = ref(16); 
 
-const adjustFontSize = (action: 'increase' | 'decrease') => {
-  if (action === 'increase') {
-    fontSize.value += 2; // Increase font size by 2 pixels
-  } else if (action === 'decrease' && fontSize.value > 2) {
-    fontSize.value -= 2; // Decrease font size by 2 pixels, ensuring it doesn't go below 2
-  }
-};
+// const adjustFontSize = (action: 'increase' | 'decrease') => {
+//   if (action === 'increase') {
+//     fontSize.value += 2; // Increase font size by 2 pixels
+//   } else if (action === 'decrease' && fontSize.value > 2) {
+//     fontSize.value -= 2; // Decrease font size by 2 pixels, ensuring it doesn't go below 2
+//   }
+// };
 
 const currentDay = ref(new Date().getDate());
 const currentMonth = ref(new Date().getMonth());
@@ -462,10 +476,10 @@ const calculatedHolidays = computed(() => {
 });
 
 // Handle the blur event to close the modal
-const handleBlur = () => {
-  setOpen(false);
-  // Additional logic if needed
-};
+// const handleBlur = () => {
+//   setOpen(false);
+//   // Additional logic if needed
+// };
 
 </script>
 
@@ -502,4 +516,177 @@ const handleBlur = () => {
 
 .buttonSaint {
   width: 100%;
-}</style>
+}
+
+
+/* CSS */
+/* .buttonAudioandHref {
+  appearance: button;
+  background-color: #1899D6;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: din-round,sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: .8px;
+  line-height: 20px;
+  margin: 0;
+  outline: none;
+  overflow: visible;
+  padding: 13px 16px;
+  text-align: center;
+  text-transform: uppercase;
+  touch-action: manipulation;
+  transform: translateZ(0);
+  transition: filter .2s;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.buttonAudioandHref:after {
+  background-clip: padding-box;
+  background-color: #1CB0F6;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  bottom: -4px;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.buttonAudioandHref:main,
+.buttonAudioandHref:focus {
+  user-select: auto;
+}
+
+.buttonAudioandHref:hover:not(:disabled) {
+  filter: brightness(1.1);
+  -webkit-filter: brightness(1.1);
+}
+
+.buttonAudioandHref:disabled {
+  cursor: auto;
+}
+
+.buttonAudioandHref:active {
+  border-width: 4px 0 0;
+  background: none;
+} */
+
+
+/* CSS */
+.button-82-pushable {
+  position: relative;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  outline-offset: 4px;
+  transition: filter 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-82-shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: hsl(0deg 0% 0% / 0.25);
+  will-change: transform;
+  transform: translateY(2px);
+  transition:
+    transform
+    600ms
+    cubic-bezier(.3, .7, .4, 1);
+}
+
+.button-82-edge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: linear-gradient(
+    to left,
+    hsl(340deg 100% 16%) 0%,
+    hsl(340deg 100% 32%) 8%,
+    hsl(340deg 100% 32%) 92%,
+    hsl(340deg 100% 16%) 100%
+  );
+}
+
+.button-82-front {
+  display: block;
+  position: relative;
+  padding: 12px 27px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  color: white;
+  background: hsl(345deg 100% 47%);
+  will-change: transform;
+  transform: translateY(-4px);
+  transition:
+    transform
+    600ms
+    cubic-bezier(.3, .7, .4, 1);
+}
+
+@media (min-width: 768px) {
+  .button-82-front {
+    font-size: 1.25rem;
+    padding: 12px 42px;
+  }
+}
+
+.button-82-pushable:hover {
+  filter: brightness(110%);
+  -webkit-filter: brightness(110%);
+}
+
+.button-82-pushable:hover .button-82-front {
+  transform: translateY(-6px);
+  transition:
+    transform
+    250ms
+    cubic-bezier(.3, .7, .4, 1.5);
+}
+
+.button-82-pushable:active .button-82-front {
+  transform: translateY(-2px);
+  transition: transform 34ms;
+}
+
+.button-82-pushable:hover .button-82-shadow {
+  transform: translateY(4px);
+  transition:
+    transform
+    250ms
+    cubic-bezier(.3, .7, .4, 1.5);
+}
+
+.button-82-pushable:active .button-82-shadow {
+  transform: translateY(1px);
+  transition: transform 34ms;
+}
+
+.button-82-pushable:focus:not(:focus-visible) {
+  outline: none;
+}
+</style>
