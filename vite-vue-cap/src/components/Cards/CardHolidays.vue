@@ -92,7 +92,7 @@
                         {{ dayName }}
 
                       </div>
-                      <div v-if="selectedDay.name_days && selectedDay.name_days === ''">
+                      <div v-if="selectedDay.name_days === ''">
                         Not found today
                       </div>
                     </ion-card-content>
