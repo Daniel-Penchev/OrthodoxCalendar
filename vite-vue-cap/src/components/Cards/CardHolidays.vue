@@ -20,7 +20,7 @@
                 <div v-if="isCurrentDаy(day.day) && isCurrentMonth(month.name)">
                   <h3>Day {{ selectedDay.day }}</h3>
 
-                    <img :src="selectedDay.image || 'https://ionicframework.com/docs/img/demos/thumbnail.svg'" style="width: 50%; height: auto;margin-top: 5%;" />
+                    <img :src="selectedDay.image || 'https://ionicframework.com/docs/img/demos/thumbnail.svg'" style="width: 35%; height: auto;margin-top: 10%;" />
 
                     <IonList class="churchHoliday" style="margin-top: 10%;">
                     <!-- Ще изведе подвижните праници -->
@@ -61,14 +61,14 @@
                       
                       </ion-button>
 
-                        <ion-button class="button-82-pushable" v-if="churchHoliday.href" role="button">
-                          <span class="button-82-shadow"></span>
-                          <span class="button-82-edge"></span>
-                          <span class="button-82-front text">
-                            <img  src="../../assets/img/PrayerBook.png" />
+                        <!-- <ion-button class="button-83-pushable" v-if="churchHoliday.href" role="button">
+                          <span class="button-83-shadow"></span>
+                          <span class="button-83-edge"></span>
+                          <span class="button-83-front text">
+                            <img  src="../../assets/img/PrayerBook.png" style="width: 67px;height: 35px;" />
                           </span>
-                        </ion-button>
-                        <ion-button class="button-82-pushable" v-if="churchHoliday.audio" role="button">
+                        </ion-button> -->
+                        <!-- <ion-button class="button-82-pushable" v-if="churchHoliday.audio" role="button">
                           <span class="button-82-shadow"></span>
                           <span class="button-82-edge"></span>
                           <span class="button-82-front text">
@@ -88,8 +88,33 @@
                           </g>
                            </svg>
                           </span>
-                        </ion-button>
+                        </ion-button> -->
 
+
+
+                        <ion-button  v-if="churchHoliday.href" role="button">
+                          <a :href="churchHoliday.href">  <img  src="../../assets/img/PrayerBook.png" style="width: 58px;height: 35px;" />
+                            </a>
+                        </ion-button>
+               <ion-button  v-if="churchHoliday.audio" role="button">
+                <a :href="churchHoliday.audio">
+                            <svg v-if="churchHoliday.audio" width="20px" height="20px" viewBox="0 0 32 32" version="1.1"
+                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+                          <title>headphone</title>
+                          <desc>Created with Sketch Beta.</desc>
+                          <defs></defs>
+                          <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+                            <g id="Icon-Set-Filled" sketch:type="MSLayerGroup" transform="translate(-466.000000, -517.000000)"
+                              fill="#000000">
+                              <path
+                                d="M495.938,531.521 C495.966,531.183 496,530.846 496,530.5 C496,523.044 489.732,517 482,517 C474.268,517 468,523.044 468,530.5 C468,530.846 468.034,531.183 468.063,531.521 C466.838,532.205 466,533.498 466,535 L466,541 C466,543.209 467.791,545 470,545 L474,545 C476.125,544.905 478,543.148 478,541 L478,535 C478,532.791 476.209,531 474,531 L470,531 C470,524.01 475.373,519 482,519 C488.628,519 494.043,523.967 494,531 C493.999,531.17 490,531 490,531 C487.791,531 486,532.791 486,535 L486,541 C486,543.148 487.875,544.905 490,545 L492,545 L492,548 C492,548.553 492.447,549 493,549 C493.553,549 494,548.553 494,548 L494,545 C496.209,545 498,543.209 498,541 L498,535 C498,533.498 497.162,532.205 495.938,531.521"
+                                id="headphone" sketch:type="MSShapeGroup"></path>
+                            </g>
+                          </g>
+                           </svg>
+                          </a>
+                        </ion-button>
                         
                       </ion-buttons>
 
@@ -425,6 +450,8 @@ const calculateOrthodoxEaster = (year: number): Date => {
 // const orthodoxEaster = computed(() => calculateOrthodoxEaster(selectedYear.value));
 
 const holidays = ref<Holiday[]>([
+  { name: '✝ Нова година. Обрезание Господне.', date: '01-01', offset: -1, image: '' },
+  { name: '✝ Неделя преди Богоявление', date: '01-07', offset: -1, image: '' },
   { name: 'Неделя на митаря и фарисея', date: '', offset: -70, image: '' },
   { name: 'Неделя на блудния син', date: '', offset: -63, image: '' },
   // { name: 'Месен четвъртък (гръцка традиция! - Tsiknopempti)', date: '', offset: -59 },
@@ -465,12 +492,18 @@ const holidays = ref<Holiday[]>([
 const calculatedHolidays = computed(() => {
   const easterDate = calculateOrthodoxEaster(selectedDate.value.getFullYear());
   const result = holidays.value.map(holiday => {
-    const holidayDate = new Date(easterDate);
-    holidayDate.setDate(easterDate.getDate() + holiday.offset);
+    let holidayDate;
+    if (holiday.date) {
+      const [month, day] = holiday.date.split('-').map(Number);
+      holidayDate = new Date(selectedDate.value.getFullYear(), month - 1, day);
+    } else {
+      holidayDate = new Date(easterDate);
+      holidayDate.setDate(easterDate.getDate() + holiday.offset);
+    }
     return { ...holiday, date: holidayDate };
   });
 
-  // console.log('Calculated Holidays:', result); // Add this line
+  // console.log('Calculated Holidays:', result);
 
   return result;
 });
@@ -652,7 +685,7 @@ const calculatedHolidays = computed(() => {
 @media (min-width: 768px) {
   .button-82-front {
     font-size: 1.25rem;
-    padding: 10px 13px;
+    padding: 15px 20px;
   }
 }
 
@@ -688,6 +721,111 @@ const calculatedHolidays = computed(() => {
 }
 
 .button-82-pushable:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* CSS */
+.button-83-pushable {
+  position: relative;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  outline-offset: 4px;
+  transition: filter 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-83-shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: hsl(0deg 0% 0% / 0.25);
+  will-change: transform;
+  transform: translateY(2px);
+  transition:
+    transform
+    600ms
+    cubic-bezier(.3, .7, .4, 1);
+}
+
+.button-83-edge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: linear-gradient(
+    to left,
+    hsl(340deg 100% 16%) 0%,
+    hsl(340deg 100% 32%) 8%,
+    hsl(340deg 100% 32%) 92%,
+    hsl(340deg 100% 16%) 100%
+  );
+}
+
+.button-83-front {
+  display: block;
+  position: relative;
+  padding: 9px 15px;
+  margin: 2px 4px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  color: white;
+  background: hsl(345deg 100% 47%);
+  will-change: transform;
+  transform: translateY(-4px);
+  transition:
+    transform
+    600ms
+    cubic-bezier(.3, .7, .4, 1);
+}
+
+@media (min-width: 768px) {
+  .button-83-front {
+    font-size: 1.25rem;
+    padding: 10px 13px;
+  }
+}
+
+.button-83-pushable:hover {
+  filter: brightness(110%);
+  -webkit-filter: brightness(110%);
+}
+
+.button-83-pushable:hover .button-83-front {
+  transform: translateY(-6px);
+  transition:
+    transform
+    250ms
+    cubic-bezier(.3, .7, .4, 1.5);
+}
+
+.button-83-pushable:active .button-83-front {
+  transform: translateY(-2px);
+  transition: transform 34ms;
+}
+
+.button-83-pushable:hover .button-83-shadow {
+  transform: translateY(4px);
+  transition:
+    transform
+    250ms
+    cubic-bezier(.3, .7, .4, 1.5);
+}
+
+.button-83-pushable:active .button-83-shadow {
+  transform: translateY(1px);
+  transition: transform 34ms;
+}
+
+.button-83-pushable:focus:not(:focus-visible) {
   outline: none;
 }
 </style>

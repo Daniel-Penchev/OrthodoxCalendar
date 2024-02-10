@@ -426,6 +426,29 @@ const calculateOrthodoxEaster = (year: number): Date => {
 // const orthodoxEaster = computed(() => calculateOrthodoxEaster(selectedYear.value));
 
 const holidays = ref<Holiday[]>([
+  { name: '✝ Нова година. Обрезание Господне', date: '01-01', offset: -1,isEaster: false },
+  { name: '✝ Неделя преди Богоявление', date: '01-01', offset: -2,isEaster: false },
+  { name: '✝ Св. Богоявление', date: '01-06', offset: -1,isEaster: false },
+  { name: '✝ Св. Йоан Кръстител ', date: '01-07', offset: -1,isEaster: false },
+  { name: '✝ Неделя след Богоявление ', date: '01-07', offset: -1,isEaster: false },
+  { name: '✝ Сретение Господне', date: '02-02', offset: -1,isEaster: false },
+  { name: '✝ Благовещение', date: '03-25', offset: -1,isEaster: false },
+  { name: '✝ Св. вмчк Георги Победоносец', date: '05-06', offset: -1,isEaster: false },
+  { name: '✝ Св. равноапостолни Методий и Кирил', date: '05-11', offset: -1,isEaster: false },
+  { name: '✝ Св. първовърховни апостоли Петър и Павел', date: '06-29', offset: -1,isEaster: false },
+  { name: '✝ Св. пророк Илия', date: '07-20', offset: -1,isEaster: false },
+  { name: '✝ Преображение Господне', date: '08-06', offset: -1,isEaster: false },
+  { name: '✝ Успение на Пресвета Богородица', date: '08-15', offset: -1,isEaster: false },
+  { name: '✝ Рождество на Пресвета Богородица', date: '09-08', offset: -1,isEaster: false },
+  { name: '✝ Въздвижение на Св. Кръст Господен', date: '09-14', offset: -1,isEaster: false },
+  { name: '✝ Преп. Йоан Рилски Чудотворец', date: '10-19', offset: -1,isEaster: false },
+  { name: '✝ Св. вмчк Димитрий Мироточиви', date: '10-26', offset: -1,isEaster: false },
+  { name: '✝ Събор на св. архангел Михаил', date: '11-08', offset: -1,isEaster: false },
+  { name: '✝ Въведение Богородично', date: '11-21', offset: -1,isEaster: false },
+  { name: '✝ Св. Николай, архиеп. Мирликийски, Чудотворец', date: '12-06', offset: -1,isEaster: false },
+  { name: '✝ Рождество Христово', date: '12-25', offset: -1,isEaster: false },
+  { name: '✝ Събор на Пресвета Богородица', date: '12-26', offset: -1,isEaster: false },
+  { name: '✝ Св. първомъченик и архидякон Стефан', date: '12-27', offset: -1,isEaster: false },
   {
     name: " Неделя на митаря и фарисея",
     date: "",
@@ -519,18 +542,22 @@ const holidays = ref<Holiday[]>([
 ]);
 
 const calculatedHolidays = computed(() => {
-  const year = selectedYear.value;
-  if (year !== null) {
-    const easterDate = calculateOrthodoxEaster(year);
-    return holidays.value.map((holiday) => {
-      const holidayDate = new Date(easterDate);
+  const easterDate = calculateOrthodoxEaster(selectedDate.value.getFullYear());
+  const result = holidays.value.map(holiday => {
+    let holidayDate;
+    if (holiday.date) {
+      const [month, day] = holiday.date.split('-').map(Number);
+      holidayDate = new Date(selectedDate.value.getFullYear(), month - 1, day);
+    } else {
+      holidayDate = new Date(easterDate);
       holidayDate.setDate(easterDate.getDate() + holiday.offset);
-      return { ...holiday, date: holidayDate };
-    });
-  } else {
-    // Можете да върнете празен масив или направете нещо друго, според вашите нужди
-    return [];
-  }
+    }
+    return { ...holiday, date: holidayDate };
+  });
+
+  // console.log('Calculated Holidays:', result);
+
+  return result;
 });
 
 const goToGreatDay = () => {

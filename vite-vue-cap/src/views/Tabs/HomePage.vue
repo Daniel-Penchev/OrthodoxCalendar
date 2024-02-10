@@ -123,27 +123,31 @@
       </ion-toolbar>
     </ion-header>
     <ion-content class="ion-padding">
-      <div>
+      <div class="library-container">
         <!-- Description Section -->
         <h2>Description</h2>
-        <p>Your app description goes here.</p>
         <p>Приложението е направено с най-добри намерения, да се разпространява вярата.</p>
-        <p>Ако забележите нещо нередно или грешно, не се колебайте да ми пишете.</p>
-<p> Ако видите тази иконка <svg width="20px" height="20px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns"><title>headphone</title><desc>Created with Sketch Beta.</desc><defs></defs><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"><g id="Icon-Set-Filled" sketch:type="MSLayerGroup" transform="translate(-466.000000, -517.000000)" fill="#000000"><path d="M495.938,531.521 C495.966,531.183 496,530.846 496,530.5 C496,523.044 489.732,517 482,517 C474.268,517 468,523.044 468,530.5 C468,530.846 468.034,531.183 468.063,531.521 C466.838,532.205 466,533.498 466,535 L466,541 C466,543.209 467.791,545 470,545 L474,545 C476.125,544.905 478,543.148 478,541 L478,535 C478,532.791 476.209,531 474,531 L470,531 C470,524.01 475.373,519 482,519 C488.628,519 494.043,523.967 494,531 C493.999,531.17 490,531 490,531 C487.791,531 486,532.791 486,535 L486,541 C486,543.148 487.875,544.905 490,545 L492,545 L492,548 C492,548.553 492.447,549 493,549 C493.553,549 494,548.553 494,548 L494,545 C496.209,545 498,543.209 498,541 L498,535 C498,533.498 497.162,532.205 495.938,531.521" id="headphone" sketch:type="MSShapeGroup"></path></g></g></svg> означава ,че за въпросният светец или празник има аудио.</p>
-        <!-- Resources Section -->
+        <p> Ако видите тази иконка <img  src="../../assets/img/PrayerBook.png" style="width: 35px;height: 35px;" /> означава ,че за въпросният светец или празник има за четене.</p>
+       
+        <p> Ако видите тази иконка <svg width="20px" height="20px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns"><title>headphone</title><desc>Created with Sketch Beta.</desc><defs></defs><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"><g id="Icon-Set-Filled" sketch:type="MSLayerGroup" transform="translate(-466.000000, -517.000000)" fill="#000000"><path d="M495.938,531.521 C495.966,531.183 496,530.846 496,530.5 C496,523.044 489.732,517 482,517 C474.268,517 468,523.044 468,530.5 C468,530.846 468.034,531.183 468.063,531.521 C466.838,532.205 466,533.498 466,535 L466,541 C466,543.209 467.791,545 470,545 L474,545 C476.125,544.905 478,543.148 478,541 L478,535 C478,532.791 476.209,531 474,531 L470,531 C470,524.01 475.373,519 482,519 C488.628,519 494.043,523.967 494,531 C493.999,531.17 490,531 490,531 C487.791,531 486,532.791 486,535 L486,541 C486,543.148 487.875,544.905 490,545 L492,545 L492,548 C492,548.553 492.447,549 493,549 C493.553,549 494,548.553 494,548 L494,545 C496.209,545 498,543.209 498,541 L498,535 C498,533.498 497.162,532.205 495.938,531.521" id="headphone" sketch:type="MSShapeGroup"></path></g></g></svg> означава ,че за въпросният светец или празник има аудио.</p>
+        <p>Ако забележите нещо нередно или грешно, не се колебайте да ми пишете.</p>  
+<!-- Resources Section -->
         <h2>Resources</h2>
-        <ul style="list-style-type: none">
+        <ul class="book-list" style="list-style-type: none">
           <li> <a href="http://www.pravoslavieto.com/toc/chitalnja.htm" target=_blank><img width=158 height=23
                 src="http://www.pravoslavieto.com/images/felles/logo_small.gif"
                 alt="ПРАВОСЛАВНАТА ЧИТАЛНЯ. Eastern Orthodox readings in Bulgarian at Pravoslavieto.com" border=0></a>
           </li>
           <li><a href="http://www.sviatost.info/12_jitiya_na_svetiite/index.html" target=_blank><img width=158 height=23
-                src="http://www.pravoslavieto.com/images/felles/logo_small.gif"></a>
+                >http://www.sviatost.info</a>
+          </li>
+          <li><a href="https://bg-patriarshia.bg/calendar/2024" target=_blank><img width=158 height=23
+                src="">https://bg-patriarshia.bg/calendar</a>
           </li>
           <li>Resource 3</li>
           <!-- Add more resources as needed -->
         </ul>
-
+        
         <!-- Contact Section -->
         <h2>Contact</h2>
         <p>Email: <a
@@ -249,4 +253,41 @@ const handleBlur = () => {
   font-weight: bold;
 }
 
+
+/* Style for each list item */
+ul li {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+border-bottom: 2px solid grey;
+    margin: 4%;
+    padding: 4%;
+}
+
+/* Style for the images inside the list items */
+ul li img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Style for the entire list */
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+/* Style for the library container */
+.library-container {
+  background-color: #ececec;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+
+/* Book style */
 </style>
