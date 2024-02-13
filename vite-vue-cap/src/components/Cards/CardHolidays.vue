@@ -126,11 +126,13 @@
                   <ion-button id="auto-trigger">Show name days</ion-button>
                   <ion-popover trigger="auto-trigger" size="cover">
                     <ion-card-content class="ion-padding">
-                      <div v-for="dayName in selectedDay.name_days">
-                        {{ dayName }}
+                      <div v-if="selectedDay.name_days && selectedDay.name_days.length > 0">
+                        <div v-for="dayName in selectedDay.name_days">
+                          {{ dayName }}
 
-                      </div>
-                      <div v-if="selectedDay.name_days === ''">
+                        </div>
+                      </div>  
+                      <div v-else>
                         Not found today
                       </div>
                     </ion-card-content>
@@ -248,7 +250,7 @@ interface HolidayData {
       name: string;
       days: {
         day: number;
-        nameDay: string[];
+        name_days: string[];
         church_holidays?: {
           name: string;
           image: string;

@@ -2,25 +2,43 @@
   <ion-card>
     <ion-item lines="full">
       <ion-card-header>
-        <ion-card-title>Holidays</ion-card-title>
+        <ion-card-title>Calculate Holidays</ion-card-title>
       </ion-card-header>
     </ion-item>
 
     <ion-card-content style="width: 100%;">
       <div style="display: flow;justify-content: center;align-items: center;margin-bottom: 5%;margin-top: 5%;text-align: center;">
 
-      <label style="width:25%" for="year">Select Year:</label>
 
-      <input style="width:25%" type="number" id="year" v-model="selectedYear" />
+        <label style="width:25%;font-size: larger;" for="year">Select Year</label>
 
-      <button style="width:auto;margin: 4%;" class="button-82-pushable" role="button" @click="calculateHolidays">
-        <span class="button-82-shadow"></span>
-        <span class="button-82-edge"></span>
-        <span class="button-82-front text">
-          Calculate
-        </span>
-      </button>
-    </div>
+
+        <!-- Move Year -->
+        <div style="display: flex; justify-content: center; box-sizing: border-box; padding: 4%; margin-top: 0%; margin-bottom: 2%;">
+        
+          <button class="datePrevious" @click="decrementYear">
+          <svg stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" width="24" height="24" class="vc-base-icon"><polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+        </button>
+          
+        <div class="container">
+        <input style="width:50%;border-bottom: 2px solid blue;border-top: none;border-right: none;border-left: none; border-radius: 5%;" id="year" v-model="selectedYear" />
+        </div>
+        
+        <button class="dateNext" @click="incrementYear">
+          <svg stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" width="24" height="24" class="vc-base-icon"><polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+        </button>
+      </div>
+
+        <button style="width:auto;margin: 4%;" class="button-82-pushable" role="button" @click="calculateHolidays">
+          <span class="button-82-shadow"></span>
+          <span class="button-82-edge"></span>
+          <span class="button-82-front text">
+            Calculate
+          </span>
+        </button>
+      </div>
 
       <table cellspacing="1" cellpadding="1">
         <tbody>
@@ -139,6 +157,15 @@ const calculateCustomDate = (offset: number): Date => {
   date.setDate(date.getDate() + offset);
   return date;
 };
+
+
+function incrementYear() {
+  selectedYear.value += 1;
+}
+
+function decrementYear() {
+  selectedYear.value -= 1;
+}
 </script>
 <style scopde>
 

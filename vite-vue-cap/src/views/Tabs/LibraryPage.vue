@@ -3,60 +3,30 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100%;
+    height: auto;
   }
 
   /* Style book */
-  * {
-	box-sizing: border-box;
-}
-
-::-webkit-scrollbar {
-	width: 20px;
-}
-
-::-webkit-scrollbar-track {
-	background: #ae9d72;
-	background-image: url("https://www.transparenttextures.com/patterns/black-paper.png");
-}
-
-::-webkit-scrollbar-thumb {
-	background: #ae9d72;
-}
-
-::-webkit-scrollbar-thumb:hover {
-	background: #8bba98;
-}
-
-body {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	height: 100vh;
-	overflow: hidden;
-	background: #697854;
-	margin: 0;
-	padding: 0;
-	font-family: "Josefin Slab", serif;
-}
 
 .content-container {
 	/* display: flex; */
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	width: 100%;
+	width: 109%;
 	height: auto;
+	background: url('../../assets/img/natural_oak _wood.webp');
+	margin: -5% 0 0 -5%;
+    padding: 5%;
 }
 
 .content {
-	position: relative;
+	/* position: relative;
 	top: 10px;
-	background: url("https://i.imgur.com/0kjMcUe.png");
+	 background: url("https://i.imgur.com/0kjMcUe.png");
 	background-size: 1000px;
 	background-position: center right;
-	/* display: flex; */
+	 display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: flex-start;
@@ -106,9 +76,9 @@ body {
 		100% 97%,
 		100% 0%
 	);
-	overflow: auto;
+	overflow: auto; */
 }
-
+/* 
 @media screen and (max-width: 1650px) {
 	.content {
 		width: 60%;
@@ -133,7 +103,7 @@ body {
 		padding: 30px 30px 50px 30px;
 		width: 100%;
 	}
-}
+} */
 
 h1 {
 	font-family: "Yellowtail", cursive;
@@ -227,14 +197,18 @@ p span {
 }
 
 li{
+   /* Use url() for background-image */
+  background-size: cover; 
   display: flex;
   justify-content: center;
   text-align: center;
   padding: 5%;
   margin: 5%;
-  border-bottom: 2px solid #ccc;
+  /* border-bottom: 2px solid #ccc; */
 }
+
 </style>
+
 
 <template>
   <ion-page>
@@ -247,23 +221,28 @@ li{
       <div class="content-container">
         <!-- Description Section -->
         <h2>For Read</h2>
+		<p style="font-size: small;margin-bottom: 30%;">Click the books</p>
         <ul  class="content" style="list-style-type: none;height: auto;">
 
-          <li><a href="http://www.sviatost.info/12_jitiya_na_svetiite/index.html" target=_blank><img width=158 height=23
-                src="http://www.pravoslavieto.com/images/felles/logo_small.gif"></a>
-          </li>
-          <li>Resource 2</li>
-          <li>Resource 3</li>
+		  <li ><BookComponent title="Православие" href="http://www.pravoslavieto.com/" hrefName="Pravoslavieto.com" srcHref="http://www.pravoslavieto.com/images/felles/logo_small.gif"></BookComponent></li>
+		  <li ><BookComponent title="Православие" href="http://www.sviatost.info/12_jitiya_na_svetiite/index.html" href-name="Православие" image="http://www.pravoslavieto.com/images/felles/logo_small.gif"></BookComponent></li>
+		  <li ><BookComponent title="Православие" href="http://www.sviatost.info/12_jitiya_na_svetiite/index.html" href-name="Православие" image="http://www.pravoslavieto.com/images/felles/logo_small.gif"></BookComponent></li>
+	
         </ul>
-
+		
         <h2>Audio</h2>
+		<p style="font-size: small;margin-bottom: 30%;">Click the books</p>
         <ul class="content" style="list-style-type: none;height: auto;">
-          <li> <a href="https://petkohinov.com/audioknigi/" target=_blank><img width=44 height=44
+          <li> 
+
+			<!-- <a href="https://petkohinov.com/audioknigi/" target=_blank><img width=44 height=44
                 src="../../assets/img/BookAudio-removebg-preview.png"
                 ><p>https://petkohinov.com/audioknigi</p>
-                </a>
+                </a> -->
+			<BookComponent title="petkohinov" href="https://petkohinov.com/audioknigi/" hrefName="petkohinov.com/audioknigi" srcHref="../../assets/img/BookAudio-removebg-preview.png"></BookComponent>
           </li>
-          <li><a href="https://www.pokayanie.info/video.html" target=_blank><img width=44 height=44
+          <li>
+			<a href="https://www.pokayanie.info/video.html" target=_blank><img width=44 height=44
                 src="../../assets/img/mm_health_photo.jpg"
                 >
                <p>www.pokayanie.info/video.html</p> </a></li>
@@ -299,7 +278,7 @@ li{
   
   <script setup lang="ts">
     import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/vue';
-  
+    import BookComponent from '../../components/BookComponent.vue'
   
 
   </script>
