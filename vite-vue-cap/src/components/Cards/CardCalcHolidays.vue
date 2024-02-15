@@ -10,7 +10,7 @@
       <div style="display: flow;justify-content: center;align-items: center;margin-bottom: 5%;margin-top: 5%;text-align: center;">
 
 
-        <label style="width:25%;font-size: larger;" for="year">Select Year</label>
+        <label style="width:25%;font-size: x-large;" for="year">Select Year</label>
 
 
         <!-- Move Year -->
@@ -22,7 +22,16 @@
         </button>
           
         <div class="container">
-        <input style="width:50%;border-bottom: 2px solid blue;border-top: none;border-right: none;border-left: none; border-radius: 5%;" id="year" v-model="selectedYear" />
+        <input style="    width: 44%;
+    border-bottom: 4px solid blue;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-radius: 5%;
+    height: 100%;
+    color: black;
+    font-weight: bolder;
+    font-size: x-large;" id="year" v-model="selectedYear" />
         </div>
         
         <button class="dateNext" @click="incrementYear">

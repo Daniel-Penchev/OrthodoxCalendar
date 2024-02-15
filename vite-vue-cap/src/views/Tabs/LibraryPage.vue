@@ -15,7 +15,7 @@
 	justify-content: center;
 	width: 109%;
 	height: auto;
-	background: url('../../assets/img/natural_oak _wood.webp');
+	/* background: url('../../assets/img/natural_oak _wood.webp'); */
 	margin: -5% 0 0 -5%;
     padding: 5%;
 }
@@ -151,19 +151,15 @@ h2 {
 }
 
 h3 {
-	text-decoration: 1px dashed underline #888;
-	letter-spacing: 2px;
 	font-size: 20pt;
-	font-weight: 300;
-	font-style: italic;
+	font-weight:bold;
 	color: #35312b;
 	margin-bottom: 40px;
-	text-shadow: 0.6px 0.6px 1px Sienna;
 }
 
 @media screen and (max-width: 700px) {
 	h3 {
-		margin-bottom: 70px;
+		margin-bottom: 30px;
 	}
 }
 
@@ -198,6 +194,7 @@ p span {
 
 li{
    /* Use url() for background-image */
+   background: url('../../assets/img/libarary/oldPaper.jpg');
   background-size: cover; 
   display: flex;
   justify-content: center;
@@ -214,32 +211,31 @@ li{
   <ion-page>
     <ion-header>
       <ion-toolbar>
-        <ion-title>Libary Page</ion-title>
+        <ion-title style="background: url('https://t4.ftcdn.net/jpg/01/01/72/17/360_F_101721700_HE5ouiYmnmHljXfxTCYrNre4JgxXN64V.jpg');margin-left: -42%;width: 144%;
+    font-size: xx-large;">Libary Page</ion-title>
+		<BookComponent style="margin: auto;"></BookComponent>
       </ion-toolbar>
     </ion-header>
     <ion-content class="ion-padding">
       <div class="content-container">
         <!-- Description Section -->
         <h2>For Read</h2>
-		<p style="font-size: small;margin-bottom: 30%;">Click the books</p>
-        <ul  class="content" style="list-style-type: none;height: auto;">
+       
+		<ul  class="content" style="list-style-type: none;height: auto;">
 
-		  <li ><BookComponent title="Православие" href="http://www.pravoslavieto.com/" hrefName="Pravoslavieto.com" srcHref="http://www.pravoslavieto.com/images/felles/logo_small.gif"></BookComponent></li>
-		  <li ><BookComponent title="Православие" href="http://www.sviatost.info/12_jitiya_na_svetiite/index.html" href-name="Православие" image="http://www.pravoslavieto.com/images/felles/logo_small.gif"></BookComponent></li>
-		  <li ><BookComponent title="Православие" href="http://www.sviatost.info/12_jitiya_na_svetiite/index.html" href-name="Православие" image="http://www.pravoslavieto.com/images/felles/logo_small.gif"></BookComponent></li>
+		  <li ><a href="http://www.pravoslavieto.com/index.htm" target=_blank><img width=158 height=23 src="http://www.pravoslavieto.com/images/felles/logo_small.gif" alt="Българският ПРАВОСЛАВЕН каталог в Интернет - Pravoslavieto.com" border=0></a> </li>
+		  <li >Resources</li>
+		  <li >Resources</li>
 	
         </ul>
 		
-        <h2>Audio</h2>
-		<p style="font-size: small;margin-bottom: 30%;">Click the books</p>
+        <h2>Audio Books</h2>
         <ul class="content" style="list-style-type: none;height: auto;">
           <li> 
-
-			<!-- <a href="https://petkohinov.com/audioknigi/" target=_blank><img width=44 height=44
+			<a href="https://petkohinov.com/audioknigi/" target=_blank><img width=44 height=44
                 src="../../assets/img/BookAudio-removebg-preview.png"
                 ><p>https://petkohinov.com/audioknigi</p>
-                </a> -->
-			<BookComponent title="petkohinov" href="https://petkohinov.com/audioknigi/" hrefName="petkohinov.com/audioknigi" srcHref="../../assets/img/BookAudio-removebg-preview.png"></BookComponent>
+                </a>
           </li>
           <li>
 			<a href="https://www.pokayanie.info/video.html" target=_blank><img width=44 height=44
@@ -278,7 +274,6 @@ li{
   
   <script setup lang="ts">
     import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/vue';
-    import BookComponent from '../../components/BookComponent.vue'
-  
+    import BookComponent from '../../components/BookComponent.vue';
 
   </script>

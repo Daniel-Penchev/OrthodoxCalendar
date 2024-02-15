@@ -1,20 +1,25 @@
 <template>
-<div class="card">
-    <div class="imgBox">
-      <div class="bark"></div>
-      <img :src="'https://image.ibb.co/fYzTrb/lastofus.jpg'">
+  <div class="bg">
+    <div class="book book1">
+      <div class="ribbon ribbon1"></div>
+      <div class="bookCut"></div>
     </div>
-    <div class="details">
-      <img width=150 height=23 :src="srcHref">
-      <h3>{{ title }}</h3>
-      <a :href="href" target=_blank >{{ hrefName }}</a>
+
+    <div class="book book3">
+      <div class="ribbon ribbon3"></div>
+      <div class="bookCut3"></div>
+    </div>
+
+    <div class="book book6">
+      <div class="ribbon ribbon6"></div>
+      <div class="bookCut6"></div>
     </div>
   </div>
 </template>
-  
-  <script lang="ts">
-  export default {
-  name: 'LtSidebarHeader',
+
+<script lang="ts">
+export default {
+  name: 'BookComponent',
   props: {
     title: String,
     href: String,
@@ -26,127 +31,86 @@
     return {};
   },
 };
-  </script>
+</script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
-@import url('https://fonts.googleapis.com/css?family=Amatic+SC');
-
-body {
-  font-family: 'Indie Flower', cursive !important;
-  background: #FDE3A7; /*CAPE HONEY*/
-  margin: 0px;
-  padding: 0px;
+.bg {
+  height: 14vh;
+  width: 81vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: -14px;
+  margin-top: -8%;
 }
 
-::selection {
-  background: transparent;
-}
-
-h4 {
-  font-size: 26px;
-  line-height: 1px;
-  font-family: 'Amatic SC', cursive !important;
-}
-
-
-.card {
-  color: #013243; /*SHERPA BLUE*/
-  top: 50%;
-  left: 50%;
-  background: #e0e1dc;
-  transform-style: preserve-3d;
-  transform: translate(-50%,-50%) perspective(2000px);
-  box-shadow: inset 300px 0 50px rgba(0,0,0,.5), 20px 0 60px rgba(0,0,0,.5);
-  transition: 1s;
-   width: 164px;
-   height: 218px;
-   margin-left: 40%;
-}
-
-.card:hover {
-  transform: translate(-50%,-50%) perspective(2000px) rotate(15deg) scale(1.2);
-  box-shadow: inset 20px 0 50px rgba(0,0,0,.5), 0 10px 100px rgba(0,0,0,.5);
-}
-
-.card:before {
-  content:'';
-  position: absolute;
-  top: -5px;
-  left: 0;
-  width: 100%;
-  height: 5px;
-  background: #BAC1BA;
-  transform-origin: bottom;
-  transform: skewX(-45deg);
-}
-
-.card:after {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: -5px;
-  width: 5px;
-  height: 100%;
-  background: #92A29C;
-  transform-origin: left;
-  transform: skewY(-45deg);
-}
-
-.card .imgBox {
-  width: 100%;
-  height: 100%;
+.book {
   position: relative;
-  transform-origin: left;
-  transition: .7s;
+  height: 30px;
+  border-radius: 10px;
+  background: #fffff0;
 }
 
-.card .bark {
+.book1 {
+  width: 140px;
+  border: 5px solid #942343;
+  margin-left: 53vw;
+  border-right-style: none;
+  z-index: 9;
+}
+
+.bookCut {
+  margin-left: 97%;
+  width: 5px;
+  height: 30px;
+}
+
+.ribbon {
   position: absolute;
-  background: #e0e1dc;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  transition: .7s;
+  height: 25px;
+  width: 20px;
 }
 
-.card .imgBox img {
-  min-width: auto;
-  max-height: 400px;
+.ribbon1 {
+  background: #ff785b;
+  margin: 12px 0 0 10px;
 }
 
-.card:hover .imgBox {
-  transform: rotateY(-135deg);
+.book3 {
+  width: 140px;
+  border: 5px solid #004d25;
+  margin-left: 53vw;
+  border-left-style: none;
+  z-index: 8;
 }
 
-.card:hover .bark {
-  opacity: 1;
-  transition: .6s;
-  box-shadow: 300px 200px 100px rgba(0, 0, 0, .4) inset;
+.bookCut3 {
+  width: 5px;
+  height: 30px;
 }
 
-.card .details {
+.ribbon3 {
+  background: #a4d5bd;
   position: absolute;
-  top: 0;
-  left: 0;
-  box-sizing: border-box;
-  padding: 0 0 0 10px;
-  z-index: -1;
-  margin-top: 70px;
+  margin: 10px 0 0 100px;
 }
 
-.card .details p {
-  font-size: 15px;
-  line-height: 5px;
-  transform: rotate(-10deg);
-  padding: 0 0 0 20px;
+.book6 {
+  width: 165px;
+  border: 5px solid #622d18;
+  margin-left: 48.5vw;
+  border-left-style: none;
+  z-index: 7;
 }
 
-.card .details h4 {
-  text-align: center;
+.bookCut6 {
+  width: 5px;
+  height: 30px;
 }
 
-.text-right {
-  text-align: right;
+.ribbon6 {
+  background: #a4d5bd;
+  position: absolute;
+  margin: 14px 0 0 105px;
 }
 </style>

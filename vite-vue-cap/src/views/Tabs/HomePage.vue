@@ -4,8 +4,8 @@
     <!-- Header -->
     <ion-header>
       <ion-toolbar>
-        <div class="header-content">
-          <IonTitle class="header-title">Calendar</IonTitle>
+        <div class="header-content" style="background: url('https://t4.ftcdn.net/jpg/01/01/72/17/360_F_101721700_HE5ouiYmnmHljXfxTCYrNre4JgxXN64V.jpg');padding-top: 5%;padding-bottom: 3%;">
+          <IonTitle class="header-title" >Calendar</IonTitle>
           <ion-buttons slot="end" @click="toggleDatePicker">
             <ion-button><ion-icon class="icons-style" :icon="calendarOutline"></ion-icon></ion-button>
           </ion-buttons>
@@ -42,7 +42,7 @@
     </ion-header>
 
     <!-- Body -->
-    <ion-content class="ion-padding">
+    <ion-content class="ion-padding"  style="background: url('../../assets/img/libarary/oldPaper.jpg');background-size: cover;">
       <div class="calendar-content">
         <div pager="true" style="width: 100%">
           <!-- Slide 1 -->
@@ -216,7 +216,10 @@ ul {
   border-radius: 10px;
   margin-top: 20px;
 }
-
+/* .toolbar-container{
+  background: url('../../assets/img/libarary/oldPaper.jpg');
+  background-size: cover; 
+} */
 
 /* Book style */
 </style>
