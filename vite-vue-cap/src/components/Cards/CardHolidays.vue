@@ -93,7 +93,7 @@
 
 
                         <ion-button  v-if="churchHoliday.href" role="button">
-                          <a :href="churchHoliday.href">  <img  src="../../assets/img/PrayerBook.png" style="width: 58px;height: 35px;" />
+                          <a :href="churchHoliday.href">  <img  src="../../assets/img/PrayerBook.png" style="width: 50px;height: 35px;" />
                             </a>
                         </ion-button>
                <ion-button  v-if="churchHoliday.audio" role="button">

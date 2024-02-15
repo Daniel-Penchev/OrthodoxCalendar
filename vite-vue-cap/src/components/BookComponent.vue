@@ -34,7 +34,7 @@ export default {
 </script>
 
 <style scoped>
-.bg {
+/* .bg {
   height: 14vh;
   width: 81vw;
   display: flex;
@@ -42,7 +42,7 @@ export default {
   justify-content: center;
   margin: -14px;
   margin-top: -8%;
-}
+} */
 
 .book {
   position: relative;
@@ -54,7 +54,7 @@ export default {
 .book1 {
   width: 140px;
   border: 5px solid #942343;
-  margin-left: 53vw;
+  /* margin-left: 53vw; */
   border-right-style: none;
   z-index: 9;
 }
@@ -79,7 +79,7 @@ export default {
 .book3 {
   width: 140px;
   border: 5px solid #004d25;
-  margin-left: 53vw;
+  /* margin-left: 53vw; */
   border-left-style: none;
   z-index: 8;
 }
@@ -98,7 +98,7 @@ export default {
 .book6 {
   width: 165px;
   border: 5px solid #622d18;
-  margin-left: 48.5vw;
+  /* margin-left: 48.5vw; */
   border-left-style: none;
   z-index: 7;
 }
