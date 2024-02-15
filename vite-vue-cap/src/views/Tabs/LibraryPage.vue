@@ -212,8 +212,8 @@ li{
     <ion-header>
       <ion-toolbar>
         <ion-title style="background: url('https://t4.ftcdn.net/jpg/01/01/72/17/360_F_101721700_HE5ouiYmnmHljXfxTCYrNre4JgxXN64V.jpg');margin-left: -42%;width: 144%;
-    font-size: xx-large;">Libary Page</ion-title>
-		<BookComponent style="margin: auto;"></BookComponent>
+    font-size: xx-large;">Libary Page 
+		<BookComponent></BookComponent></ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content class="ion-padding">
