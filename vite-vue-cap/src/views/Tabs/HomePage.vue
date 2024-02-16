@@ -216,9 +216,8 @@ ul {
   border-radius: 10px;
   margin-top: 20px;
 }
-.toolbar-background{
-  background: url('https://t4.ftcdn.net/jpg/01/01/72/17/360_F_101721700_HE5ouiYmnmHljXfxTCYrNre4JgxXN64V.jpg');
-  background-size: cover; 
+ion-toolbar.toolbar-title-default {
+  --background: url('https://t4.ftcdn.net/jpg/01/01/72/17/360_F_101721700_HE5ouiYmnmHljXfxTCYrNre4JgxXN64V.jpg');
 }
 
 /* Book style */

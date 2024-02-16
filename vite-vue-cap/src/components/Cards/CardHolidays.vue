@@ -10,8 +10,6 @@
     </swiper> -->
 
       <div v-if="churchHolidays" style="margin-top: 3%;">
-        <!-- <swiper :loop="true">
-          <swiper-slide v-for="(month, monthIndex) in churchHolidays.year.months" :key="monthIndex"> -->
         <div v-for="(month, monthIndex) in churchHolidays.year.months" :key="monthIndex">
           <h2 v-if="isCurrentMonth(month.name)">{{ selectedMonth.name }}</h2>
           <div>
@@ -61,14 +59,14 @@
                       
                       </ion-button>
 
-                        <!-- <ion-button class="button-83-pushable" v-if="churchHoliday.href" role="button">
+                        <ion-button class="button-83-pushable" v-if="churchHoliday.href" role="button">
                           <span class="button-83-shadow"></span>
                           <span class="button-83-edge"></span>
                           <span class="button-83-front text">
                             <img  src="../../assets/img/PrayerBook.png" style="width: 67px;height: 35px;" />
                           </span>
-                        </ion-button> -->
-                        <!-- <ion-button class="button-82-pushable" v-if="churchHoliday.audio" role="button">
+                        </ion-button> 
+                        <ion-button class="button-82-pushable" v-if="churchHoliday.audio" role="button">
                           <span class="button-82-shadow"></span>
                           <span class="button-82-edge"></span>
                           <span class="button-82-front text">
@@ -88,11 +86,11 @@
                           </g>
                            </svg>
                           </span>
-                        </ion-button> -->
+                        </ion-button>
 
 
 
-                        <ion-button  v-if="churchHoliday.href" role="button">
+                        <!-- <ion-button  v-if="churchHoliday.href" role="button">
                           <a :href="churchHoliday.href">  <img  src="../../assets/img/PrayerBook.png" style="width: 50px;height: 35px;" />
                             </a>
                         </ion-button>
@@ -114,7 +112,7 @@
                           </g>
                            </svg>
                           </a>
-                        </ion-button>
+                        </ion-button> -->
                         
                       </ion-buttons>
 
@@ -149,8 +147,6 @@
             </div>
           </div>
         </div>
-        <!-- </swiper-slide>
-        </swiper> -->
       </div>
       <div v-else>
         <p>Loading data...</p>
@@ -658,24 +654,18 @@ const calculatedHolidays = computed(() => {
   width: 100%;
   height: 100%;
   border-radius: 12px;
-  background: linear-gradient(
-    to left,
-    hsl(340deg 100% 16%) 0%,
-    hsl(340deg 100% 32%) 8%,
-    hsl(340deg 100% 32%) 92%,
-    hsl(340deg 100% 16%) 100%
-  );
+  background: linear-gradient( to left, hsl(37.19deg 75.16% 68.43%) 0%, hsl(39.44deg 70.13% 69.8%) 8%, hsl(38.64deg 71.08% 67.45%) 92%, hsl(39.5deg 71.43% 67.06%) 100% );
 }
 
 .button-82-front {
   display: block;
   position: relative;
-  padding: 9px 15px;
+  padding: 7px 7px;
   margin: 2px 4px;
   border-radius: 12px;
   font-size: 1.1rem;
   color: white;
-  background: hsl(345deg 100% 47%);
+  background: hsl(40.43deg 69.7% 87.06%);
   will-change: transform;
   transform: translateY(-4px);
   transition:
@@ -728,6 +718,7 @@ const calculatedHolidays = computed(() => {
 
 /* CSS */
 .button-83-pushable {
+  width: 75px;
   position: relative;
   border: none;
   background: transparent;
@@ -763,24 +754,18 @@ const calculatedHolidays = computed(() => {
   width: 100%;
   height: 100%;
   border-radius: 12px;
-  background: linear-gradient(
-    to left,
-    hsl(340deg 100% 16%) 0%,
-    hsl(340deg 100% 32%) 8%,
-    hsl(340deg 100% 32%) 92%,
-    hsl(340deg 100% 16%) 100%
-  );
+  background: linear-gradient( to left, hsl(37.19deg 75.16% 68.43%) 0%, hsl(39.44deg 70.13% 69.8%) 8%, hsl(38.64deg 71.08% 67.45%) 92%, hsl(39.5deg 71.43% 67.06%) 100% );
 }
 
 .button-83-front {
   display: block;
   position: relative;
-  padding: 9px 15px;
+  padding: 7px 7px;
   margin: 2px 4px;
   border-radius: 12px;
   font-size: 1.1rem;
   color: white;
-  background: hsl(345deg 100% 47%);
+  background: hsl(40.43deg 69.7% 87.06%);
   will-change: transform;
   transform: translateY(-4px);
   transition:
