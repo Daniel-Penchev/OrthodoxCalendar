@@ -241,6 +241,7 @@ li {
           style="
             display: flex;
             background: url('https://t4.ftcdn.net/jpg/01/01/72/17/360_F_101721700_HE5ouiYmnmHljXfxTCYrNre4JgxXN64V.jpg');
+            background-size: cover;
             margin-left: -42%;
             width: 144%;
           "

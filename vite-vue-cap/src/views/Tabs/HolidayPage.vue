@@ -19,7 +19,7 @@
     </ion-header> -->
     <ion-content>
       <div class="holiday-content">
-        
+        <HolidayComponent></HolidayComponent>
         <CardCalcHolidays></CardCalcHolidays>
         <!-- <CalendarDisplay></CalendarDisplay> -->
       </div>
@@ -31,7 +31,7 @@
 //  import HolidayLayout from '../../components/Layouts/HolidayLayout.vue';
 //  import CalendarPost from '../../components/CalendarPost.vue';
  import CardCalcHolidays from '../../components/Cards/CardCalcHolidays.vue';
-
+ import HolidayComponent from '../../components/Cards/HolidayComponent.vue';
 //  import CalendarDisplay from '../../components/CalendarDisplay.vue';
  
  import { IonPage, IonContent } from '@ionic/vue';

@@ -3,7 +3,7 @@
     <ion-tabs >
       <ion-router-outlet></ion-router-outlet>
 
-      <ion-tab-bar lass="custom-background" slot="bottom">
+      <ion-tab-bar class="custom-background" slot="bottom">
         <ion-tab-button tab="holiday" href="/holiday" style="background: url('https://t4.ftcdn.net/jpg/01/01/72/17/360_F_101721700_HE5ouiYmnmHljXfxTCYrNre4JgxXN64V.jpg');">
           <ion-icon :icon="bed" />
           <ion-label>Holidays</ion-label>
@@ -31,10 +31,9 @@
   </script>
 <style scoped>
 .custom-background {
-  background: grey;
-  background-size: 100%;
+  background: url('https://t4.ftcdn.net/jpg/01/01/72/17/360_F_101721700_HE5ouiYmnmHljXfxTCYrNre4JgxXN64V.jpg');
+  background-size: cover;
   background-position: center right;
   filter: brightness(0.95) sepia(30%) saturate(80%);
-  border-radius: 30px;
 }
 </style>

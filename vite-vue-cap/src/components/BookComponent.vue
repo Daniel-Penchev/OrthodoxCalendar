@@ -57,6 +57,7 @@ export default {
   /* margin-left: 53vw; */
   border-right-style: none;
   z-index: 9;
+  margin-top: 10%;
 }
 
 .bookCut {
