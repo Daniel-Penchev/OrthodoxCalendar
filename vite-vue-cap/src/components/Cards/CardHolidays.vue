@@ -783,6 +783,11 @@ const saveHoliday = (nameText: string) => {
   max-width: 33.33%;
 }
 
+.button-solid {
+    --background: #5d7fbb;
+    --color: var(--ion-color-primary-contrast, #fff);
+}
+
 .buttonSaint {
   width: 100%;
 }
@@ -996,7 +1001,7 @@ const saveHoliday = (nameText: string) => {
   /* padding: 7px 7px;
   margin: 2px 4px; */
   border-radius: 12px;
-  font-size: 1.1rem;
+  font-size: 3.3rem;
   color: white;
   background: hsl(40.43deg 69.7% 87.06%);
   will-change: transform;

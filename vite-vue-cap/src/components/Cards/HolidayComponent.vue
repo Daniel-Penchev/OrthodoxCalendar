@@ -92,3 +92,24 @@ import {
 } from "@ionic/vue";
 
 </script>
+
+
+<style scoped>
+a{
+  text-decoration: none; 
+  color: #5d7fbb;
+}
+.card-content-md p {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 2px;
+    font-size: 1.175rem;
+    font-weight: normal;
+    line-height: 1.5;
+}
+b, strong {
+    font-weight: bold;
+    font-size: larger;
+}
+</style>
