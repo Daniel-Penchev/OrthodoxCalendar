@@ -21,12 +21,28 @@
                   <h3>Day {{ selectedDay.day }}</h3>
 
                   <img
-                    :src="
-                      selectedDay.image ||
-                      'https://ionicframework.com/docs/img/demos/thumbnail.svg'
-                    "
-                    style="width: 35%; height: auto; margin-top: 10%"
+                    v-if="selectedDay.church_holidays && selectedDay.church_holidays.length !== '' && selectedDay.church_holidays[0].image"
+                    :src="selectedDay.church_holidays[0].image || 'https://ionicframework.com/docs/img/demos/thumbnail.svg'"
+                    class="imageStyle"
                   />
+
+                  <!-- Use Swiper if there are multiple images -->
+                  <swiper v-else :loop="true">
+                    <swiper-slide v-for="(churchHoliday, churchIndex) in selectedDay.church_holidays" :key="churchIndex">
+                      <!-- Display image for each church holiday -->
+                      <img
+                        v-if="churchHoliday.image"
+                        :src="churchHoliday.image || 'https://ionicframework.com/docs/img/demos/thumbnail.svg'"
+                        class="imageStyle"
+                      />
+                    </swiper-slide>
+                  </swiper>
+                  <!-- <img
+                  v-for="(image, imageIndex) in selectedDay.church_holidays.images"
+                  :key="imageIndex"
+                  :src="image || 'https://ionicframework.com/docs/img/demos/thumbnail.svg'"
+                  style="width: 35%; height: auto; margin-top: 10%"
+                  /> -->
 
                   <IonList class="churchHoliday" style="margin-top: 10%">
                     <div class="AlertCopy">
@@ -91,7 +107,7 @@
                     >
                       <ion-buttons
                         class="buttonSaint"
-                        style="gap: 2%; margin-top: 5%; margin-bottom: 5%"
+                        style="margin-top: 5%; margin-bottom: 5%"
                       >
                         <ion-button
                           expand="block"
@@ -125,17 +141,24 @@
                           </div>
                         </ion-button>
 
-                        <!-- <ion-button class="button-83-pushable" v-if="churchHoliday.href" role="button">
+                        <!-- Two buttons one for text and one for audio -->
+                        <div style="display: inline-grid;gap: 3%;">
+                        <ion-button class="button-83-pushable" v-if="churchHoliday.href" role="button">
+                          
+                          <a :href="churchHoliday.href">
+                          
                           <span class="button-83-shadow"></span>
                           <span class="button-83-edge"></span>
-                          <span class="button-83-front text">
-                            <img  src="../../assets/img/PrayerBook.png" style="width: 67px;height: 35px;" />
+                          <span class="button-83-front text" style="width: 60px;">
+                            <img  src="../../assets/img/PrayerBook.png" width="40px" height="40px" />
                           </span>
+                        </a>
                         </ion-button> 
                         <ion-button class="button-82-pushable" v-if="churchHoliday.audio" role="button">
+                          <a :href="churchHoliday.audio">
                           <span class="button-82-shadow"></span>
                           <span class="button-82-edge"></span>
-                          <span class="button-82-front text">
+                          <span class="button-82-front text" >
                             <svg v-if="churchHoliday.audio" width="20px" height="20px" viewBox="0 0 32 32" version="1.1"
                             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                             xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
@@ -152,9 +175,10 @@
                           </g>
                            </svg>
                           </span>
-                        </ion-button> -->
-
-                        <ion-button
+                        </a>
+                        </ion-button>
+                      </div>
+                        <!-- <ion-button
                           class="button-67"
                           v-if="churchHoliday.href"
                           role="button"
@@ -208,12 +232,14 @@
                               </g>
                             </svg>
                           </a>
-                        </ion-button>
+                        </ion-button> -->
+
                       </ion-buttons>
                     </IonItem>
                   </IonList>
 
                   <!-- Показва именните дни -->
+                  
                   <ion-button id="auto-trigger">Show name days</ion-button>
                   <ion-popover trigger="auto-trigger" size="cover">
                     <ion-card-content class="ion-padding">
@@ -333,6 +359,7 @@ import {
 import { format } from "date-fns";
 // IonItem, IonCardHeader, IonCardTitle
 import { computed, onMounted, ref, watch } from "vue";
+import { Swiper } from "vue-awesome-swiper";
 // import { Swiper , SwiperSlide } from 'swiper/vue';
 // import 'swiper/swiper-bundle.css';
 
@@ -558,7 +585,7 @@ const holidays = ref<Holiday[]>([
     name: "✝ Нова година. Обрезание Господне.",
     date: "01-01",
     offset: -1,
-    image: "",
+    image: "/src/assets/img/Orthodox Calendar/1.January/1-1-xc.png",
   },
   { name: "✝ Неделя преди Богоявление", date: "01-07", offset: -1, image: "" },
   { name: "Неделя на митаря и фарисея", date: "", offset: -70, image: "" },
@@ -695,6 +722,25 @@ const saveHoliday = (nameText: string) => {
 </script>
 
 <style>
+
+/* image*/
+.imageStyle{
+  width: 60%;
+  height: auto;
+  margin-top: 10%
+}
+@media screen and (min-width: 375px) {
+  .imageStyle {
+    width: 50%;
+  }
+}        
+@media screen and (min-width: 768px) {
+  .imageStyle {
+    width: 28%;
+  }
+}                
+/*    */
+
 /* alert */
 
 .AlertCopy {
@@ -740,7 +786,6 @@ const saveHoliday = (nameText: string) => {
 .buttonSaint {
   width: 100%;
 }
-
 /* CSS */
 /* .buttonAudioandHref {
   appearance: button;
@@ -807,6 +852,7 @@ const saveHoliday = (nameText: string) => {
   background: none;
 } */
 
+
 /* CSS */
 .button-82-pushable {
   position: relative;
@@ -853,8 +899,8 @@ const saveHoliday = (nameText: string) => {
 .button-82-front {
   display: block;
   position: relative;
-  padding: 7px 7px;
-  margin: 2px 4px;
+  padding: 10px 20px;
+  /* margin: 2px 4px; */
   border-radius: 12px;
   font-size: 1.1rem;
   color: white;
@@ -947,8 +993,8 @@ const saveHoliday = (nameText: string) => {
 .button-83-front {
   display: block;
   position: relative;
-  padding: 7px 7px;
-  margin: 2px 4px;
+  /* padding: 7px 7px;
+  margin: 2px 4px; */
   border-radius: 12px;
   font-size: 1.1rem;
   color: white;

@@ -194,7 +194,7 @@ p span {
 
 li {
   /* Use url() for background-image */
-  background: url("../../assets/img/libarary/oldPaper.jpg");
+  /* background: url("../../assets/img/libarary/oldPaper.jpg"); */
   background-size: cover;
   display: flex;
   justify-content: center;
@@ -259,7 +259,7 @@ li {
         <!-- Description Section -->
         <h2>For Read</h2>
 
-        <ul class="content" style="list-style-type: none; height: auto">
+        <ul class="content" style="list-style-type: none; height: auto;background: url(/src/assets/img/libarary/oldPaper.jpg);background-size: cover;">
           <li>
             <a href="http://www.pravoslavieto.com/index.htm" target="_blank"
               ><img

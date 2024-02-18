@@ -9,8 +9,8 @@
           style="
             background: url('https://t4.ftcdn.net/jpg/01/01/72/17/360_F_101721700_HE5ouiYmnmHljXfxTCYrNre4JgxXN64V.jpg');
             background-size: cover;
-            padding-top: 5%;
-            padding-bottom: 3%;
+            padding-top: 2%;
+            padding-bottom: 2%;
           "
         >
           <IonTitle class="header-title">Calendar</IonTitle>
@@ -112,7 +112,8 @@
           <!-- Slide 1 -->
           <div style="width: 100%">
             <swiper :loop="true">
-              <swiper-slide>
+              <swiper-slide >
+                
                 <CalendarComponent
                   :showDatePicker="showDatePicker"
                   @move-forward="handleMoveForward"
