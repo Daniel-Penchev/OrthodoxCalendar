@@ -5307,18 +5307,11 @@
             "day": 12,
             "church_holidays": [
               {
-                "name": "Св. мъченици Фотий и Аникита",
+                "name": "Св. мъченици Фотий и Аникита,Преподобен Паламон Египетски",
                 "image": "",
                 "text": "",
                 "href": "https://www.pravoslavieto.com/life/08.12_svv_Anikita_Fotij.htm",
                 "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_mwchenici_Anikita_i_Fotiy.mp3"
-              },
-              {
-                "name": "Преподобен Паламон Египетски",
-                "image": "",
-                "text": "",
-                "href": "",
-                "audio": ""
               }
             ]
           },
@@ -5329,14 +5322,14 @@
                 "name": "Преподобни Максим Изповедник",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://bg-patriarshia.bg/orthodox-thought/zhitie-na-sv-prepodobni-maksim-izpovednik",
                 "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Prepodobni_Maksim_Izpovednik.mp3"
               },
               {
                 "name": "Св. Тихон, епископ Задонски",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://www.pravoslavieto.com/life/08.13_sv_Tihon_Zadonski.htm",
                 "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_Tihon_Zadonski.mp3"
               }
               
@@ -5347,17 +5340,17 @@
             "day": 14,
             "church_holidays": [
               {
-                "name":  "Св. пророк Михей",
+                "name":  "Св. пророк Михей от Дванадесетте пророка",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://www.pravoslavieto.com/life/08.14_sv_pr_Mihej.htm",
                 "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_prorok_Mihey.mp3"
               },
               {
                 "name":  "(Предпразненство на Успение Богородично)",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://svetatroitsa-stz.com/interesni-fakti-za-uspenie-bogorodichno/",
                 "audio": ""
               }
               
@@ -5371,7 +5364,7 @@
                 "name":  "✞ Успение на Пресвета Богородица",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://www.pravoslavieto.com/calendar/feasts/08.15_Uspenie_Bogorodichno.htm",
                 "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Uspenie_na_presveta_Bogorodica.mp3"
               }
               
@@ -5385,21 +5378,21 @@
                 "name":  "Пренасяне на неръкотворния образ на Господ Иисус Христос",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://www.pravoslavieto.com/life/08.16_prenasjane_nerakotvornija_obraz.htm",
                 "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Prenasyane_Nerwkotvorniya_obraz_Iisus_Hristos_ot_Edesa_v_Carigrad.mp3"
               },
               {
                 "name": "Св. мъченик Диомид лекар",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://www.pravoslavieto.com/life/08.16_sv_Diomid.htm",
                 "audio": ""
               },
               {
                 "name": "Преподобен Йоаким Осоговски",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://www.pravoslavieto.com/life/08.16_sv_Joakim_Osogovski.htm",
                 "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Prepodobni_Yoakim_Osogovski.mp3"
               },
               {
@@ -5413,7 +5406,7 @@
                 "name": "Преподобномъченик Никодим Метеорски",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://venera.bg/pochitame-svetets-chudotvorets-lekuval-telata-i-dushite_4128",
                 "audio": ""
               }
               
@@ -5426,14 +5419,14 @@
                 "name":  "Св. мъченик Мирон",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://www.pravoslavieto.com/life/08.17_sv_Miron_prezviter.htm",
                 "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_mwchenik_Miron_prezviter.mp3"
               },
               {
                 "name":  "Преподобен Алипий иконописец",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://www.pravoslavieto.com/life/08.17_sv_Alipij_Pecherski.htm",
                 "audio": ""
               }
               
@@ -5447,21 +5440,21 @@
                 "name":  "✞ 8 Неделя след Петдесетница",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "http://www.plovdivskamitropolia.bg/nedelna-propoved/50-8-nedelya-sled-petdesetnitza.html",
                 "audio": ""
               },
               {
                 "name": "Успение на преподобен Йоан Рилски Чудотворец",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://www.pravoslavieto.com/life/08.18_sv_Ivan_Rilski_uspenie.htm",
                 "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Uspenieto_na_sveti_Ivan_Rilski.mp3"
               },
               {
                 "name":  "Св. мъченици Флор и Лавър",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://www.pravoslavieto.com/life/08.18_sv_Flor_i_Mavur.htm",
                 "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_mwchenici_Flor_i_Lavwr.mp3"
               }
               
@@ -5474,7 +5467,7 @@
                 "name": "Св. мъченик Андрей Стратилат и с него 2593 мъченици",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://pronewsdobrich.bg/pochitame-sv-mchk-andrey-stratilat-i-s-nego-2593-machenitsi-p361500",
                 "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_mwchenik_Andrey_Stratilat.mp3"
               },
               {
@@ -5501,7 +5494,7 @@
                 "name": "Св. 37 мъченици Пловдивски",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://bg-patriarshia.bg/news/praznik-na-svetite-37-plovdivski-machenitsi",
                 "audio": ""
               }
               
@@ -5512,17 +5505,17 @@
             "day": 21,
             "church_holidays": [
               {
-                "name":  "Св. апостол Тадей",
+                "name":  "Св. апостол Тадей от Седемдесетте апостоли",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://www.pravoslavieto.com/life/08.21_sv_ap_Tadey_70te.htm",
                 "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_apostol_Tadey.mp3"
               },
               {
                 "name": "Св. мъченица Васа Хелеспонтска и Васа Солунска",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://www.cross.bg/simeon-vasa-tadeii-1726897.html",
                 "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveta_mwchenica_Vasa.mp3"
               },
               {
@@ -5542,14 +5535,14 @@
                 "name":  "Св. мъченик Агатоник и дружината му",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://www.pravoslavieto.com/life/08.22_sv_Agaton_Zotik.htm",
                 "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_mwchenici_Agatonik_Teoprepiy_Zotik_i_drugi.mp3"
               },
               {
                 "name":  "Св. мъченица Евлалия девица",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://pravoslavenhram.com/%D0%BA%D0%B0%D0%BB%D0%B5%D0%BD%D0%B4%D0%B0%D1%80/%D0%B0%D0%B2%D0%B3%D1%83%D1%81%D1%82/22/%D1%81%D1%82%D1%80%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D0%BD%D0%B0-%D1%81%D0%B2%D0%B5%D1%82%D0%B0-%D0%BC%D1%8A%D1%87%D0%B5%D0%BD%D0%B8%D1%86%D0%B0-%D0%B5%D0%B2%D0%BB%D0%B0%D0%BB%D0%B8%D1%8F/154",
                 "audio": ""
               }
               
@@ -5563,21 +5556,21 @@
                 "name":  "Св. мъченик Луп",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://www.pravoslavieto.com/life/08.23_sv_Loup_.htm",
                 "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_mwchenik_Lup.mp3"
               },
               {
                 "name":  "Св. Ириней, епископ Лионски",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://www.pravoslavieto.com/life/08.23_sv_Irinej_Lionski.htm",
                 "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_sveshtenomwchenik_Iriney_episkop_Lionski.mp3"
               },
               {
                 "name":  "Преподобен Флорентий",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://pravoslavenhram.com/%D0%BA%D0%B0%D0%BB%D0%B5%D0%BD%D0%B4%D0%B0%D1%80/%D0%B0%D0%B2%D0%B3%D1%83%D1%81%D1%82/23/%D0%B2-%D0%BF%D0%B0%D0%BC%D0%B5%D1%82-%D0%BD%D0%B0-%D0%BF%D1%80%D0%B5%D0%BF%D0%BE%D0%B4%D0%BE%D0%B1%D0%BD%D0%B8%D1%82%D0%B5-%D0%B5%D0%B2%D1%82%D0%B8%D1%85%D0%B8%D0%B9-%D0%B8-%D1%84%D0%BB%D0%BE%D1%80%D0%B5%D0%BD%D1%82%D0%B8%D0%B9/157",
                 "audio": ""
               }              
             ],
@@ -5590,21 +5583,21 @@
                 "name":  "Св. свещеномъченик Евтих",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://www.pravoslavieto.com/life/08.24_sv_Evtih.htm",
                 "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_sveshtenomwchenik_Evtih.mp3"
               },
               {
                 "name":  "Св. мъченик Татион",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://www.pravoslavieto.com/life/08.24_sv_Tation_.htm",
                 "audio": ""
               },
               {
                 "name":  "Преподобен Георги Лимниот",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "http://www.plovdivskamitropolia.bg/component/content/article/23-kalendar/214-2408.html",
                 "audio": ""
               }              
             ]
@@ -5616,21 +5609,21 @@
                 "name":  "✞ 9 Неделя след Петдесетница",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "http://www.plovdivskamitropolia.bg/nedelna-propoved/51-9-nedelya-sled-petdesetnitza.html",
                 "audio": ""
               },
               {
                 "name":  "Възвръщане честните мощи на св. апостол Вартоломей",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://www.pravoslavieto.com/life/08.25_sv_ap_Vartolomej_moshti.htm",
                 "audio": ""
               },
               {
-                "name":  "Св. апостол Тит",
+                "name":  "Св. апостол Тит от Седемдесетте апостоли",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://www.pravoslavieto.com/life/08.25_sv_ap_Tit.htm",
                 "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_apostol_Tit.mp3"
               }
               
@@ -5643,7 +5636,7 @@
                 "name":  "Св. мъченици Адриан и Наталия",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://www.pravoslavieto.com/life/08.26_sv_Adrian_Natalia.htm",
                 "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_mwchenici_Adrian_i_Nataliya.mp3"
               }
               
@@ -5657,14 +5650,14 @@
                 "name":  "Преподобен Пимен Велики",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://www.pravoslavieto.com/life/08.27_sv_Pimen_Veliki.htm",
                 "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Prepodobni_Pimen_Veliki.mp3"
               },
               {
                 "name":  "Св. Фанурий",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://duma.bg/pochitame-sveti-fanuriy-n279571",
                 "audio": ""
               }
             ]
@@ -5676,7 +5669,7 @@
                 "name": "Преп. Моисей Мурин",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://www.pravoslavieto.com/life/08.28_sv_Mojsej_Mourin.htm",
                 "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Prepodobni_Moysey_Murin.mp3"
               }
               
@@ -5689,14 +5682,14 @@
                 "name":  "Отсичане главата на св. Йоан Предтеча и Кръстител",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://bg-patriarshia.bg/august-29",
                 "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Otsichane_glavata_na_sveti_Yoan_Krystitel.mp3"
               },
               {
                 "name":  "Преподобен Анастасий Струмишки",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://www.pravoslavieto.com/life/08.29_sv_Atanasij_Strumishki.htm",
                 "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_mwchenik_Anastasiy_Strumishki.mp3"
               }
             ],
@@ -5709,14 +5702,14 @@
                 "name":  "Св. апостоли Александър, Йоан и Павел, патриарси Константинополски",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://www.pravoslavieto.com/life/08.30_svv_patr_Alexander_JoanPostnik_Pavel.htm",
                 "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_Aleksandwr_Yoan_i_Pavel_Carigradski_patriarsi.mp3"
               },
               {
                 "name":  "Пренасяне честните мощи на св. Александър Невски",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://arhiereiskopz.com/to-faith/learnings/696-prenasyane-chestnite-moshti-na-svetiya-blagoveren-knyaz-aleksandar-nevski",
                 "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_blagoverni_knyaz_Aleksandwr_Nevski.mp3"
               }
             ],
@@ -5729,21 +5722,21 @@
                 "name":  "Полагане честния пояс на Пресвета Богородица",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://www.pravoslavieto.com/life/08.31_polagane_chestnija_pojas.htm",
                 "audio": ""
               },
               {
                 "name":  "Св. свещеномъченик Киприан, епископ Картагенски",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://www.pravoslavieto.com/life/08.31_sv_Kiprian_Kartagenski.htm",
                 "audio": ""
               },
               {
                 "name":  "Св. Генадий, патриарх Константинополски",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://www.pravoslavieto.com/life/08.31_sv_Genadij_Konstantinopolski.htm",
                 "audio": ""
               }
               
@@ -5762,21 +5755,21 @@
                 "name": "10 Неделя след Петдесетница",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "http://www.plovdivskamitropolia.bg/nedelna-propoved/52-10-nedelya-sled-petdesetnitza.html",
                 "audio": ""
               },
               {
                 "name": "Начало на Църковната нова година",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://www.pravoslavieto.com/calendar/feasts/09.01_novoletie.htm",
                 "audio": ""
               },
               {
                 "name": "Св. преподобни Симеон Стълпник",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://www.pravoslavieto.com/life/09.01_sv_Simeon_Stulpnik.htm",
                 "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Prepodobni_Simeon_Stwlpnik.mp3"
               },
               {
@@ -5790,21 +5783,21 @@
                 "name": "Св. мъченици Айтал и Амун дякони",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://dveri.bg/component/com_content/Itemid,171/catid,118/id,67734/view,article/",
                 "audio": ""
               },
               {
                 "name": "Праведник Иисус Навин",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://www.pravoslavieto.com/life/09.01_Iisus_Navin.htm",
                 "audio": ""
               },
               {
                 "name": "Св. мъченици Калист, Евод и Ермоген",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://pravoslavenhram.com/%D0%BA%D0%B0%D0%BB%D0%B5%D0%BD%D0%B4%D0%B0%D1%80/%D1%81%D0%B5%D0%BF%D1%82%D0%B5%D0%BC%D0%B2%D1%80%D0%B8/1/%D0%B2-%D0%BF%D0%B0%D0%BC%D0%B5%D1%82-%D0%BD%D0%B0-%D1%81%D0%B2%D0%B5%D1%82%D0%B0-%D0%BA%D0%B0%D0%BB%D0%B8%D1%81%D1%82%D0%B0-%D0%B8-%D1%80%D0%BE%D0%B4%D0%BD%D0%B8%D1%82%D0%B5-%D1%9D-%D0%B1%D1%80%D0%B0%D1%82%D1%8F-%D0%B5%D0%B2%D0%BE%D0%B4-%D0%B8-%D0%B5%D1%80%D0%BC%D0%BE%D0%B3%D0%B5%D0%BD/191",
                 "audio": ""
               }
               
@@ -5818,20 +5811,20 @@
                 "name": "Св. мъченик Мамант",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://www.pravoslavieto.com/life/09.02_sv_Mamant.htm",
                 "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_mwchenik_Mamant.mp3"
               },
               {
                 "name": "Преп. Йоан постник, патриарх Константинополски",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://www.pravoslavieto.com/life/09.02_sv_Joan_Postnik_Konstantinopolski.htm",
                 "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_Yoan_Postnik_patriarh_Carigradski.mp3"
               },
               {
                 "name": "Св. 3628 мъченици в Никомидия",
                 "image": "",
-                "text": "",
+                "text": "https://pravoslavieto.com/life/09.02_Nikomidia.htm",
                 "href": "https://www.pravoslavieto.com/life/09.02_Nikomidia.htm",
                 "audio": ""
               }
@@ -5845,7 +5838,7 @@
                 "name": "Св. свещеномъченик Антим, епископ Никомидийски",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://www.pravoslavieto.com/life/09.03_sv_Antim_Nikomidijski.htm",
                 "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_sveshtenomwchenik_Antim_Nikomidiyski.mp3"
               },
               {
@@ -5859,14 +5852,14 @@
                 "name": "Св. Фива дякониса",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://pravoslavenhram.com/%D0%BA%D0%B0%D0%BB%D0%B5%D0%BD%D0%B4%D0%B0%D1%80/%D1%81%D0%B5%D0%BF%D1%82%D0%B5%D0%BC%D0%B2%D1%80%D0%B8/3/%D0%B2-%D0%BF%D0%B0%D0%BC%D0%B5%D1%82-%D0%BD%D0%B0-%D1%81%D0%B2%D0%B5%D1%82%D0%B0-%D1%84%D0%B8%D0%B2%D0%B0/198",
                 "audio": ""
               },
               {
                 "name": "Св. мъченица Василиса Никомидийска",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://pravoslavenhram.com/%D0%BA%D0%B0%D0%BB%D0%B5%D0%BD%D0%B4%D0%B0%D1%80/%D1%81%D0%B5%D0%BF%D1%82%D0%B5%D0%BC%D0%B2%D1%80%D0%B8/3/%D1%81%D1%82%D1%80%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D0%BD%D0%B0-%D1%81%D0%B2%D0%B5%D1%82%D0%B0-%D0%BC%D1%8A%D1%87%D0%B5%D0%BD%D0%B8%D1%86%D0%B0-%D0%B2%D0%B0%D1%81%D0%B8%D0%BB%D0%B8%D1%81%D0%B0/196",
                 "audio": ""
               },
               {
@@ -5886,14 +5879,14 @@
                 "name": "Св. свещеномъченик Вавила, епископ Антиохийски",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://www.pravoslavieto.com/life/09.04_sv_Bavila.htm",
                 "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_sveshtenomwchenik_Vavila_Antiohiyski.mp3"
               },
               {
                 "name": "Св. пророк и боговидец Моисей",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://www.pravoslavieto.com/life/09.04_sv_Mojsej_Bogovidets.htm",
                 "audio": ""
               }
               
@@ -5908,7 +5901,7 @@
                 "name": "Св. пророк Захария и праведна Елисавета",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://www.pravoslavieto.com/life/09.05_pr_Zaharia_Elisaveta.htm",
                 "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_pravedni_Zahariy_i_Elisaveta.mp3"
               }
               
@@ -5922,21 +5915,21 @@
                 "name": "Св. мъченик Ромил и Св. мъченик Евдоксий",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://www.pravoslavie.bg/%D0%B6%D0%B8%D1%82%D0%B8%D1%8F/%D0%A1%D0%B2%D0%B5%D1%82%D0%B8-%D0%BC%D1%8A%D1%87%D0%B5%D0%BD%D0%B8%D1%86%D0%B8-%D0%A0%D0%BE%D0%BC%D0%B8%D0%BB-%D0%B8-%D0%95%D0%B2%D0%B4%D0%BE%D0%BA%D1%81%D0%B8%D0%B9/",
                 "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_mwchenici_Romil_i_Evdoksiy.mp3"
               },
               {
                 "name": "Преп. Архип",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://offnews.bg/tcarkoven-kalendar/sv-evdoksij-prep-arhip-238646.html",
                 "audio": ""
               },
               {
                 "name": "Чудо на св. архангел Михаил (Ден на Съединението на България)",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://www.hramsvetigeorgi.eu/bg/%D0%BF%D1%80%D0%BE%D0%BF%D0%BE%D0%B2%D0%B5%D0%B4%D0%B8/153-%D0%B2%D1%8A%D0%B7%D0%BF%D0%BE%D0%BCe%D0%BD%D0%B0%D0%BD%D0%B8%D0%B5-%D0%B7%D0%B0-%D1%87%D1%83%D0%B4%D0%BE%D1%82%D0%BE-%D0%BD%D0%B0-%D1%81%D0%B2%D0%B5%D1%82%D0%B8-%D0%B0%D1%80%D1%85%D0%B8%D1%81%D1%82%D1%80%D0%B0%D1%82%D0%B8%D0%B3-%D0%BC%D0%B8%D1%85%D0%B0%D0%B8%D0%BB-%D0%B2-%D1%85%D0%BE%D0%BD%D0%B8",
                 "audio": ""
               }
             ],
@@ -5949,7 +5942,7 @@
                 "name": "Св. мъченик Созонт",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://www.pravoslavieto.com/life/09.07_sv_Sozont.htm",
                 "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_mwchenik_Sozont.mp3"
               },
               {
@@ -5970,14 +5963,14 @@
                 "name": "✞ Неделя пред Въздвижение",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "http://www.plovdivskamitropolia.bg/nedelna-propoved/55-nedelya-pred-vazdvizhenie-.html",
                 "audio": ""
               },
               {
                 "name": "Рождество на Пресвета Богородица",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://www.pravoslavieto.com/calendar/feasts/09.08_Rozhdestvo_Bogorodichno.htm",
                 "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Rojdestvo_na_Presveta_Bogorodica.mp3"
               }
             ],
@@ -5990,21 +5983,21 @@
                 "name": "Св. праведни богоотци Йоаким и Анна",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://www.pravoslavieto.com/life/09.09_sv_Joakim_Anna.htm",
                 "audio": ""
               },
               {
                 "name": "Св. Йоаким I, патр. Търновски",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://www.pravoslavieto.com/life/01.18_sv_Joakim_I_Turnovski.htm",
                 "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_Yoakim_Pwrvi_patriarh_Twrnovsi.mp3"
               },
               {
                 "name": "Св. мъченик Севириан",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://pravoslavenhram.com/%D0%BA%D0%B0%D0%BB%D0%B5%D0%BD%D0%B4%D0%B0%D1%80/%D1%81%D0%B5%D0%BF%D1%82%D0%B5%D0%BC%D0%B2%D1%80%D0%B8/9/%D1%81%D1%82%D1%80%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D0%BD%D0%B0-%D1%81%D0%B2%D0%B5%D1%82%D0%B8-%D0%BC%D1%8A%D1%87%D0%B5%D0%BD%D0%B8%D0%BA-%D1%81%D0%B5%D0%B2%D0%B8%D1%80%D0%B8%D0%B0%D0%BD/222",
                 "audio": ""
               }
             ],
@@ -6017,7 +6010,7 @@
                 "name": "Св. мъченици Минодора, Митродора и Нимфодора",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://www.pravoslavieto.com/life/09.10_sv_Minodora_Mitrodora.htm",
                 "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_mwchenici_Minodora_Mitrodora_i_Nimfrodora.mp3"
               }
               
@@ -6031,7 +6024,7 @@
                 "name": "Св. преподобна Теодора Александрийска",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://www.pravoslavieto.com/life/09.11_sv_Teodora.htm",
                 "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Prepodobna_Teodora_Aleksandriyska.mp3"
               }
               
@@ -6045,7 +6038,7 @@
                 "name": "Св. свещеномъченик Автоном",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://www.pravoslavieto.com/life/09.12_sv_Avtonom.htm",
                 "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_sveshtenomwchenik_Avtonom.mp3"
               }
               
@@ -6059,14 +6052,14 @@
                 "name": "Св. свещеномъченик Корнилий стотник",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://www.pravoslavieto.com/life/09.13_sv_Kornilij_Stotnik.htm",
                 "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_sveshtenomwchenik_Korniliy_stotnik.mp3"
               },
               {
                 "name": "(Предпразненство на Въздвижение на Честния Кръст)",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://medianews.bg/bg/a/predpraznenstvo-na-vzdvizhenie-na-chestniya-krst",
                 "audio": ""
               }
               
@@ -6078,10 +6071,10 @@
             "day": 14,
             "church_holidays": [
               {
-                "name": "✞  Въздвижение на Св. Кръст Господен",
+                "name": "✞ Въздвижение на Св. Кръст Господен",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://www.pravoslavieto.com/calendar/feasts/09.14_Krustovuzdvizhenie.htm",
                 "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Vwzdvijenie_na_Svetiya_Krwst_Gospoden.mp3"
               },
               {
@@ -6102,21 +6095,21 @@
                 "name": "✞ Неделя след Въздвижение",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "http://www.plovdivskamitropolia.bg/nedelna-propoved/1437-nedelya-sled-vazdvizhenie.html",
                 "audio": ""
               },
               {
                 "name": "Св. великомъченик Никита",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://www.pravoslavieto.com/life/09.15_sv_Nikita.htm",
                 "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_velikomwchenik_Nikita.mp3"
               },
               {
-                "name": "Преп. Филотей",
+                "name": "Преп. Филотей, презвитер и чудотворец",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://pravoslavenhram.com/%D0%BA%D0%B0%D0%BB%D0%B5%D0%BD%D0%B4%D0%B0%D1%80/%D1%81%D0%B5%D0%BF%D1%82%D0%B5%D0%BC%D0%B2%D1%80%D0%B8/15/%D0%B2-%D0%BF%D0%B0%D0%BC%D0%B5%D1%82-%D0%BD%D0%B0-%D1%81%D0%B2%D0%B5%D1%82%D0%B8-%D1%84%D0%B8%D0%BB%D0%BE%D1%82%D0%B5%D0%B9-%D0%BF%D1%80%D0%B5%D0%B7%D0%B2%D0%B8%D1%82%D0%B5%D1%80-%D0%B8-%D1%87%D1%83%D0%B4%D0%BE%D1%82%D0%B2%D0%BE%D1%80%D0%B5%D1%86/246",
                 "audio": ""
               },
               {
@@ -6136,14 +6129,14 @@
                 "name": "Св. великомъченица Евфимия Всехвална",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://www.pravoslavieto.com/life/09.16_sv_Evfimia_Vsehvalna.htm",
                 "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveta_velikomwchenicha_Evfimiya_vsehvalna.mp3"
               },
               {
                 "name": "Св. Людмила Чешка",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://www.pravoslavieto.com/life/09.16_sv_Ljudmila_Cheshka.htm",
                 "audio": ""
               },
               {
@@ -6163,14 +6156,14 @@
                 "name": "Св. мъченици София, Вяра, Надежда и Любов",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://www.pravoslavieto.com/life/09.17_Vjara_Nadezhda_Ljubov_Sophia.htm",
                 "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_mwchenici_Vyara_Nadejda_Lyubov_i_maika_im_Sofiya.mp3"
               },
               {
                 "name": "Св. мъченица Теодотия",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://www.pravoslavieto.com/life/09.17_sv_Teodotia.htm",
                 "audio": ""
               },
               {
@@ -6192,7 +6185,7 @@
               {
                 "name": "Преп. Евмений, епископ Гортински, Чудотворец",
                 "image": "",
-                "text": "",
+                "text": "https://www.pravoslavieto.com/life/09.18_sv_Evmenij_Gortinski.htm",
                 "href": "https://www.pravoslavieto.com/life/09.18_sv_Evmenij_Gortinski.htm",
                 "audio": ""
               }
@@ -6207,7 +6200,7 @@
                 "name": "Св. мчци Трофим, Саватий и Доримедонт",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://www.pravoslavieto.com/life/09.19_sv_Trofim_Savatij_Dorimedont.htm",
                 "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_mwchenici_Trufim_Sevatiy_i_Dorimedont.mp3"
               }
               
@@ -6232,17 +6225,17 @@
             "day": 21,
             "church_holidays": [
               {
-                "name": "Св. ап. Кодрат",
+                "name": "Св. ап. Кодрат от Седемдесетте апостоли",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://www.pravoslavieto.com/life/09.21_sv_ap_Kodrat.htm",
                 "audio": ""
               },
               {
                 "name": "Св. Исакий и Мелетий, еп. Кипърски",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://www.pravoslavieto.com/life/09.21_sv_Isakij_i_Meletiy.htm",
                 "audio": ""
               }
               
@@ -6257,7 +6250,7 @@
                 "name": "✞ 1 Неделя след Неделя подир Въздвижение",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "http://www.plovdivskamitropolia.bg/nedelna-propoved/1038-nedelya-sled-nedelya-podir-vazdvizhenie.html",
                 "audio": ""
               },
               {
@@ -6271,7 +6264,7 @@
                 "name": "Св. свщмчк Фока, еп. Синопийски",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://www.pravoslavieto.com/life/09.22_sv_Foka_Sinopski.htm",
                 "audio": ""
               },
               {
@@ -6292,14 +6285,14 @@
                 "name": "Зачатие на св. Йоан Предтеча и Кръстител",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://www.pravoslavieto.com/life/09.23_zachatie_Joan_Predtecha.htm",
                 "audio": ""
               },
               {
                 "name": "Св. мчца Ираида",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://www.pravoslavieto.com/life/09.23_sv_Iriada.htm",
                 "audio": ""
               }
               
@@ -6314,14 +6307,14 @@
                 "name": "Св. първомъченица и равноапостолна Текла",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://www.pravoslavieto.com/life/09.24_sv_Tekla.htm",
                 "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveta_pwrvomwchenica_i_ravnoapostolna_Tekla.mp3"
               },
               {
                 "name": "Преп. Коприй",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://www.pravoslavieto.com/life/09.24_sv_Koprij.htm",
                 "audio": ""
               }
               
@@ -6336,14 +6329,14 @@
                 "name": "Преп. Ефросиния Александрийска",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://www.pravoslavieto.com/life/09.25_sv_Efrosinia.htm",
                 "audio": ""
               },
               {
                 "name": "Преп. Сергий, Радонежки чудотворец",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://pravoslavenhram.com/%D0%BA%D0%B0%D0%BB%D0%B5%D0%BD%D0%B4%D0%B0%D1%80/%D1%81%D0%B5%D0%BF%D1%82%D0%B5%D0%BC%D0%B2%D1%80%D0%B8/25/%D0%B6%D0%B8%D1%82%D0%B8%D0%B5-%D0%B8-%D1%87%D1%83%D0%B4%D0%B5%D1%81%D0%B0-%D0%BD%D0%B0-%D0%BF%D1%80%D0%B5%D0%BF%D0%BE%D0%B4%D0%BE%D0%B1%D0%BD%D0%B8%D1%8F-%D0%B8-%D0%B1%D0%BE%D0%B3%D0%BE%D0%BD%D0%BE%D1%81%D0%B5%D0%BD-%D0%BD%D0%B0%D1%88-%D0%BE%D1%82%D0%B5%D1%86-%D1%81%D0%B5%D1%80%D0%B3%D0%B8%D0%B9-%D1%80%D0%B0%D0%B4%D0%BE%D0%BD%D0%B5%D0%B6%D0%BA%D0%B8-%D1%87%D1%83%D0%B4%D0%BE%D1%82%D0%B2%D0%BE%D1%80%D0%B5%D1%86/283",
                 "audio": ""
               }
               
@@ -6358,7 +6351,7 @@
                 "name": "Успение на Св. апостол и евангелист Йоан Богослов",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://hristianstvo.bg/%D1%83%D1%81%D0%BF%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BD%D0%B0-%D1%81%D0%B2-%D0%B9%D0%BE%D0%B0%D0%BD-%D0%B1%D0%BE%D0%B3%D0%BE%D1%81%D0%BB%D0%BE%D0%B2/",
                 "audio": ""
               }
               
@@ -6372,14 +6365,14 @@
                 "name": "Св. мъченик Калистрат и дружината му",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://www.pravoslavieto.com/life/09.27_sv_Kalistrat.htm",
                 "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_mwchenik_Kalistrat.mp3"
               },
               {
                 "name": "Св. апостоли от 70-те Марк и Аристарх",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://www.pravoslavieto.com/life/09.27_svv_Marko_Zina.htm",
                 "audio": ""
               }
             ],
@@ -6392,14 +6385,14 @@
                 "name": "Преп. Харитон Изповедник",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://www.pravoslavieto.com/life/09.28_sv_Hariton.htm",
                 "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Prepodobni_Hariton_Izpovednik.mp3"
               },
               {
                 "name": "Св. прор. Варух",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://www.pravoslavieto.com/life/09.28_sv_pr_Varuh.htm",
                 "audio": ""
               }
               
@@ -6413,21 +6406,21 @@
                 "name": "✞ 2 Неделя след Неделя подир Въздвижение",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "http://www.plovdivskamitropolia.bg/nedelna-propoved/56-2-nedelya-sled-nedelya-podir-vazdvizhenie.html",
                 "audio": ""
               },
               {
                 "name": "Преп. Кириак Отшелник",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://www.pravoslavieto.com/life/09.29_sv_Kiriak.htm",
                 "audio": "http://www.sviatost.info/jitia_na_svetiite/jitiya---Prepodobni_Kiriyak_Otshelnik.mp3"
               },
               {
                 "name": "Преп. Теофан Милостиви",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://medianews.bg/bg/a/tsrkvata-pochita-prepodobnite-teofan-milostivi-i-kiriak-otshelnik",
                 "audio": ""
               }
             ],
@@ -6447,7 +6440,7 @@
                 "name": "Св. мъченица Рипсимия",
                 "image": "",
                 "text": "",
-                "href": "",
+                "href": "https://patrioti.net/%D0%BD%D0%B0-30-%D1%81%D0%B5%D0%BF%D1%82%D0%B5%D0%BC%D0%B2%D1%80%D0%B8-%D0%BF%D1%80%D0%B0%D0%B2%D0%BE%D1%81%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%82%D0%B0-%D1%86%D1%8A%D1%80%D0%BA%D0%B2%D0%B0-%D0%BF%D0%BE/",
                 "audio": ""
               }
             ],
