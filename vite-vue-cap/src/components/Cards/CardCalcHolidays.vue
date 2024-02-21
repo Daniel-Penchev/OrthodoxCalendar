@@ -40,10 +40,10 @@
         </button>
       </div>
 
-        <button style="width:auto;margin: 4%;" class="button-82-pushable" role="button" @click="calculateHolidays">
-          <span class="button-82-shadow"></span>
-          <span class="button-82-edge"></span>
-          <span class="button-82-front text">
+        <button style="width:auto;margin: 4%;" class="button-8-pushable" role="button" @click="calculateHolidays">
+          <span class="button-8-shadow"></span>
+          <span class="button-8-edge"></span>
+          <span class="button-8-front text">
             Calculate
           </span>
         </button>
@@ -180,7 +180,7 @@ function decrementYear() {
 
 
 /* CSS */
-.button-82-pushable {
+.button-8-pushable {
   position: relative;
   border: none;
   background: transparent;
@@ -193,7 +193,7 @@ function decrementYear() {
   touch-action: manipulation;
 }
 
-.button-82-shadow {
+.button-8-shadow {
   position: absolute;
   top: 0;
   left: 0;
@@ -209,7 +209,7 @@ function decrementYear() {
     cubic-bezier(.3, .7, .4, 1);
 }
 
-.button-82-edge {
+.button-8-edge {
   position: absolute;
   top: 0;
   left: 0;
@@ -225,7 +225,7 @@ function decrementYear() {
   );
 }
 
-.button-82-front {
+.button-8-front {
   display: block;
   position: relative;
   padding: 12px 27px;
@@ -242,18 +242,18 @@ function decrementYear() {
 }
 
 @media (min-width: 768px) {
-  .button-82-front {
+  .button-8-front {
     font-size: 1.25rem;
     padding: 12px 42px;
   }
 }
 
-.button-82-pushable:hover {
+.button-8-pushable:hover {
   filter: brightness(110%);
   -webkit-filter: brightness(110%);
 }
 
-.button-82-pushable:hover .button-82-front {
+.button-8-pushable:hover .button-8-front {
   transform: translateY(-6px);
   transition:
     transform
@@ -261,12 +261,12 @@ function decrementYear() {
     cubic-bezier(.3, .7, .4, 1.5);
 }
 
-.button-82-pushable:active .button-82-front {
+.button-8-pushable:active .button-8-front {
   transform: translateY(-2px);
   transition: transform 34ms;
 }
 
-.button-82-pushable:hover .button-82-shadow {
+.button-8-pushable:hover .button-8-shadow {
   transform: translateY(4px);
   transition:
     transform
@@ -274,12 +274,12 @@ function decrementYear() {
     cubic-bezier(.3, .7, .4, 1.5);
 }
 
-.button-82-pushable:active .button-82-shadow {
+.button-8-pushable:active .button-8-shadow {
   transform: translateY(1px);
   transition: transform 34ms;
 }
 
-.button-82-pushable:focus:not(:focus-visible) {
+.button-8-pushable:focus:not(:focus-visible) {
   outline: none;
 }
 

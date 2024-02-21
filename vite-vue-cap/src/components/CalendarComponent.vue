@@ -287,6 +287,7 @@ const changeMonth = (index: number) => {
   // Adjust the index to match JavaScript's month representation (0 to 11)
   const adjustedIndex = index;
 
+  data.isDropDownOpen = false;
   if (Array.isArray(index) && index.length > 0) {
     data.selectedMonth = adjustedIndex + 2;
   } else {
@@ -449,7 +450,17 @@ const holidays = ref<Holiday[]>([
   { name: '✝ Събор на Пресвета Богородица', date: '12-26', offset: -1 },
   { name: '✝ Св. първомъченик и архидякон Стефан', date: '12-27', offset: -1 },
   {
-    name: " Неделя на митаря и фарисея",
+    name: " Неделя подир Въздвижение на 10-те прокажени",
+    date: "",
+    offset: -84,
+  },
+  {
+    name: "Петдесетница на Хананейката",
+    date: "",
+    offset: -77,
+  },
+  {
+    name: "Неделя на митаря и фарисея",
     date: "",
     offset: -70,
   },
@@ -467,9 +478,12 @@ const holidays = ref<Holiday[]>([
     date: "",
     offset: -48,
   },
-  { name: "Свети Теодор", date: "", offset: -43 },
+  { name: "Тодорова събота", date: "", offset: -43 },
   { name: "Неделя на Православието ", date: "", offset: -42 },
   { name: "Свети Григорий Палама ", date: "", offset: -35 },
+  // { name: "Неделя на Великия пост - Кръстопоклонна", date: "", offset: -28 },
+  // { name: "Неделя на Великия пост ­- Преп. Йоан Лествичник", date: "", offset: -21 },
+  // { name: "Неделя на Великия пост -­ Преп. Мария Египетска", date: "", offset: -14 },
   { name: "Лазарова събота ", date: "", offset: -8 },
   { name: "Цветница ", date: "", offset: -7 },
   { name: "Велики понеделник ", date: "", offset: -6 },
@@ -528,6 +542,8 @@ const holidays = ref<Holiday[]>([
   { name: "Неделя на всички светии", date: "", offset: 56 },
   // ................................
 ]);
+
+
 
 const calculatedHolidays = computed(() => {
   const easterDate = calculateOrthodoxEaster(selectedDate.value.getFullYear());

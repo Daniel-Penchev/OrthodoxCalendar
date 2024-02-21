@@ -219,7 +219,7 @@
               <img
                 width="64"
                 height="64"
-                src="../../assets/img/jitiya_na_svetiite_logo.jpg"
+                src="../../assets/img/libarary/jitiya_na_svetiite_logo.jpg"
               /><a
                 href="http://www.sviatost.info/12_jitiya_na_svetiite/index.html"
                 target="_blank"
@@ -230,7 +230,7 @@
               <img
                 width="64"
                 height="64"
-                src="../../assets/img/PlovdivMitropoliq.png"
+                src="../../assets/img/libarary/PlovdivMitropoliq.png"
               /><a
                 href="http://www.plovdivskamitropolia.bg/"
                 target="_blank"
@@ -241,7 +241,7 @@
               <img
                 width="64"
                 height="64"
-                src="../../assets/img/pravoslaven-kalendar.png"
+                src="../../assets/img/libarary/pravoslaven-kalendar.png"
               /><a
                 href="https://pravoslaven-kalendar.com/%D1%86%D1%8A%D1%80%D0%BA%D0%BE%D0%B2%D0%B5%D0%BD-%D0%BA%D0%B0%D0%BB%D0%B5%D0%BD%D0%B4%D0%B0%D1%80-%D1%8F%D0%BD%D1%83%D0%B0%D1%80%D0%B8-2024/"
                 target="_blank"
@@ -252,7 +252,7 @@
               <img
                 width="64"
                 height="64"
-                src="../../assets/img/bg-patriarshia.png"
+                src="../../assets/img/libarary/bg-patriarshia.png"
               /><a
                 href="https://bg-patriarshia.bg/calendar/2024"
                 target="_blank"
@@ -263,7 +263,7 @@
               <img
                 width="64"
                 height="64"
-                src="../../assets/img/sv-atanasii-varna.png"
+                src="../../assets/img/libarary/sv-atanasii-varna.png"
               /><a
                 href="https://www.sv-atanasii-varna.org/"
                 target="_blank"
@@ -274,7 +274,7 @@
               <img
                 width="64"
                 height="64"
-                src="../../assets/img/pravoslavenhram.png"
+                src="../../assets/img/libarary/pravoslavenhram.png"
               /><a
                 href="https://pravoslavenhram.com/"
                 target="_blank"
@@ -391,7 +391,6 @@ const handleBlur = () => {
   justify-content: end;
   gap: 2%;
 }
-
 .icons-style {
   width: 30px;
   height: 30px;

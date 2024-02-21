@@ -10,14 +10,15 @@
 
 .content-container {
   /* display: flex; */
+  background: url('../../assets/img/libarary/wood-grain-texture-wooden-flooring.jpg');
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 109%;
   height: auto;
   /* background: url('../../assets/img/natural_oak _wood.webp'); */
-  margin: -5% 0 0 -5%;
-  padding: 5%;
+  margin: -5%;
+  padding: 3%;
 }
 
 .content {
@@ -146,7 +147,7 @@ hr {
 h2 {
   font-size: 30pt;
   font-weight: 300;
-  color: #35312b;
+  color: #f7e9cc;
   text-shadow: 0.3px 0.3px 2px Sienna;
 }
 
@@ -167,7 +168,7 @@ p {
   font-size: 16pt;
   font-weight: 400;
   line-height: 28pt;
-  color: #565046;
+  color: #5878af;
   letter-spacing: 0.5px;
   word-spacing: 3px;
   text-shadow: 0.2px 0.2px 1.3px Sienna;
@@ -194,7 +195,7 @@ p span {
 
 li {
   /* Use url() for background-image */
-  /* background: url("../../assets/img/libarary/oldPaper.jpg"); */
+  background: url("../../assets/img/libarary/vintage-paper-texture-thumb21.png");
   background-size: cover;
   display: flex;
   justify-content: center;
@@ -203,7 +204,11 @@ li {
   margin: 5%;
   /* border-bottom: 2px solid #ccc; */
 }
-
+a {
+    background-color: transparent;
+    text-decoration: none;
+    margin-top: 9%;
+}
 .book {
   position: relative;
   height: 30px;
@@ -259,8 +264,8 @@ li {
         <!-- Description Section -->
         <h2>For Read</h2>
 
-        <ul class="content" style="list-style-type: none; height: auto;background: url(/src/assets/img/libarary/oldPaper.jpg);background-size: cover;">
-          <li>
+        <ul class="content" style="list-style-type: none; height: auto;">
+          <li >
             <a href="http://www.pravoslavieto.com/index.htm" target="_blank"
               ><img
                 width="158"
@@ -270,60 +275,38 @@ li {
                 border="0"
             /></a>
           </li>
-          <li>Resources</li>
-          <li>Resources</li>
+          <li> 
+            <a href=" https://hramsvetigeorgi.eu/bg/%D0%BF%D1%80%D0%BE%D0%BF%D0%BE%D0%B2%D0%B5%D0%B4%D0%B8?limitstart=0" target="_blank"
+              ><img
+                width="260"
+                height="70"
+                src="../../assets/img/libarary/hramsvetigeorgi.png"
+                
+                border="0"
+            /></a></li>
+          <li> 
+            <a href="https://pravoslavenhram.com/%D0%B1%D0%B8%D0%B1%D0%BB%D0%B8%D0%BE%D1%82%D0%B5%D0%BA%D0%B0_29" target="_blank"
+              ><img
+                width="260"
+                height="70"
+                src="../../assets/img/libarary/pravoslavenhramtitle.png"
+                
+                border="0"
+            /></a>
+          </li>
         </ul>
-
+       
         <h2>Audio Books</h2>
         <ul class="content" style="list-style-type: none; height: auto">
+
           <li>
             <a href="https://petkohinov.com/audioknigi/" target="_blank"
               ><img
                 width="44"
                 height="44"
-                src="../../assets/img/BookAudio-removebg-preview.png"
-				style="margin-bottom: -18%;"
+                src="../../assets/img/libarary/BookAudio-removebg-preview.png"
               />
-              <p style="margin-bottom: -5%; color: blue">petkohinov.com</p>
-              <div class="book book3">
-                <div class="ribbon ribbon3"></div>
-                <div class="bookCut3"></div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="https://petkohinov.com/audioknigi/" target="_blank"
-              ><img
-                width="44"
-                height="44"
-                src="../../assets/img/BookAudio-removebg-preview.png"
-              />
-              <p>https://petkohinov.com/audioknigi</p>
-            </a>
-          </li>
-		  <li>
-            <a href="https://www.pokayanie.info/video.html" target="_blank"
-              ><img
-                width="44"
-                height="44"
-                src="../../assets/img/mm_health_photo.jpg"
-				style="margin-bottom: -18%;"
-              />
-              <p style="margin-bottom: -5%; color: blue">pokayanie.info</p>
-              <div class="book book3">
-                <div class="ribbon ribbon3"></div>
-                <div class="bookCut3"></div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.pokayanie.info/video.html" target="_blank"
-              ><img
-                width="44"
-                height="44"
-                src="../../assets/img/mm_health_photo.jpg"
-              />
-              <p>www.pokayanie.info/video.html</p>
+              <p>Petkohinov Audioknigi</p>
             </a>
           </li>
           <li>
@@ -333,7 +316,7 @@ li {
               ><img
                 width="44"
                 height="44"
-                src="../../assets/img/BookAudioYouTub-removebg-preview.png"
+                src="../../assets/img/libarary/BookAudioYouTub-removebg-preview.png"
               />
               <p>Благовестие</p>
             </a>
@@ -345,9 +328,43 @@ li {
               ><img
                 width="44"
                 height="44"
-                src="../../assets/img/BookAudioYouTub-removebg-preview.png"
+                src="../../assets/img/libarary/BookAudioYouTub-removebg-preview.png"
               />
               <p>Изяснение на Апокалипсиса</p>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.youtube.com/@orthodox_books/videos"
+              target="_blank"
+              ><img
+                width="44"
+                height="44"
+                src="../../assets/img/libarary/orthodox_booksvideo.png"
+              />
+              <p>Orthodox Books Video</p>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.youtube.com/watch?v=wcBLKH-DMkU&list=PLOC5p7JyZ_0KD6X2tS_6c482iyGFmugAx"
+              target="_blank"
+              ><img
+                width="88"
+                height="88"
+                src="../../assets/img/libarary/miter.AthanasiusofLimassol.png"
+              />
+              <p>miter. Athanasius of Limassol</p>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.pokayanie.info/video.html" target="_blank"
+              ><img
+                width="44"
+                height="44"
+                src="../../assets/img/libarary/pokayanie.png"
+              />
+              <p>Pokayanie</p>
             </a>
           </li>
           <li>
@@ -357,7 +374,7 @@ li {
               ><img
                 width="44"
                 height="44"
-                src="../../assets/img/jitiya_na_svetiite_logo.jpg"
+                src="../../assets/img/libarary/jitiya_na_svetiite_logo.jpg"
               />
               <p>Жития на Светиите</p></a
             >
