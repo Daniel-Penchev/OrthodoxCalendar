@@ -12,9 +12,9 @@
       <div width="52%" height="40" colspan="4" valign="bottom">
         <a name="ЦЪРКОВНИ"></a>
         <p>&nbsp;</p>
-        <div v-for="month in sortedMonths" :key="month" style="margin-top: 12%;"> 
+        <div v-for="month in sortedMonths" :key="month" style="margin-top: 12%;    border-bottom: 1px solid grey;"> 
           <b>{{ month }}</b>
-          <div v-for="holiday in  getHolidaysByMonth(month)" :key="holiday.name" style="margin-top: 5%;display: flex; gap: 8%;justify-content: space-between;align-items: center;border-bottom: 1px solid grey;padding-bottom: 6%;">
+          <div v-for="holiday in  getHolidaysByMonth(month)" :key="holiday.name" style="margin-top: 5%;display: flex; gap: 8%;justify-content: space-between;align-items: center;padding-bottom: 6%;">
             <!-- <b>{{ getMonthName(holiday.date) }}</b> -->
              <p class="styleDay">{{ parseInt(holiday.date.split('/')[1], 10) }}</p>
              <p class="styleName">{{ holiday.name }}</p>

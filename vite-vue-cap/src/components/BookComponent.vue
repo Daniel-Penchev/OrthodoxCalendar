@@ -1,5 +1,5 @@
 <template>
-  <div class="bg">
+  <div class="bg" style="z-index: 1;">
     <div class="book book1">
       <div class="ribbon ribbon1"></div>
       <div class="bookCut"></div>

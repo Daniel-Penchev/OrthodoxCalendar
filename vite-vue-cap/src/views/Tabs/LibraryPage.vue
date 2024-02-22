@@ -247,12 +247,10 @@ a {
             display: flex;
             background: url('https://t4.ftcdn.net/jpg/01/01/72/17/360_F_101721700_HE5ouiYmnmHljXfxTCYrNre4JgxXN64V.jpg');
             background-size: cover;
-            margin-left: -42%;
-            width: 144%;
           "
         >
           <ion-title
-            style="font-size: xx-large; font-weight: bold; margin-left: 30%"
+            style="font-size: xx-large; font-weight: bold;"
             >Libary Page</ion-title
           >
           <BookComponent></BookComponent>

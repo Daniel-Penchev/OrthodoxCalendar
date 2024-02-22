@@ -120,6 +120,8 @@
                   @move-backward="handleMoveBackward"
                   @update:selectedDate="updateSelectedDate"
                 ></CalendarComponent>
+                <ShortThoughtsDay></ShortThoughtsDay>
+
                 <CardHolidays :selectedDate="selectedDate"></CardHolidays>
               </swiper-slide>
             </swiper>
@@ -281,6 +283,17 @@
                 ><p style="text-align: center;">https://pravoslavenhram.com</p></a
               >
             </li>
+            <li>
+              <img
+                width="64"
+                height="64"
+                src="../../assets/img/libarary/pravoslaven-sviat.png"
+              /><a
+                href="https://pravoslaven-sviat.org/kratki_misli/"
+                target="_blank"
+                ><p style="text-align: center;">https://pravoslavenhram.com</p></a
+              >
+            </li>
           </ul>
           <!-- Contact Section -->
           <h2>Contact</h2>
@@ -301,6 +314,7 @@
 <script setup lang="ts">
 import CalendarComponent from "../../components/CalendarComponent.vue";
 import CardHolidays from "../../components/Cards/CardHolidays.vue";
+import ShortThoughtsDay from "../../components/Cards/ShortThoughtsDay.vue";
 import {
   IonPage,
   IonContent,

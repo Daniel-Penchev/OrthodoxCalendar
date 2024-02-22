@@ -1032,8 +1032,8 @@ const moveMonthBackward = () => {
 /* Current */
 .vc-highlight-content-outline.vc-content-today {
   background: url("../assets/img/currentDaySun.png") center center no-repeat;
-  background-size: 50px;
-  background-position-y: 8px;
+  background-size: 59px;
+  background-position-y: 4px;
   width: 40px;
   height: 66px;
   z-index: 4;
@@ -1044,10 +1044,12 @@ const moveMonthBackward = () => {
   /* Add your styles for the selected date here */
   /* For example: */
   background: url('../assets/img/cross5.png') center center no-repeat;
-  background-size: 40px;
-  width: 40px;
-  height: 40px;
-  z-index: 5;
+    width: 50px;
+    height: 64px;
+    z-index: 5;
+    background-size: 53px;
+    background-position-y: 14px;
+    background-position-x: -2px;
 }
 .vc-content:not(.vc-base) {
     font-weight:bold;
