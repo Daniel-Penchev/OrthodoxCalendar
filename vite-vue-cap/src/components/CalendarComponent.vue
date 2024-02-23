@@ -1049,7 +1049,6 @@ const moveMonthBackward = () => {
     z-index: 5;
     background-size: 53px;
     background-position-y: 14px;
-    background-position-x: -2px;
 }
 .vc-content:not(.vc-base) {
     font-weight:bold;

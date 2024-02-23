@@ -192,6 +192,7 @@ b, strong {
 }
 
 .styleName{
-  font-size: 1.375rem;
+  font-size: 1.175rem;
+  text-align: center;
 }
 </style>

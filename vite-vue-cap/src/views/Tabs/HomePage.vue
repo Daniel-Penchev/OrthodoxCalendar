@@ -100,13 +100,7 @@
     </ion-header>
 
     <!-- Body -->
-    <ion-content
-      class="ion-padding"
-      style="
-        background: url('../../assets/img/libarary/oldPaper.jpg');
-        background-size: cover;
-      "
-    >
+    <ion-content>
       <div class="calendar-content">
         <div pager="true" style="width: 100%">
           <!-- Slide 1 -->
@@ -393,10 +387,15 @@ const handleBlur = () => {
 .calendar-content {
   display: inline-flex;
   align-items: center;
+  padding: 5%;
   justify-content: space-between;
   /* height: auto; */
   flex-direction: column;
   width: 100%;
+            background: url('https://t4.ftcdn.net/jpg/01/01/72/17/360_F_101721700_HE5ouiYmnmHljXfxTCYrNre4JgxXN64V.jpg');
+            background-size: cover;
+            padding-top: 3%;
+            padding-bottom: 2%;
 }
 
 .header-content {

@@ -21,8 +21,8 @@
   padding: 3%;
 }
 
-.content {
-  /* position: relative;
+/* .content {
+  position: relative;
 	top: 10px;
 	 background: url("https://i.imgur.com/0kjMcUe.png");
 	background-size: 1000px;
@@ -77,8 +77,9 @@
 		100% 97%,
 		100% 0%
 	);
-	overflow: auto; */
-}
+	overflow: auto;
+} */
+
 /* 
 @media screen and (max-width: 1650px) {
 	.content {
@@ -247,13 +248,15 @@ a {
             display: flex;
             background: url('https://t4.ftcdn.net/jpg/01/01/72/17/360_F_101721700_HE5ouiYmnmHljXfxTCYrNre4JgxXN64V.jpg');
             background-size: cover;
+            padding-top: 3%;
+            padding-bottom: 2%;
           "
         >
           <ion-title
             style="font-size: xx-large; font-weight: bold;"
             >Libary Page</ion-title
           >
-          <BookComponent></BookComponent>
+          
         </div>
       </ion-toolbar>
     </ion-header>
@@ -392,5 +395,4 @@ import {
   IonTitle,
   IonContent,
 } from "@ionic/vue";
-import BookComponent from "../../components/BookComponent.vue";
 </script>

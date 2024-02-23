@@ -13,7 +13,7 @@
         <h1 style="text-align: center;margin-bottom: 10%;font-weight: 700;">Кратки Мисли</h1>
 
         <div v-if="shortThoughts.length > 0" style="text-align: center;font-size: large;margin-bottom: 5%;">
-          <div style="font-size: larger;">{{ currentThought.text }}</div>
+          <div style="font-size: larger;padding-left: 3%;padding-right: 3%;">{{ currentThought.text }}</div>
           <div style="margin-top: 7%;">{{ currentThought.author }}</div>
         </div>
       </ion-card-content>
@@ -70,7 +70,8 @@ function hideComponent() {
 <style scoped>
 
 .thoughtsStyle{
-  background-color: floralwhite;
+  background: url('https://img.freepik.com/free-photo/concrete-wall-scratched-material-background-texture-concept_53876-42929.jpg?size=626&ext=jpg&ga=GA1.2.626944831.1684409618&semt=ais');
+  background-size: cover;
   padding: 3%;
 }
 
