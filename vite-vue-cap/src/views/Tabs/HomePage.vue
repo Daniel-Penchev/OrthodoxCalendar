@@ -392,8 +392,8 @@ const handleBlur = () => {
   /* height: auto; */
   flex-direction: column;
   width: 100%;
-            background: url('https://t4.ftcdn.net/jpg/01/01/72/17/360_F_101721700_HE5ouiYmnmHljXfxTCYrNre4JgxXN64V.jpg');
-            background-size: cover;
+            background: url('../../assets/img//libarary/cross-on-paper.jpg');
+            background-size: contain;
             padding-top: 3%;
             padding-bottom: 2%;
 }

@@ -256,6 +256,18 @@
                       <div v-else>Not found today</div>
                     </ion-card-content>
                   </ion-popover>
+
+                  <ion-button id="auto-triggerPost">Post Calendar</ion-button>
+                  
+                  <ion-popover trigger="auto-triggerPost" side="top" alignment="center">
+                    <div style="padding-top: 50px;
+    padding-bottom: 50px;">
+                      <div class="image-container">
+                      <VueMagnifier mgTouchOffsetX=10 zoomFactor=2 mgWidth=200 mgHeight="200" src="https://pravoslaven-kalendar.com/wp-content/uploads/2023/10/pravoslaven-posten-kalendar-2024.jpg" />
+                    
+                    </div>
+                    </div>
+                  </ion-popover>
                   <!-- <div>________________________________________________</div> -->
 
                   <!-- Идващи от Json -->
@@ -363,6 +375,9 @@ import { Swiper } from "vue-awesome-swiper";
 // import { Swiper , SwiperSlide } from 'swiper/vue';
 // import 'swiper/swiper-bundle.css';
 
+import VueMagnifier from '@websitebeaver/vue-magnifier'
+import '@websitebeaver/vue-magnifier/styles.css'
+
 // const isOpen = ref(false);
 
 // const setOpen = (open: boolean) => (isOpen.value = open);
@@ -444,6 +459,7 @@ const loadData = async () => {
 onMounted(async () => {
   churchHolidays.value = await loadData();
   console.log("churchHolidays:", churchHolidays.value);
+  
 });
 
 // ion-modal Logic
@@ -579,6 +595,7 @@ const calculateOrthodoxEaster = (year: number): Date => {
 };
 // const orthodoxEaster = computed(() => calculateOrthodoxEaster(selectedYear.value));
 
+
 const holidays = ref<Holiday[]>([
   { name: '✝ Нова година. Обрезание Господне', date: '01-01', offset: -1 },
   { name: '✝ Неделя преди Богоявление', date: '01-01', offset: -2 },
@@ -604,11 +621,31 @@ const holidays = ref<Holiday[]>([
   { name: '✝ Събор на Пресвета Богородица', date: '12-26', offset: -1 },
   { name: '✝ Св. първомъченик и архидякон Стефан', date: '12-27', offset: -1 },
   {
-    name: "Неделя на митаря и фарисея",
+    name: "✝ Неделя 14 след Неделя подир Въздвижение на Йерихонския слепец",
+    date: "",
+    offset: -98,
+  },
+  {
+    name: "✝ Неделя 15 след Неделя подир Въздвижение на Закхея",
+    date: "",
+    offset: -91,
+  },
+  {
+    name: "✝ Неделя 16 подир Петдесетница за Талантите",
+    date: "",
+    offset: -84,
+  },
+  {
+    name: "✝ Неделя 17 след Петдесетница – на Хананейката",
+    date: "",
+    offset: -77,
+  },
+  {
+    name: "✝ Неделя 16 след Неделя подир Въздвижение на Митаря и Фарисея",
     date: "",
     offset: -70,
   },
-  { name: "Неделя на блудния син", date: "", offset: -63 },
+  { name: "✝ Неделя 17 след Неделя подир Въздвижение - на Блудния син", date: "", offset: -63 },
   // { name: 'Месен четвъртък (гръцка традиция! - Tsiknopempti)', date: '', offset: -59 },
   {
     name: "Събота срещу Неделя Месопустна Задушница",
@@ -623,13 +660,13 @@ const holidays = ref<Holiday[]>([
     offset: -48,
   },
   { name: "Тодорова събота", date: "", offset: -43 },
-  { name: "Неделя на Православието ", date: "", offset: -42 },
-  { name: "Свети Григорий Палама ", date: "", offset: -35 },
-  // { name: "Неделя на Великия пост - Кръстопоклонна", date: "", offset: -28 },
-  // { name: "Неделя на Великия пост ­- Преп. Йоан Лествичник", date: "", offset: -21 },
-  // { name: "Неделя на Великия пост -­ Преп. Мария Египетска", date: "", offset: -14 },
+  { name: "✝ 1 Неделя на Великия пост - Православна", date: "", offset: -42 },
+  { name: "✝ 2 Неделя на Великия пост - Св. Григорий Палама", date: "", offset: -35 },
+  { name: "✝ 3 Неделя на Великия пост Кръстопоклонна", date: "", offset: -28 },
+  { name: "✝ 4 Неделя на Великия пост - Преп. Йоан Лествичник", date: "", offset: -21 },
+  { name: "✝ 5 Неделя на Великия пост - Преп. Мария Египетска", date: "", offset: -14 },
   { name: "Лазарова събота ", date: "", offset: -8 },
-  { name: "Цветница ", date: "", offset: -7 },
+  { name: "✝ 6 Неделя на Великия пост Вход Господен в Йерусалим Връбница Цветница", date: "", offset: -7 },
   { name: "Велики понеделник ", date: "", offset: -6 },
   { name: "Велики вторник", date: "", offset: -5 },
   { name: "Велика сряда", date: "", offset: -4 },
@@ -637,6 +674,7 @@ const holidays = ref<Holiday[]>([
   { name: "Велики петък", date: "", offset: -2 },
   { name: "Велика събота", date: "", offset: -1 },
   { name: "СВЕТИ ВЕЛИКДЕН ", date: "", offset: 0 },
+  
   {
     name: "2-ри ден от Светлата седмица (седмица на Пасха, седмица на обновлението)",
     date: "",
@@ -668,25 +706,51 @@ const holidays = ref<Holiday[]>([
     date: "",
     offset: 6,
   },
-  { name: "Неделя на Тома ", date: "", offset: 7 },
+  { name: "✝ 2 Неделя след Пасха - Тома ", date: "", offset: 7 },
   {
-    name: "Неделя на жените мироносици ",
+    name: "✝ 3 Неделя след Пасха - на св. Мироносици",
     date: "",
     offset: 14,
   },
-  { name: "Неделя на паралитика ", date: "", offset: 21 },
+  { name: "✝ 4 Неделя след Пасха - на Разслабления", date: "", offset: 21 },
+  { name: "✝ 5 Неделя след Пасха на Самарянката", date: "", offset: 28 },
+  { name: "✝ 6 Неделя след Пасха - на Слепия", date: "", offset: 35 },
   { name: "Свето Възнесение ", date: "", offset: 39 },
-  {
-    name: "Събота срещу Петдесетница Задушница",
-    date: "",
-    offset: 48,
-  },
-  { name: "Света Петдесетница", date: "", offset: 49 },
+  { name: "✝ 7 Неделя след Пасха - на св. Отци от Първиявселенски събор", date: "", offset: 42 },
+  {name: " Събота срещу Петдесетница Задушница",date: "",offset: 48, },
+  { name: "✝ 8 Неделя след Пасха Петдесетница", date: "", offset: 49 },
   { name: "Понеделник на Светия Дух", date: "", offset: 50 },
-  { name: "Неделя на всички светии", date: "", offset: 56 },
+  { name: "✝ 1 Неделя след Петдесетница - на Всички светии", date: "", offset: 56 },
+  { name: "✝ 2 Неделя след Петдесетница - на Всички български светии", date: "", offset: 63 },
+  { name: "✝ 3 Неделя след Петдесетница", date: "", offset: 70 },
+  { name: "✝ 4 Неделя след Петдесетница", date: "", offset: 77  },
+  { name: "✝ 5 Неделя след Петдесетница", date: "", offset: 84 },
+  { name: "✝ 6 Неделя след Петдесетница на св. Отци от 6-те Вселенски събори", date: "", offset: 91 },
+  { name: "✝ 7 Неделя след Петдесетница", date: "", offset: 98 },
+  { name: "✝ 8 Неделя след Петдесетница", date: "", offset: 105 },
+  { name: "✝ 9 Неделя след Петдесетница", date: "", offset: 112 },
+  { name: "✝ 10 Неделя след Петдесетница", date: "", offset: 119 },
+  { name: "✝ 11 Неделя след Петдесетница", date: "", offset: 126 },
+  { name: "✝ 12 Неделя след Петдесетница", date: "", offset: 133 },
+  // Error
+  { name: "✝ 13 Неделя след Петдесетница", date: "", offset: 140 }, 
+  { name: "✝ 1 Неделя подир Въздвижение", date: "", offset: 147 },
+  { name: "✝ 2 Неделя след Неделя подир Въздвижение", date: "", offset: 154 },
+  { name: "✝ 3 Неделя след Неделя подир Въздвижение", date: "", offset: 161 },
+  { name: "✝ 4 Неделя след Неделя подир Въздвижение", date: "", offset: 168 },
+  { name: "✝ 6 Неделя след Неделя подир Въздвижение - на св. Отци от VII Вселенски събор", date: "", offset: 175 },
+  { name: "✝ 5 Неделя след Неделя подир Въздвижение", date: "", offset: 182 },
+  { name: "✝ 7 Неделя след Неделя подир Въздвижение", date: "", offset: 189 },
+  { name: "✝ 8 Неделя след Неделя подир Въздвижение", date: "", offset: 196 },
+  { name: "✝ 9 Неделя след Неделя подир Въздвижение", date: "", offset: 203 },
+  { name: "✝ 13 Неделя след Неделя подир Въздвижение", date: "", offset: 210 },
+  { name: "✝ 10 Неделя след Неделя подир Въздвижение", date: "", offset: 217 },
+  { name: "✝ 11 Неделя след Неделя подир Въздвижение", date: "", offset: 224 },
+  { name: "✝ 12 Неделя след Неделя подир Въздвижение на св. Праотци", date: "", offset: 231 },
+  { name: "Неделя преди Рождество Христово", date: "", offset: 238 },
+
   // ................................
 ]);
-
 const calculatedHolidays = computed(() => {
   const easterDate = calculateOrthodoxEaster(selectedDate.value.getFullYear());
   const result = holidays.value.map((holiday) => {
@@ -1101,4 +1165,17 @@ const saveHoliday = (nameText: string) => {
     padding: 24px;
   }
 }
+
+/* Post Calendar */
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.calendar-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 </style>

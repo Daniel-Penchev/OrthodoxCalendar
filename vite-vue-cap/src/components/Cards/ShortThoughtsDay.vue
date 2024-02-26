@@ -59,7 +59,7 @@ function setupThoughtUpdateTimer() {
   setInterval(() => {
     updateCurrentThought();
     isHidden.value = false;
-  }, 1 * 60 * 1000);
+  }, 2 * 60 * 1000);
 }
 
 function hideComponent() {
@@ -70,7 +70,7 @@ function hideComponent() {
 <style scoped>
 
 .thoughtsStyle{
-  background: url('https://img.freepik.com/free-photo/concrete-wall-scratched-material-background-texture-concept_53876-42929.jpg?size=626&ext=jpg&ga=GA1.2.626944831.1684409618&semt=ais');
+  background: url('../../assets/img/libarary/concrete-wall-scratched-material.jpg');
   background-size: cover;
   padding: 3%;
 }
