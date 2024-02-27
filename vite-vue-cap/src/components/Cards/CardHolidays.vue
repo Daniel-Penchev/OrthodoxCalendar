@@ -7,7 +7,16 @@
         <swiper-slide>Slide 2</swiper-slide>
         <swiper-slide>Slide 3</swiper-slide>
     </swiper> -->
-
+    <!-- <swiper :loop="true">
+                    <swiper-slide v-for="(churchHoliday, churchIndex) in selectedDay.church_holidays" :key="churchIndex">
+           
+                      <img
+                        v-if="churchHoliday.image"
+                        :src="churchHoliday.image || 'https://ionicframework.com/docs/img/demos/thumbnail.svg'"
+                        class="imageStyle"
+                      />
+                    </swiper-slide>
+                  </swiper> -->
       <div v-if="churchHolidays" style="margin-top: 3%">
         <div
           v-for="(month, monthIndex) in churchHolidays.year.months"
@@ -20,23 +29,18 @@
                 <div v-if="isCurrentDаy(day.day) && isCurrentMonth(month.name)">
                   <h3>Day {{ selectedDay.day }}</h3>
 
-                  <img
-                    v-if="selectedDay.church_holidays && selectedDay.church_holidays.length !== '' && selectedDay.church_holidays[0].image"
-                    :src="selectedDay.church_holidays[0].image || 'https://ionicframework.com/docs/img/demos/thumbnail.svg'"
-                    class="imageStyle"
-                  />
+              
+          <!-- Display images from day_images -->
+          <swiper v-if="selectedDay.day_images && selectedDay.day_images.length > 0" :loop="true">
+            <swiper-slide v-for="(image, imageIndex) in selectedDay.day_images" :key="imageIndex">
+              <img
+                v-if="image"
+                :src="image || 'https://ionicframework.com/docs/img/demos/thumbnail.svg'"
+                class="imageStyle"
+              />
+            </swiper-slide>
+          </swiper>
 
-                  <!-- Use Swiper if there are multiple images -->
-                  <swiper v-else :loop="true">
-                    <swiper-slide v-for="(churchHoliday, churchIndex) in selectedDay.church_holidays" :key="churchIndex">
-                      <!-- Display image for each church holiday -->
-                      <img
-                        v-if="churchHoliday.image"
-                        :src="churchHoliday.image || 'https://ionicframework.com/docs/img/demos/thumbnail.svg'"
-                        class="imageStyle"
-                      />
-                    </swiper-slide>
-                  </swiper>
                   <!-- <img
                   v-for="(image, imageIndex) in selectedDay.church_holidays.images"
                   :key="imageIndex"
@@ -371,7 +375,7 @@ import {
 import { format } from "date-fns";
 // IonItem, IonCardHeader, IonCardTitle
 import { computed, onMounted, ref, watch } from "vue";
-import { Swiper } from "vue-awesome-swiper";
+import { Swiper, SwiperSlide } from "vue-awesome-swiper";
 // import { Swiper , SwiperSlide } from 'swiper/vue';
 // import 'swiper/swiper-bundle.css';
 
@@ -389,6 +393,7 @@ interface HolidayData {
       name: string;
       days: {
         day: number;
+        day_images: string[];
         name_days: string[];
         church_holidays?: {
           name: string;
@@ -610,6 +615,7 @@ const holidays = ref<Holiday[]>([
   { name: '✝ Св. пророк Илия', date: '07-20', offset: -1 },
   { name: '✝ Преображение Господне', date: '08-06', offset: -1 },
   { name: '✝ Успение на Пресвета Богородица', date: '08-15', offset: -1 },
+  { name: '✝ Начало на Църковната нова година', date: '09-01', offset: -1 },
   { name: '✝ Рождество на Пресвета Богородица', date: '09-08', offset: -1 },
   { name: '✝ Въздвижение на Св. Кръст Господен', date: '09-14', offset: -1 },
   { name: '✝ Преп. Йоан Рилски Чудотворец', date: '10-19', offset: -1 },
@@ -725,7 +731,7 @@ const holidays = ref<Holiday[]>([
   { name: "✝ 3 Неделя след Петдесетница", date: "", offset: 70 },
   { name: "✝ 4 Неделя след Петдесетница", date: "", offset: 77  },
   { name: "✝ 5 Неделя след Петдесетница", date: "", offset: 84 },
-  { name: "✝ 6 Неделя след Петдесетница на св. Отци от 6-те Вселенски събори", date: "", offset: 91 },
+  { name: "✝ 6 Неделя след Петдесетница", date: "", offset: 91 },
   { name: "✝ 7 Неделя след Петдесетница", date: "", offset: 98 },
   { name: "✝ 8 Неделя след Петдесетница", date: "", offset: 105 },
   { name: "✝ 9 Неделя след Петдесетница", date: "", offset: 112 },
@@ -734,7 +740,7 @@ const holidays = ref<Holiday[]>([
   { name: "✝ 12 Неделя след Петдесетница", date: "", offset: 133 },
   // Error
   { name: "✝ 13 Неделя след Петдесетница", date: "", offset: 140 }, 
-  { name: "✝ 1 Неделя подир Въздвижение", date: "", offset: 147 },
+  { name: "✝ 1 Неделя след Неделя подир Въздвижение", date: "", offset: 147 },
   { name: "✝ 2 Неделя след Неделя подир Въздвижение", date: "", offset: 154 },
   { name: "✝ 3 Неделя след Неделя подир Въздвижение", date: "", offset: 161 },
   { name: "✝ 4 Неделя след Неделя подир Въздвижение", date: "", offset: 168 },
