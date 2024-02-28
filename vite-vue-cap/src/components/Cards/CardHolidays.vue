@@ -29,18 +29,21 @@
                 <div v-if="isCurrentDаy(day.day) && isCurrentMonth(month.name)">
                   <h3>Day {{ selectedDay.day }}</h3>
 
-              
           <!-- Display images from day_images -->
-          <swiper v-if="selectedDay.day_images && selectedDay.day_images.length > 0" :loop="true">
+          <swiper v-if="selectedDay.day_images && selectedDay.day_images.length > 0" :options="swiperOptions" ref="swiperRef" :slides-per-view="1" @swiper="onSwiper" :modules="[Navigation]" :loop="true" >
+            
             <swiper-slide v-for="(image, imageIndex) in selectedDay.day_images" :key="imageIndex">
-              <img
-                v-if="image"
-                :src="image || 'https://ionicframework.com/docs/img/demos/thumbnail.svg'"
-                class="imageStyle"
-              />
-            </swiper-slide>
-          </swiper>
+            <img
+              v-if="image"
+              :src="image || 'https://ionicframework.com/docs/img/demos/thumbnail.svg'"
+              class="imageStyle"
+            />
+          </swiper-slide>
 
+          <div class="swiper-button-next" v-if="selectedDay.day_images.length > 1" @click="swiperNextSlide"></div>
+          <div class="swiper-button-prev" v-if="selectedDay.day_images.length > 1" @click="swiperPrevSlide"></div>
+        </swiper>
+        
                   <!-- <img
                   v-for="(image, imageIndex) in selectedDay.church_holidays.images"
                   :key="imageIndex"
@@ -378,8 +381,9 @@ import { computed, onMounted, ref, watch } from "vue";
 import { Swiper, SwiperSlide } from "vue-awesome-swiper";
 // import { Swiper , SwiperSlide } from 'swiper/vue';
 // import 'swiper/swiper-bundle.css';
+import { Navigation  } from 'swiper/modules'
 
-import VueMagnifier from '@websitebeaver/vue-magnifier'
+import VueMagnifier from "@websitebeaver/vue-magnifier";
 import '@websitebeaver/vue-magnifier/styles.css'
 
 // const isOpen = ref(false);
@@ -466,6 +470,29 @@ onMounted(async () => {
   console.log("churchHolidays:", churchHolidays.value);
   
 });
+const swiperInstance = ref()
+
+function onSwiper(swiper: any) {
+    swiperInstance.value = swiper
+}
+const swiperNextSlide = () => {
+    swiperInstance.value.slideNext()
+};
+const swiperPrevSlide = () => {
+    swiperInstance.value.slidePrev()
+};
+// Swiper
+const swiperOptions = {
+  loop: true,
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true, // Enable clickable pagination
+  },
+
+};
+
+
+
 
 // ion-modal Logic
 
@@ -1182,6 +1209,35 @@ const saveHoliday = (nameText: string) => {
   max-width: 100%;
   height: auto;
   display: block;
+}
+
+/* Swiper Style */
+.swiper-button-next,
+.swiper-button-prev {
+    width: 16%;
+    height: 130%;
+    background-color: rgb(255 255 255 / 100%);
+    color: #000000;
+    display: flex;
+    align-items: center;
+    /* padding-bottom: 58%; */
+    margin-top: -40%;
+    justify-content: center;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 22px;
+  font-weight: bold;
+  color: #464646; /* Променете цвета според вашите предпочитания */
+}
+
+.swiper-button-next {
+  right: 0;
+}
+
+.swiper-button-prev {
+  left: -1px;
 }
 
 </style>
