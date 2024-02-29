@@ -105,6 +105,27 @@
                             </div>
                           </div>
                         </ion-button>
+                            <!-- Add your buttons for text and audio here, similar to the previous example -->
+                            <div style="display: inline-grid; gap: 3%;">
+                              <ion-button class="button-83-pushable" v-if="filteredHoliday.href" role="button">
+                                <a :href="filteredHoliday.href">
+                                  <span class="button-83-shadow"></span>
+                                  <span class="button-83-edge"></span>
+                                  <span class="button-83-front text" style="width: 60px;">
+                                    <img src="/src/assets/img/PrayerBook.png" width="40px" height="40px" />
+                                  </span>
+                                </a>
+                              </ion-button>
+                              <ion-button class="button-82-pushable" v-if="filteredHoliday.audio" role="button">
+                                <a :href="filteredHoliday.audio">
+                                  <span class="button-82-shadow"></span>
+                                  <span class="button-82-edge"></span>
+                                  <span class="button-82-front text">
+                                    <svg width="20px" height="20px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns"><title>headphone</title><desc>Created with Sketch Beta.</desc><defs></defs><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"><g id="Icon-Set-Filled" sketch:type="MSLayerGroup" transform="translate(-466.000000, -517.000000)" fill="#000000"><path d="M495.938,531.521 C495.966,531.183 496,530.846 496,530.5 C496,523.044 489.732,517 482,517 C474.268,517 468,523.044 468,530.5 C468,530.846 468.034,531.183 468.063,531.521 C466.838,532.205 466,533.498 466,535 L466,541 C466,543.209 467.791,545 470,545 L474,545 C476.125,544.905 478,543.148 478,541 L478,535 C478,532.791 476.209,531 474,531 L470,531 C470,524.01 475.373,519 482,519 C488.628,519 494.043,523.967 494,531 C493.999,531.17 490,531 490,531 C487.791,531 486,532.791 486,535 L486,541 C486,543.148 487.875,544.905 490,545 L492,545 L492,548 C492,548.553 492.447,549 493,549 C493.553,549 494,548.553 494,548 L494,545 C496.209,545 498,543.209 498,541 L498,535 C498,533.498 497.162,532.205 495.938,531.521" id="headphone" sketch:type="MSShapeGroup"></path></g></g></svg>
+                                  </span>
+                                </a>
+                              </ion-button>
+                            </div>
                       </ion-buttons>
                     </IonItem>
 
@@ -161,6 +182,7 @@
                           </span>
                         </a>
                         </ion-button> 
+
                         <ion-button class="button-82-pushable" v-if="churchHoliday.audio" role="button">
                           <a :href="churchHoliday.audio">
                           <span class="button-82-shadow"></span>
@@ -414,6 +436,9 @@ interface Holiday {
   name: string;
   date: string;
   offset: number;
+  image: string;
+  href: string;
+  audio: string;
 }
 // const formatTextSpace = (text: string) => {
 //   const htmlResult = text.replace(/\n/g, '<br>');
@@ -424,6 +449,7 @@ interface Holiday {
 //   const htmlResult = text.replace(/\n/g, '<br>');
 //   return `<div v-html="'${htmlResult}'"></div>`;
 // };
+
 const churchHolidays = ref<HolidayData | null>(null);
 
 const props = defineProps(["selectedDate"]);
@@ -629,158 +655,158 @@ const calculateOrthodoxEaster = (year: number): Date => {
 
 
 const holidays = ref<Holiday[]>([
-  { name: '✝ Нова година. Обрезание Господне', date: '01-01', offset: -1 },
-  { name: '✝ Неделя преди Богоявление', date: '01-01', offset: -2 },
-  { name: '✝ Св. Богоявление', date: '01-06', offset: -1 },
-  { name: '✝ Св. Йоан Кръстител ', date: '01-07', offset: -1 },
-  { name: '✝ Неделя след Богоявление ', date: '01-07', offset: -1 },
-  { name: '✝ Сретение Господне', date: '02-02', offset: -1 },
-  { name: '✝ Благовещение', date: '03-25', offset: -1 },
-  { name: '✝ Св. вмчк Георги Победоносец', date: '05-06', offset: -1 },
-  { name: '✝ Св. равноапостолни Методий и Кирил', date: '05-11', offset: -1 },
-  { name: '✝ Св. първовърховни апостоли Петър и Павел', date: '06-29', offset: -1 },
-  { name: '✝ Св. пророк Илия', date: '07-20', offset: -1 },
-  { name: '✝ Преображение Господне', date: '08-06', offset: -1 },
-  { name: '✝ Успение на Пресвета Богородица', date: '08-15', offset: -1 },
-  { name: '✝ Начало на Църковната нова година', date: '09-01', offset: -1 },
-  { name: '✝ Рождество на Пресвета Богородица', date: '09-08', offset: -1 },
-  { name: '✝ Въздвижение на Св. Кръст Господен', date: '09-14', offset: -1 },
-  { name: '✝ Преп. Йоан Рилски Чудотворец', date: '10-19', offset: -1 },
-  { name: '✝ Св. вмчк Димитрий Мироточиви', date: '10-26', offset: -1 },
-  { name: '✝ Събор на св. архангел Михаил', date: '11-08', offset: -1 },
-  { name: '✝ Въведение Богородично', date: '11-21', offset: -1 },
-  { name: '✝ Св. Николай, архиеп. Мирликийски, Чудотворец', date: '12-06', offset: -1 },
-  { name: '✝ Рождество Христово', date: '12-25', offset: -1 },
-  { name: '✝ Събор на Пресвета Богородица', date: '12-26', offset: -1 },
-  { name: '✝ Св. първомъченик и архидякон Стефан', date: '12-27', offset: -1 },
+  { name: '✝ Нова година. Обрезание Господне', date: '01-01', offset: -1 ,image: "/src/assets/img/Orthodox Calendar/1.January/1-1-xc.png",href:"https://www.pravoslavieto.com/calendar/feasts/01.01_Obrezanie_Gospodne.htm",audio:"" },
+  { name: '✝ Неделя преди Богоявление', date: '01-01', offset: -2 ,image: "",href:"",audio:"" },
+  { name: '✝ Св. Богоявление', date: '01-06', offset: -1 ,image: "",href: "https://www.pravoslavieto.com/calendar/feasts/01.06_Bogojavlenie/index.htm",audio: "http://www.sviatost.info/jitia_na_svetiite/jitiya---Bogoyavlenie.mp3" },
+  { name: '✝ Св. Йоан Кръстител ', date: '01-07', offset: -1 ,image: "",href:"https://www.pravoslavieto.com/life/01.07_sv_Joan_Predtecha.htm",audio:"http://www.sviatost.info/jitia_na_svetiite/jitiya---Otsichane_glavata_na_sveti_Yoan_Krystitel.mp3" },
+  { name: '✝ Неделя след Богоявление ', date: '01-07', offset: -1 ,image: "",href:"",audio:"" },
+  { name: '✝ Сретение Господне', date: '02-02', offset: -1 ,image: "",href:"https://www.pravoslavieto.com/calendar/feasts/02.02_Sretenie_Gospodne.htm",audio:"" },
+  { name: '✝ Благовещение', date: '03-25', offset: -1 ,image: "",href:"https://www.izbite.com/bg/%D1%82%D1%80%D0%B0%D0%B4%D0%B8%D1%86%D0%B8%D0%B8-%D0%B8-%D0%BF%D1%80%D0%B0%D0%B7%D0%BD%D0%B8%D1%86%D0%B8/%D1%82%D1%80%D0%B0%D0%B4%D0%B8%D1%86%D0%B8%D0%B8-%D0%B8-%D0%BF%D1%80%D0%B0%D0%B7%D0%BD%D0%B8%D1%86%D0%B8/%D0%B1%D0%BB%D0%B0%D0%B3%D0%BE%D0%B2%D0%B5%D1%89%D0%B5%D0%BD%D0%B8%D0%B5",audio:"http://www.sviatost.info/jitia_na_svetiite/jitiya---Blagoveshtenie.mp3" },
+  { name: '✝ Св. вмчк Георги Победоносец', date: '05-06', offset: -1 ,image: "",href:"https://www.pravoslavieto.com/life/04.23_sv_Georgi_Pobedonosec.htm",audio:"http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_velikomwchenik_i_pobedonosec_Georgi.mp3" },
+  { name: '✝ Св. равноапостолни Методий и Кирил', date: '05-11', offset: -1 ,image: "",href:"https://bg-patriarshia.bg/kiril-metodi",audio:"http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_ravnoapostoli_Kiril_i_Metodi.mp3" },
+  { name: '✝ Св. първовърховни апостоли Петър и Павел', date: '06-29', offset: -1  ,image: "",href:"https://bg-patriarshia.bg/june-29",audio:"http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_pwrvovwrhovni_apostoli_Petwr_i_Pavel.mp3"},
+  { name: '✝ Св. пророк Илия', date: '07-20', offset: -1 ,image: "",href:"https://www.pravoslavieto.com/life/07.20_sv_prorok_Ilia.htm",audio:"http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_prorok_Iliya.mp3" },
+  { name: '✝ Преображение Господне', date: '08-06', offset: -1  ,image: "",href:"https://www.pravoslavieto.com/calendar/feasts/08.06_Preobrazhenie_Gospodne.htm",audio:"http://www.sviatost.info/jitia_na_svetiite/jitiya---Preobrajenie_Gospodne.mp3"},
+  { name: '✝ Успение на Пресвета Богородица', date: '08-15', offset: -1 ,image: "",href:"https://www.pravoslavieto.com/calendar/feasts/08.15_Uspenie_Bogorodichno.htm",audio:"http://www.sviatost.info/jitia_na_svetiite/jitiya---Uspenie_na_presveta_Bogorodica.mp3" },
+  { name: '✝ Начало на Църковната нова година', date: '09-01', offset: -1 ,image: "",href:"https://www.pravoslavieto.com/calendar/feasts/09.01_novoletie.htm",audio:"" },
+  { name: '✝ Рождество на Пресвета Богородица', date: '09-08', offset: -1  ,image: "",href:"https://www.pravoslavieto.com/calendar/feasts/09.08_Rozhdestvo_Bogorodichno.htm",audio:"http://www.sviatost.info/jitia_na_svetiite/jitiya---Rojdestvo_na_Presveta_Bogorodica.mp3"},
+  { name: '✝ Въздвижение на Св. Кръст Господен', date: '09-14', offset: -1  ,image: "",href:"https://www.pravoslavieto.com/calendar/feasts/09.14_Krustovuzdvizhenie.htm",audio:"http://www.sviatost.info/jitia_na_svetiite/jitiya---Vwzdvijenie_na_Svetiya_Krwst_Gospoden.mp3"},
+  { name: '✝ Преп. Йоан Рилски Чудотворец', date: '10-19', offset: -1  ,image: "",href:"https://www.pravoslavieto.com/life/10.19_sv_Ivan_Rilski.htm",audio:""},
+  { name: '✝ Св. вмчк Димитрий Мироточиви', date: '10-26', offset: -1 ,image: "",href:"https://www.pravoslavieto.com/life/10.26_sv_Dimitar_Solunski.htm",audio:"http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_velikomwchenik_Dimitriy_Mirotochivi.mp3" },
+  { name: '✝ Събор на св. архангел Михаил', date: '11-08', offset: -1 ,image: "",href:"https://www.pravoslavieto.com/calendar/feasts/11.08_Arhangelovden.htm",audio:"http://www.sviatost.info/jitia_na_svetiite/jitiya---Swbor_na_sveti_arhistratig_Mihail.mp3" },
+  { name: '✝ Въведение Богородично', date: '11-21', offset: -1  ,image: "",href:"https://www.pravoslavieto.com/calendar/feasts/11.21_Vavedenie_Bogorodichno.htm",audio:"http://www.sviatost.info/jitia_na_svetiite/jitiya---Vwvejdane_na_Presveta_Bogorodica_v_hrama.mp3"},
+  { name: '✝ Св. Николай, архиеп. Мирликийски, Чудотворец', date: '12-06', offset: -1 ,image: "",href:"https://www.pravoslavieto.com/life/12.06_sv_Nikolay.htm",audio:"" },
+  { name: '✝ Рождество Христово', date: '12-25', offset: -1 ,image: "",href:"https://www.pravoslavieto.com/calendar/feasts/rh/index.htm",audio:"http://www.sviatost.info/jitia_na_svetiite/jitiya---Rojdestvo_Hristovo.mp3" },
+  { name: '✝ Събор на Пресвета Богородица', date: '12-26', offset: -1 ,image: "",href:"https://www.pravoslavieto.com/calendar/feasts/12.26_sabor_Bogoroditsa.htm",audio:"http://www.sviatost.info/jitia_na_svetiite/jitiya---Swbor_na_Presveta_Bogorodica.mp3" },
+  { name: '✝ Св. първомъченик и архидякон Стефан', date: '12-27', offset: -1 ,image: "",href:"https://www.pravoslavieto.com/life/12.27_sv_arhidjakon_Stefan.htm",audio:"http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_pwrvomwchenik_i_arhidyakon_Stefan.mp3" },
   {
     name: "✝ Неделя 14 след Неделя подир Въздвижение на Йерихонския слепец",
     date: "",
-    offset: -98,
+    offset: -98 ,image: "",href:"",audio:""
   },
   {
     name: "✝ Неделя 15 след Неделя подир Въздвижение на Закхея",
     date: "",
-    offset: -91,
+    offset: -91 ,image: "",href:"",audio:""
   },
   {
     name: "✝ Неделя 16 подир Петдесетница за Талантите",
     date: "",
-    offset: -84,
+    offset: -84 ,image: "",href:"",audio:""
   },
   {
     name: "✝ Неделя 17 след Петдесетница – на Хананейката",
     date: "",
-    offset: -77,
+    offset: -77,image: "",href:"",audio:""
   },
   {
     name: "✝ Неделя 16 след Неделя подир Въздвижение на Митаря и Фарисея",
     date: "",
-    offset: -70,
+    offset: -70,image: "",href:"",audio:""
   },
-  { name: "✝ Неделя 17 след Неделя подир Въздвижение - на Блудния син", date: "", offset: -63 },
+  { name: "✝ Неделя 17 след Неделя подир Въздвижение - на Блудния син", date: "", offset: -63,image: "",href:"",audio:"" },
   // { name: 'Месен четвъртък (гръцка традиция! - Tsiknopempti)', date: '', offset: -59 },
   {
     name: "Събота срещу Неделя Месопустна Задушница",
     date: "",
-    offset: -57,
+    offset: -57,image: "",href:"https://bg.wikipedia.org/wiki/%D0%97%D0%B0%D0%B4%D1%83%D1%88%D0%BD%D0%B8%D1%86%D0%B0",audio:""
   },
-  { name: "Месна неделя", date: "", offset: -56 },
-  { name: "Сирничка (Прошка) Неделя", date: "", offset: -49 },
+  { name: "Неделя Месопустна", date: "", offset: -56,image: "",href:"http://www.plovdivskamitropolia.bg/nedelna-propoved/76-nedelya-na-strashniya-sad-mesopustna.html",audio:"" },
+  { name: "Неделя Сирничка (Прошка) ", date: "", offset: -49,image: "",href:"https://www.pravoslavieto.com/calendar/feasts/podvizhni/podgotvitelni/siropustna/index.htm",audio:"" },
   {
     name: "Чисти понеделник (започва Великият пост - пост 6 седмици)",
     date: "",
-    offset: -48,
+    offset: -48,image: "",href:"https://vitarama.bg/bg/velikdenski-posti-prakticheski-ukazania/842/item/",audio:""
   },
-  { name: "Тодорова събота", date: "", offset: -43 },
-  { name: "✝ 1 Неделя на Великия пост - Православна", date: "", offset: -42 },
-  { name: "✝ 2 Неделя на Великия пост - Св. Григорий Палама", date: "", offset: -35 },
-  { name: "✝ 3 Неделя на Великия пост Кръстопоклонна", date: "", offset: -28 },
-  { name: "✝ 4 Неделя на Великия пост - Преп. Йоан Лествичник", date: "", offset: -21 },
-  { name: "✝ 5 Неделя на Великия пост - Преп. Мария Египетска", date: "", offset: -14 },
-  { name: "Лазарова събота ", date: "", offset: -8 },
-  { name: "✝ 6 Неделя на Великия пост Вход Господен в Йерусалим Връбница Цветница", date: "", offset: -7 },
-  { name: "Велики понеделник ", date: "", offset: -6 },
-  { name: "Велики вторник", date: "", offset: -5 },
-  { name: "Велика сряда", date: "", offset: -4 },
-  { name: "Велики четвъртък ", date: "", offset: -3 },
-  { name: "Велики петък", date: "", offset: -2 },
-  { name: "Велика събота", date: "", offset: -1 },
-  { name: "СВЕТИ ВЕЛИКДЕН ", date: "", offset: 0 },
+  { name: "Тодорова събота", date: "", offset: -43,image: "",href:"https://dobrotoliubie.com/2018/02/24/%D0%B4%D0%BD%D0%B5%D1%81-%D0%B5-%D1%82%D0%BE%D0%B4%D0%BE%D1%80%D0%BE%D0%B2%D0%B0-%D1%81%D1%8A%D0%B1%D0%BE%D1%82%D0%B0/",audio:"" },
+  { name: "✝ 1 Неделя на Великия пост - Православна", date: "", offset: -42,image: "",href:"http://www.plovdivskamitropolia.bg/nedelna-propoved/78-1-nedelya-na-velikiya-post-pravoslavna.html",audio:"" },
+  { name: "✝ 2 Неделя на Великия пост - Св. Григорий Палама", date: "", offset: -35 ,image: "",href:"http://www.plovdivskamitropolia.bg/nedelna-propoved/79--2-nedelya-na-velikiya-post-sv-grigorii-palama.html",audio:""},
+  { name: "✝ 3 Неделя на Великия пост Кръстопоклонна", date: "", offset: -28,image: "",href:"http://www.plovdivskamitropolia.bg/nedelna-propoved/80-3-nedelya-na-velikiya-post-krastopoklonna-.html",audio:"" },
+  { name: "✝ 4 Неделя на Великия пост - Преп. Йоан Лествичник", date: "", offset: -21 ,image: "",href:"http://www.plovdivskamitropolia.bg/nedelna-propoved/81-4-nedelya-na-velikiya-post-prep-ioan-lestvichnik-.html",audio:"http://www.sviatost.info/jitia_na_svetiite/jitiya---Prepodobni_Yoan_Lestvichnik.mp3"},
+  { name: "✝ 5 Неделя на Великия пост - Преп. Мария Египетска", date: "", offset: -14,image: "",href:"http://www.plovdivskamitropolia.bg/nedelna-propoved/82-5-nedelya-na-velikiya-post-prepodobna-mariya-egipetska-.html",audio:"" },
+  { name: "Лазарова събота ", date: "", offset: -8 ,image: "",href:"",audio:""},
+  { name: "✝ 6 Неделя на Великия пост Вход Господен в Йерусалим Връбница Цветница", date: "", offset: -7 ,image: "",href:"https://www.hramsvetigeorgi.eu/bg/%D0%BF%D1%80%D0%BE%D0%BF%D0%BE%D0%B2%D0%B5%D0%B4%D0%B8/118-%D1%88%D0%B5%D1%81%D1%82%D0%B0-%D0%BD%D0%B5%D0%B4%D0%B5%D0%BB%D1%8F-%D0%BE%D1%82-%D0%B2%D0%B5%D0%BB%D0%B8%D0%BA%D0%B8%D1%8F-%D0%BF%D0%BE%D1%81%D1%82-%D0%B2%D1%80%D1%8A%D0%B1%D0%BD%D0%B8%D1%86%D0%B0",audio:""},
+  { name: "Велики понеделник ", date: "", offset: -6 ,image: "",href:"https://www.pravoslavieto.com/calendar/feasts/podvizhni/strastnata_sedmica/index.htm#1",audio:""},
+  { name: "Велики вторник", date: "", offset: -5,image: "",href:"https://www.pravoslavieto.com/calendar/feasts/podvizhni/strastnata_sedmica/index.htm#1",audio:"" },
+  { name: "Велика сряда", date: "", offset: -4,image: "",href:"https://www.pravoslavieto.com/calendar/feasts/podvizhni/strastnata_sedmica/index.htm#1",audio:"" },
+  { name: "Велики четвъртък ", date: "", offset: -3,image: "",href:"https://www.pravoslavieto.com/calendar/feasts/podvizhni/strastnata_sedmica/index.htm#4",audio:"" },
+  { name: "Велики петък", date: "", offset: -2,image: "",href:"https://www.pravoslavieto.com/calendar/feasts/podvizhni/strastnata_sedmica/index.htm#5",audio:"" },
+  { name: "Велика събота", date: "", offset: -1,image: "",href:"https://www.pravoslavieto.com/calendar/feasts/podvizhni/strastnata_sedmica/index.htm#6",audio:"" },
+  { name: "Възкресение Христово –­ Пасха (Вечерня в първия ден на Пасха)", date: "", offset: 0,image: "",href:"https://bg-patriarshia.bg/easter-passover",audio:"" },
   
   {
-    name: "2-ри ден от Светлата седмица (седмица на Пасха, седмица на обновлението)",
+    name: "2-ри ден от Светлата седмица (седмица на Пасха, седмица на обновлението) - светъл понеделник",
     date: "",
-    offset: 1,
+    offset: 1,image: "",href:"",audio:""
   },
   {
     name: "3-ти ден от Светлата седмица (Седмица на Пасха, Седмица на обновлението) - светъл вторник",
     date: "",
-    offset: 2,
+    offset: 2,image: "",href:"",audio:""
   },
   {
-    name: "4-ти ден от Светлата седмица (седмица на Пасха, седмица на обновлението)",
+    name: "4-ти ден от Светлата седмица (седмица на Пасха, седмица на обновлението) - светла сряда",
     date: "",
-    offset: 3,
+    offset: 3,image: "",href:"https://arhiereiskopz.com/to-faith/learnings/231-na-svetla-sryada-tzarkvata-pochita-sveti-ioan-bogoslov",audio:""
   },
   {
-    name: "5-ти ден от Светлата седмица (седмица на Пасха, седмица на обновлението)",
+    name: "5-ти ден от Светлата седмица (седмица на Пасха, седмица на обновлението) - светъл четвъртък",
     date: "",
-    offset: 4,
+    offset: 4,image: "",href:"https://www.pravoslavieto.com/calendar/feasts/podvizhni/svetlata_sedmica/svetli_chetvartak.htm",audio:""
   },
   {
-    name: "6-ти ден от Светлата седмица (седмица на Пасха, седмица на обновлението)",
+    name: "6-ти ден от Светлата седмица (седмица на Пасха, седмица на обновлението) - светъл петък",
     date: "",
-    offset: 5,
+    offset: 5,image: "",href:"https://predanie.bg/%D0%BF%D1%8A%D1%82%D1%8F%D1%82-%D0%BD%D0%B0-%D0%BE%D1%82%D1%86%D0%B8%D1%82%D0%B5/%D0%B1%D0%BE%D0%B3%D0%BE%D1%81%D0%BB%D0%BE%D0%B2%D0%B8%D0%B5%D1%82%D0%BE-%D0%BD%D0%B0-%D0%BE%D1%82%D1%86%D0%B8%D1%82%D0%B5/1315-%D1%81%D0%B2%D0%B5%D1%82%D0%BB%D0%B8-%D0%BF%D0%B5%D1%82%D1%8A%D0%BA-%D0%BF%D1%80%D0%B5%D1%81%D0%B2%D0%B5%D1%82%D0%B0-%D0%B1%D0%BE%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D0%B8%D1%86%D0%B0-%C2%AD-%D0%B6%D0%B8%D0%B2%D0%BE%D0%BF%D1%80%D0%B8%D0%B5%D0%BC%D0%BD%D0%B8-%D0%B8%D0%B7%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA",audio:""
   },
-  { name: "Ден на животворния фонтан ", date: "", offset: 5 },
+  { name: "Ден на животворния фонтан ", date: "", offset: 5 ,image: "",href:"",audio:""},
   {
-    name: "7-ми ден от Светлата седмица (седмица на Пасха, седмица на обновлението)",
+    name: "7-ми ден от Светлата седмица (седмица на Пасха, седмица на обновлението)  - светъл събота",
     date: "",
-    offset: 6,
+    offset: 6,image: "",href:"https://www.pravoslavieto.com/calendar/feasts/podvizhni/strastnata_sedmica/Velika_subota.htm",audio:""
   },
-  { name: "✝ 2 Неделя след Пасха - Тома ", date: "", offset: 7 },
+  { name: "✝ 2 Неделя след Пасха - Тома ", date: "", offset: 7 ,image: "",href:"",audio:""},
   {
     name: "✝ 3 Неделя след Пасха - на св. Мироносици",
     date: "",
-    offset: 14,
+    offset: 14,image: "",href:"",audio:""
   },
-  { name: "✝ 4 Неделя след Пасха - на Разслабления", date: "", offset: 21 },
-  { name: "✝ 5 Неделя след Пасха на Самарянката", date: "", offset: 28 },
-  { name: "✝ 6 Неделя след Пасха - на Слепия", date: "", offset: 35 },
-  { name: "Свето Възнесение ", date: "", offset: 39 },
-  { name: "✝ 7 Неделя след Пасха - на св. Отци от Първиявселенски събор", date: "", offset: 42 },
-  {name: " Събота срещу Петдесетница Задушница",date: "",offset: 48, },
-  { name: "✝ 8 Неделя след Пасха Петдесетница", date: "", offset: 49 },
-  { name: "Понеделник на Светия Дух", date: "", offset: 50 },
-  { name: "✝ 1 Неделя след Петдесетница - на Всички светии", date: "", offset: 56 },
-  { name: "✝ 2 Неделя след Петдесетница - на Всички български светии", date: "", offset: 63 },
-  { name: "✝ 3 Неделя след Петдесетница", date: "", offset: 70 },
-  { name: "✝ 4 Неделя след Петдесетница", date: "", offset: 77  },
-  { name: "✝ 5 Неделя след Петдесетница", date: "", offset: 84 },
-  { name: "✝ 6 Неделя след Петдесетница", date: "", offset: 91 },
-  { name: "✝ 7 Неделя след Петдесетница", date: "", offset: 98 },
-  { name: "✝ 8 Неделя след Петдесетница", date: "", offset: 105 },
-  { name: "✝ 9 Неделя след Петдесетница", date: "", offset: 112 },
-  { name: "✝ 10 Неделя след Петдесетница", date: "", offset: 119 },
-  { name: "✝ 11 Неделя след Петдесетница", date: "", offset: 126 },
-  { name: "✝ 12 Неделя след Петдесетница", date: "", offset: 133 },
+  { name: "✝ 4 Неделя след Пасха - на Разслабления", date: "", offset: 21 ,image: "",href:"",audio:""},
+  { name: "✝ 5 Неделя след Пасха на Самарянката", date: "", offset: 28,image: "",href:"",audio:"" },
+  { name: "✝ 6 Неделя след Пасха - на Слепия", date: "", offset: 35,image: "",href:"",audio:"" },
+  { name: "✝ Възнесение Господне", date: "", offset: 39,image: "",href:"https://www.pravoslavieto.com/calendar/feasts/podvizhni/Vaznesenie_Gospodne/index.htm",audio:"" },
+  { name: "✝ 7 Неделя след Пасха - на св. Отци от Първиявселенски събор", date: "", offset: 42,image: "",href:"",audio:"" },
+  {name: "✝ Събота срещу Петдесетница Задушница",date: "",offset: 48,image: "",href:"https://bg.wikipedia.org/wiki/%D0%97%D0%B0%D0%B4%D1%83%D1%88%D0%BD%D0%B8%D1%86%D0%B0",audio:"" },
+  { name: "✝ 8 Неделя след Пасха Петдесетница", date: "", offset: 49,image: "",href:"",audio:"" },
+  { name: "✝ Понеделник на Светия Дух", date: "", offset: 50,image: "",href:"https://www.pravoslavieto.com/calendar/feasts/podvizhni/Petdesetnica/index.htm",audio:"" },
+  { name: "✝ 1 Неделя след Петдесетница - на Всички светии", date: "", offset: 56,image: "",href:"https://bg-patriarshia.bg/1-sunday-after-pentecost",audio:"" },
+  { name: "✝ 2 Неделя след Петдесетница - на Всички български светии", date: "", offset: 63,image: "",href:"http://www.plovdivskamitropolia.bg/nedelna-propoved/44-2-nedelya-sled-petdesetnitza.html",audio:"" },
+  { name: "✝ 3 Неделя след Петдесетница – на св. Отци от 6-те Вселенски събора", date: "", offset: 70,image: "",href:"http://www.plovdivskamitropolia.bg/nedelna-propoved/45-3-nedelya-sled-petdesetnitza.html",audio:"" },
+  { name: "✝ 4 Неделя след Петдесетница", date: "", offset: 77,image: "",href:"http://www.plovdivskamitropolia.bg/nedelna-propoved/46-4-nedelya-sled-petdesetnitza.html",audio:""  },
+  { name: "✝ 5 Неделя след Петдесетница", date: "", offset: 84,image: "",href:"http://www.plovdivskamitropolia.bg/nedelna-propoved/47-5-nedelya-sled-petdesetnitza.html",audio:"" },
+  { name: "✝ 6 Неделя след Петдесетница", date: "", offset: 91,image: "",href:"http://www.plovdivskamitropolia.bg/nedelna-propoved/48-6-nedelya-sled-petdesetnitza.html",audio:"" },
+  { name: "✝ 7 Неделя след Петдесетница", date: "", offset: 98,image: "",href:"http://www.plovdivskamitropolia.bg/nedelna-propoved/49-7-nedelya-sled-petdesetnitza.html",audio:"" },
+  { name: "✝ 8 Неделя след Петдесетница", date: "", offset: 105,image: "",href:"http://www.plovdivskamitropolia.bg/nedelna-propoved/50-8-nedelya-sled-petdesetnitza.html",audio:"" },
+  { name: "✝ 9 Неделя след Петдесетница", date: "", offset: 112,image: "",href:"http://www.plovdivskamitropolia.bg/nedelna-propoved/51-9-nedelya-sled-petdesetnitza.html",audio:"" },
+  { name: "✝ 10 Неделя след Петдесетница", date: "", offset: 119,image: "",href:"http://www.plovdivskamitropolia.bg/nedelna-propoved/52-10-nedelya-sled-petdesetnitza.html",audio:"" },
+  { name: "✝ 11 Неделя след Петдесетница", date: "", offset: 126,image: "",href:"",audio:"" },
+  { name: "✝ 12 Неделя след Петдесетница", date: "", offset: 133,image: "",href:"",audio:"" },
   // Error
-  { name: "✝ 13 Неделя след Петдесетница", date: "", offset: 140 }, 
-  { name: "✝ 1 Неделя след Неделя подир Въздвижение", date: "", offset: 147 },
-  { name: "✝ 2 Неделя след Неделя подир Въздвижение", date: "", offset: 154 },
-  { name: "✝ 3 Неделя след Неделя подир Въздвижение", date: "", offset: 161 },
-  { name: "✝ 4 Неделя след Неделя подир Въздвижение", date: "", offset: 168 },
-  { name: "✝ 6 Неделя след Неделя подир Въздвижение - на св. Отци от VII Вселенски събор", date: "", offset: 175 },
-  { name: "✝ 5 Неделя след Неделя подир Въздвижение", date: "", offset: 182 },
-  { name: "✝ 7 Неделя след Неделя подир Въздвижение", date: "", offset: 189 },
-  { name: "✝ 8 Неделя след Неделя подир Въздвижение", date: "", offset: 196 },
-  { name: "✝ 9 Неделя след Неделя подир Въздвижение", date: "", offset: 203 },
-  { name: "✝ 13 Неделя след Неделя подир Въздвижение", date: "", offset: 210 },
-  { name: "✝ 10 Неделя след Неделя подир Въздвижение", date: "", offset: 217 },
-  { name: "✝ 11 Неделя след Неделя подир Въздвижение", date: "", offset: 224 },
-  { name: "✝ 12 Неделя след Неделя подир Въздвижение на св. Праотци", date: "", offset: 231 },
-  { name: "Неделя преди Рождество Христово", date: "", offset: 238 },
+  { name: "✝ 13 Неделя след Петдесетница", date: "", offset: 140,image: "",href:"",audio:"" }, 
+  { name: "✝ 1 Неделя след Неделя подир Въздвижение", date: "", offset: 147,image: "",href:"",audio:"" },
+  { name: "✝ 2 Неделя след Неделя подир Въздвижение", date: "", offset: 154,image: "",href:"",audio:"" },
+  { name: "✝ 3 Неделя след Неделя подир Въздвижение", date: "", offset: 161,image: "",href:"",audio:"" },
+  { name: "✝ 4 Неделя след Неделя подир Въздвижение", date: "", offset: 168,image: "",href:"",audio:"" },
+  { name: "✝ 6 Неделя след Неделя подир Въздвижение - на св. Отци от VII Вселенски събор", date: "", offset: 175 ,image: "",href:"",audio:""},
+  { name: "✝ 5 Неделя след Неделя подир Въздвижение", date: "", offset: 182,image: "",href:"",audio:"" },
+  { name: "✝ 7 Неделя след Неделя подир Въздвижение", date: "", offset: 189,image: "",href:"",audio:"" },
+  { name: "✝ 8 Неделя след Неделя подир Въздвижение", date: "", offset: 196,image: "",href:"",audio:"" },
+  { name: "✝ 9 Неделя след Неделя подир Въздвижение", date: "", offset: 203,image: "",href:"",audio:"" },
+  { name: "✝ 13 Неделя след Неделя подир Въздвижение", date: "", offset: 210,image: "",href:"",audio:"" },
+  { name: "✝ 10 Неделя след Неделя подир Въздвижение", date: "", offset: 217,image: "",href:"",audio:"" },
+  { name: "✝ 11 Неделя след Неделя подир Въздвижение", date: "", offset: 224,image: "",href:"",audio:"" },
+  { name: "✝ 12 Неделя след Неделя подир Въздвижение на св. Праотци", date: "", offset: 231,image: "",href:"",audio:"" },
+  { name: "Неделя преди Рождество Христово", date: "", offset: 238,image: "",href:"",audio:"" },
 
   // ................................
 ]);
