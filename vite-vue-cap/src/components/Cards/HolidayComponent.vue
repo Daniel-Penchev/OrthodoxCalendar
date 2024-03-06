@@ -13,13 +13,18 @@
         <a name="ЦЪРКОВНИ"></a>
         <p>&nbsp;</p>
         <div v-for="month in sortedMonths" :key="month" class="styleMonth" > 
-          <b>{{ month }}</b>
+         
+        <details>
+         <summary><b>{{ month }}</b></summary>
+  
           <div v-for="holiday in  getHolidaysByMonth(month)" :key="holiday.name" style="margin-top: 5%;display: flex; gap: 8%;justify-content: space-between;align-items: center;padding-bottom: 6%;">
             <!-- <b>{{ getMonthName(holiday.date) }}</b> -->
              <p class="styleDay">{{ parseInt(holiday.date.split('/')[1], 10) }}</p>
              <p class="styleName">{{ holiday.name }}</p>
              <br>
           </div>
+       </details>
+       
       </div>
       </div>
     </ion-card-content>
@@ -189,9 +194,6 @@ b, strong {
 .styleMonth{
   margin-top: 12%;    
   border-bottom: 1px solid grey;
-}
-.styleMonth:last-child {
-  border-bottom: none;
 }
 
 .styleDay{
