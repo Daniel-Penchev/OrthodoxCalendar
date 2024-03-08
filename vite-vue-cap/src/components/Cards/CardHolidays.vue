@@ -1253,7 +1253,7 @@ const saveHoliday = (nameText: string) => {
 .swiper-button-next,
 .swiper-button-prev {
     width: 16%;
-    height: 130%;
+    height: 140%;
     background-color: rgb(255 255 255 / 100%);
     color: #000000;
     display: flex;
@@ -1268,6 +1268,7 @@ const saveHoliday = (nameText: string) => {
   font-size: 22px;
   font-weight: bold;
   color: #8a8a8a; /* Променете цвета според вашите предпочитания */
+  margin-top: -40%;
 }
 
 .swiper-button-next {
@@ -1278,4 +1279,19 @@ const saveHoliday = (nameText: string) => {
   left: -1px;
 }
 
+.swiper-button-next:active::after,
+.swiper-button-prev:active::after {
+  background-color: rgb(243 243 243);
+    color: #8a8a8a;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    /* padding-bottom: 58%; */
+    /* margin-top: -14%; */
+    justify-content: center;
+    /* padding-top: 3%; */
+    /* margin-right: 5.4%; */
+}
 </style>
