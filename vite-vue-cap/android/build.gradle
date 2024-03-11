@@ -34,7 +34,7 @@ task clean(type: Delete) {
     delete rootProject.buildDir
 }
 
-   signingConfigs {
+      signingConfigs {
        release {
            keyAlias keystoreProperties['keyAlias']
            keyPassword keystoreProperties['keyPassword']
@@ -47,3 +47,4 @@ task clean(type: Delete) {
            signingConfig signingConfigs.release
        }
    }
+

@@ -244,6 +244,9 @@
           {
             "day": 8,
             "day_images": [
+              "/src/assets/img/Orthodox Calendar/1.January/1-8.1.jpg",
+              "/src/assets/img/Orthodox Calendar/1.January/1-8.2.jpg",
+              "/src/assets/img/Orthodox Calendar/1.January/1-8.3.jpg",
               "/src/assets/img/Orthodox Calendar/1.January/1-1-xc.png"
             ],
             "church_holidays": [
@@ -287,6 +290,7 @@
           {
             "day": 9,
             "day_images": [
+              "/src/assets/img/Orthodox Calendar/1.January/1-9.jpg",
               "/src/assets/img/Orthodox Calendar/1.January/1-1-xc.png"
             ],
             "church_holidays": [
@@ -790,7 +794,8 @@
           {
             "day": 24,
             "day_images": [
-              "/src/assets/img/Orthodox Calendar/1.January/1-24.png"
+              "/src/assets/img/Orthodox Calendar/1.January/1-24.png",
+              "/src/assets/img/Orthodox Calendar/1.January/1-24.1.jpg"
             ],
             "name_days": ["Ксения", "Аксения", "Оксана"],
             "church_holidays": [
@@ -1469,7 +1474,7 @@
           },
           {
             "day": 18,
-            "day_images": ["/src/assets/img/Orthodox Calendar/2.February/2-18.png"],
+            "day_images": ["/src/assets/img/Orthodox Calendar/2.February/2-18.jpg"],
             "church_holidays": [
               {
                 "name": "Св. Лъв, папа Римски",
@@ -2234,7 +2239,8 @@
           },
           {
             "day": 27,
-            "day_images": [""],
+            "day_images": ["/src/assets/img/Orthodox Calendar/3.March/3-27.png",
+            "/src/assets/img/Orthodox Calendar/3.March/3-27.1.jpg"],
             "church_holidays": [
               {
                 "name": "Св. мчца Матрона Солунска",
@@ -2728,6 +2734,13 @@
             "day_images": ["/src/assets/img/Orthodox Calendar/4.April/4-23.png"],
             "church_holidays": [
               {
+                "name": "Св. великомъченик Георги Трофееносец",
+                "image": "",
+                "text": "",
+                "href": "https://www.ieramoni.gr/bg/%CE%AC%CE%B3%CE%B9%CE%BF%CF%82-%CE%B3%CE%B5%CF%8E%CF%81%CE%B3%CE%B9%CE%BF%CF%82/",
+                "audio": ""
+              },
+              {
                 "name": "Св. мчца Александра",
                 "image": "",
                 "text": "",
@@ -3045,7 +3058,8 @@
           },
           {
             "day": 2,
-            "day_images": ["/src/assets/img/Orthodox Calendar/5.May/5-2.png"],
+            "day_images": ["/src/assets/img/Orthodox Calendar/5.May/5-2.png",
+            "/src/assets/img/Orthodox Calendar/5.May/5-2.1.jpg"],
             "name_days": [
               "Борис",
               "Борислав",
@@ -3171,7 +3185,8 @@
           },
           {
             "day": 6,
-            "day_images": ["/src/assets/img/Orthodox Calendar/5.May/5-6.png"],
+            "day_images": ["/src/assets/img/Orthodox Calendar/5.May/5-6.1.jpg",
+            "/src/assets/img/Orthodox Calendar/5.May/5-6.png"],
             "church_holidays": [
               {
                 "name": "✞ Възкресение Христово",
@@ -3312,7 +3327,8 @@
           },
           {
             "day": 11,
-            "day_images": ["/src/assets/img/Orthodox Calendar/5.May/5-11.png"],
+            "day_images": ["/src/assets/img/Orthodox Calendar/5.May/5-11.1.jpg",
+            "/src/assets/img/Orthodox Calendar/5.May/5-11.png"],
             "church_holidays": [
               {
                 "name": "Св. свщмчк Мокий",
@@ -3734,7 +3750,8 @@
           },
           {
             "day": 30,
-            "day_images": ["/src/assets/img/Orthodox Calendar/5.May/5-30.png"],
+            "day_images": ["/src/assets/img/Orthodox Calendar/5.May/5-30.png",
+            "/src/assets/img/Orthodox Calendar/5.May/5-30.1.jpg"],
             "church_holidays": [
               {
                 "name": "Преп. Исакий Далматски",
@@ -5016,7 +5033,8 @@
           },
           {
             "day": 26,
-            "day_images": ["/src/assets/img/Orthodox Calendar/7.July/7-26.png"],
+            "day_images": ["/src/assets/img/Orthodox Calendar/7.July/7-26.png",
+            "/src/assets/img/Orthodox Calendar/7.July/7-26.1.jpg"],
             "church_holidays": [
               {
                 "name": "Св. свещеномъченик Ермолай и другарите му",
@@ -6046,7 +6064,8 @@
           {
             "day": 5,
             "day_images": [
-              "/src/assets/img/Orthodox Calendar/9.September/9-5.png"
+              "/src/assets/img/Orthodox Calendar/9.September/9-5.png",
+              "/src/assets/img/Orthodox Calendar/9.September/9-5.1.jpg"
             ],
             "church_holidays": [
               {
@@ -6074,7 +6093,8 @@
           {
             "day": 6,
             "day_images": [
-              "/src/assets/img/Orthodox Calendar/9.September/9-6.png"
+              "/src/assets/img/Orthodox Calendar/9.September/9-6.png",
+              "/src/assets/img/Orthodox Calendar/9.September/9-6.1.jpg"
             ],
             "church_holidays": [
               {
@@ -7150,6 +7170,7 @@
           {
             "day": 19,
             "day_images": [
+              "/src/assets/img/Orthodox Calendar/10.October/10-19.1.jpg",
               "/src/assets/img/Orthodox Calendar/10.October/10-19.png"
             ],
             "church_holidays": [

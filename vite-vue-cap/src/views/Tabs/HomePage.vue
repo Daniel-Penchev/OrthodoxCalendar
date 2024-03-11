@@ -9,8 +9,7 @@
           style="
             background: url('https://t4.ftcdn.net/jpg/01/01/72/17/360_F_101721700_HE5ouiYmnmHljXfxTCYrNre4JgxXN64V.jpg');
             background-size: cover;
-            padding-top: 2%;
-            padding-bottom: 2%;
+            margin: 0%;
           "
         >
           <IonTitle class="header-title">Calendar</IonTitle>
@@ -105,9 +104,6 @@
         <div pager="true" style="width: 100%">
           <!-- Slide 1 -->
           <div style="width: 100%">
-            <swiper :loop="true">
-              <swiper-slide >
-                
                 <CalendarComponent
                   :showDatePicker="showDatePicker"
                   @move-forward="handleMoveForward"
@@ -116,9 +112,11 @@
                 ></CalendarComponent>
                 <ShortThoughtsDay></ShortThoughtsDay>
 
-                <CardHolidays :selectedDate="selectedDate"></CardHolidays>
-              </swiper-slide>
-            </swiper>
+                <swiper :loop="true" @slideChange="handleSlideChange">
+                  <swiper-slide>
+                    <CardHolidays :selectedDate="selectedDate"></CardHolidays>
+                  </swiper-slide>
+                </swiper>
           </div>
         </div>
       </div>
@@ -138,8 +136,8 @@
           </ion-buttons>
         </ion-toolbar>
       </ion-header>
-      <ion-content class="ion-padding">
-        <div class="library-container">
+      <ion-content class="ion-padding" >
+        <div class="library-container" >
           <!-- Description Section -->
           <h2>Description</h2>
           <p>
@@ -334,6 +332,7 @@ import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/swiper-bundle.css";
 import { ref } from "vue";
 
+
 const selectedDate = ref(null);
 const showDatePicker = ref(true);
 
@@ -381,6 +380,19 @@ const closeAboutModal = () => {
 const handleBlur = () => {
   aboutModal.value = false;
 };
+
+
+const handleSlideChange = (swiper: any) => {
+  const currentIndex = swiper.activeIndex;
+  console.log("currentIndex!!!!!!"+currentIndex);
+  
+  // Increment selectedDate by 1 when sliding to the next item
+  // if (selectedDate.value) {
+  //   const newDate = selectedDate.value.add(1, 'day'); // Assuming you are using dayjs
+  //   updateSelectedDate(newDate);
+  // }
+
+};
 </script>
 
 <style scoped>
@@ -392,7 +404,8 @@ const handleBlur = () => {
   /* height: auto; */
   flex-direction: column;
   width: 100%;
-            background: url('../../assets/img//libarary/cross-on-paper.jpg');
+            background: url('../../assets/img/libarary/cross-on-paper.jpg');
+            /* background: url('../../assets/img/backgroundOrth.jpg'); */
             background-size: contain;
             padding-top: 3%;
             padding-bottom: 2%;

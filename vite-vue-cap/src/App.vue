@@ -7,7 +7,7 @@
 <script lang="ts">
   import { IonApp, IonRouterOutlet } from '@ionic/vue';
   import { defineComponent } from 'vue';
-
+  import '@ionic/pwa-elements';
  
 // import TabRoot from './views/Tabs/TabRoot.vue';
 

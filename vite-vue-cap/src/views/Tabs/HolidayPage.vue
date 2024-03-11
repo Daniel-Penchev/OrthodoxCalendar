@@ -18,7 +18,11 @@
       </ion-toolbar>
     </ion-header> -->
     <ion-content>
-      <div class="holiday-content">
+      <div class="holiday-content"           style="
+            background: url('https://t4.ftcdn.net/jpg/01/01/72/17/360_F_101721700_HE5ouiYmnmHljXfxTCYrNre4JgxXN64V.jpg');
+            background-size: cover;
+            margin: 0%;
+          ">
         <HolidayComponent></HolidayComponent>
         <CardCalcHolidays></CardCalcHolidays>
         <!-- <CalendarDisplay></CalendarDisplay> -->

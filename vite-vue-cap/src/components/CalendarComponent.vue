@@ -1118,11 +1118,11 @@ const moveMonthBackward = () => {
 /* Holidays */
 .vc-highlight-content-outline.vc-red {
   /* Тук е мястото за иконката църква */
-  background: url('/src/assets/img/church.png') center center no-repeat;
-    background-size: 53px;
+  background: url('/src/assets/img/orthodoxChurch.png') center center no-repeat;
+    background-size: 103px;
     background-position-y: -1px;
     width: 40px;
-    height: 54px;
+    height: 77px;
     z-index: 2;
 }
 
