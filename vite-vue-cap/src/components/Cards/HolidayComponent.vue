@@ -12,6 +12,26 @@
       <div width="52%" height="40" colspan="4" valign="bottom">
         <a name="ЦЪРКОВНИ"></a>
         <p>&nbsp;</p>
+        <div
+            style="
+              display: grid;
+              grid-template-columns: repeat(3, 1fr);
+              gap: 10px;
+              border-top: 1px solid rgb(183, 180, 180);
+              padding-top: 5%;
+              margin-top: 5%;
+            "
+          >
+            <button
+              v-for="(month, index) in sortedMonths"
+              :key="index"
+              @click="changeMonth(index)"
+              class="buttonMonthSelect"
+              :class="{ active: index === selectedMonth }"
+            >
+              {{ month }}
+            </button>
+          </div>
         <div v-for="month in sortedMonths" :key="month" class="styleMonth" > 
          
         <details>
@@ -47,7 +67,11 @@ interface Holiday {
   isEasterDay: boolean;
 }
 const calculatedHolidays = ref<Holiday[]>([]);
+const selectedMonth = ref<number>(0); // Initialize with the first month
 
+const changeMonth = (index: number) => {
+  selectedMonth.value = index;
+};
 const selectedYear = ref<number>(new Date().getFullYear());
 
 const holidays = ref<Holiday[]>([
@@ -80,6 +104,7 @@ const holidays = ref<Holiday[]>([
   { name: 'Св. първомъченик и архидякон Стефан (Стефановден)', date: '12/27', offset: 0,isEasterDay:false },
 
 ]);
+
 const calculateHolidays = () => {
   const easterDate = calculateOrthodoxEaster(selectedYear.value);
 
@@ -204,5 +229,17 @@ b, strong {
 .styleName{
   font-size: 1.175rem;
   text-align: center;
+}
+
+/* Navigation */
+.buttonMonthSelect {
+  width: 100%;
+  padding: 15px;
+  text-align: center;
+  cursor: pointer;
+  color: #0f172a;
+  font-size: 100%;
+  font-weight: 600;
+  border-radius: 7%;
 }
 </style>
