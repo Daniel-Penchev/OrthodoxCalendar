@@ -31,7 +31,7 @@ import '@ionic/vue/css/text-alignment.css';
 import '@ionic/vue/css/text-transformation.css';
 import '@ionic/vue/css/flex-utils.css';
 import '@ionic/vue/css/display.css';
-import '@ionic/pwa-elements';
+
 /* Theme variables */
 // import './theme/variables.css';
 

@@ -677,39 +677,39 @@ const holidays = ref<Holiday[]>([
   { name: '✝ Рождество Христово', date: '12-25', offset: -1 ,image: "",href:"https://www.pravoslavieto.com/calendar/feasts/rh/index.htm",audio:"http://www.sviatost.info/jitia_na_svetiite/jitiya---Rojdestvo_Hristovo.mp3" },
   { name: '✝ Събор на Пресвета Богородица', date: '12-26', offset: -1 ,image: "",href:"https://www.pravoslavieto.com/calendar/feasts/12.26_sabor_Bogoroditsa.htm",audio:"http://www.sviatost.info/jitia_na_svetiite/jitiya---Swbor_na_Presveta_Bogorodica.mp3" },
   { name: '✝ Св. първомъченик и архидякон Стефан', date: '12-27', offset: -1 ,image: "",href:"https://www.pravoslavieto.com/life/12.27_sv_arhidjakon_Stefan.htm",audio:"http://www.sviatost.info/jitia_na_svetiite/jitiya---Sveti_pwrvomwchenik_i_arhidyakon_Stefan.mp3" },
-  // {
-  //   name: "✝ Неделя след Богоявление - ако е неделята след Св. Богоявление която е на 6ти",
-  //   date: "",
-  //   offset: -112,
-  //   image: "",
-  //   href:"https://www.pravoslavieto.com/calendar/nedelnik/nedelja_sled_bogojavlenie.htm",
-  //   audio:""
-  // },
-  // {
-  //   name: "✝ Неделя за Талантите",
-  //   date: "",
-  //   offset: -105 ,image: "",href:"https://bg-patriarshia.bg/16-Sunday",audio:""
-  // },
-  // {
-  //   name: "✝ Неделя на Хананейката",
-  //   date: "",
-  //   offset: -98,image: "",href:"https://bg-patriarshia.bg/17-sunday-after-pentecost",audio:""
-  // },
-  // {
-  //   name: "✝ Неделя на 10-те прокажени",
-  //   date: "",
-  //   offset: -91 ,image: "",href:"http://www.plovdivskamitropolia.bg/nedelna-propoved/66-12-nedelya-sled-nedelya-podir-vazdvizhenie.html",audio:""
-  // },
-  // {
-  //   name: "✝ Неделя на Йерихонския слепец",
-  //   date: "",
-  //   offset: -84 ,image: "",href:"https://bg-patriarshia.bg/14-Sunday-after-the-exaltation",audio:""
-  // },
-  // {
-  //   name: "✝ Неделя на Закхея",
-  //   date: "",
-  //   offset: -77 ,image: "",href:"http://www.plovdivskamitropolia.bg/nedelna-propoved/73-15nedelya-sled-nedelya-podir-vazdvizhenie.html",audio:""
-  // },
+  {
+    name: "✝ Неделя след Богоявление - ако е неделята след Св. Богоявление която е на 6ти",
+    date: "",
+    offset: -112,
+    image: "",
+    href:"https://www.pravoslavieto.com/calendar/nedelnik/nedelja_sled_bogojavlenie.htm",
+    audio:""
+  },
+  {
+    name: "✝ Неделя за Талантите",
+    date: "",
+    offset: -105 ,image: "",href:"https://bg-patriarshia.bg/16-Sunday",audio:""
+  },
+  {
+    name: "✝ Неделя на Хананейката",
+    date: "",
+    offset: -98,image: "",href:"https://bg-patriarshia.bg/17-sunday-after-pentecost",audio:""
+  },
+  {
+    name: "✝ Неделя на 10-те прокажени",
+    date: "",
+    offset: -91 ,image: "",href:"http://www.plovdivskamitropolia.bg/nedelna-propoved/66-12-nedelya-sled-nedelya-podir-vazdvizhenie.html",audio:""
+  },
+  {
+    name: "✝ Неделя на Йерихонския слепец",
+    date: "",
+    offset: -84 ,image: "",href:"https://bg-patriarshia.bg/14-Sunday-after-the-exaltation",audio:""
+  },
+  {
+    name: "✝ Неделя на Закхея",
+    date: "",
+    offset: -77 ,image: "",href:"http://www.plovdivskamitropolia.bg/nedelna-propoved/73-15nedelya-sled-nedelya-podir-vazdvizhenie.html",audio:""
+  },
   {
     name: "✝ Неделя на Митаря и Фарисея",
     date: "",
